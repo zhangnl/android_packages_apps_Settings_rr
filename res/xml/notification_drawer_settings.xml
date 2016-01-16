@@ -88,17 +88,23 @@
         android:title="@string/force_expanded_notifications_title"
         android:summary="@string/force_expanded_notifications_summary" />
 
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+        android:key="disable_immersive_message"
+        android:title="@string/disable_immersive_message_title"
+        android:summary="@string/disable_immersive_message_summary" />
+
+</PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="notification_3"
+        android:title="@string/notifications_colors_cat" >
+
 
     <!-- Notification colors -->
     <PreferenceScreen
             android:id="@+id/notification_colors"
             android:title="@string/cat_colors_title"
             android:fragment="com.android.settings.rr.NotificationColorSettings" />
-
-    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
-        android:key="disable_immersive_message"
-        android:title="@string/disable_immersive_message_title"
-        android:summary="@string/disable_immersive_message_summary" />
 
 </PreferenceCategory>
 
