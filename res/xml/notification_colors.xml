@@ -18,6 +18,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/notification_color_settings_title">
 
+      <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+            android:key="notif_color_switch"
+            android:title="@string/notif_color_switch"
+            android:defaultValue="false" />
+
     <PreferenceCategory
         android:key="notification_cat_background"
         android:title="@string/background_title">
