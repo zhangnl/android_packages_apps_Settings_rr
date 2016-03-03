@@ -62,18 +62,20 @@ public class HeaderColors extends SettingsPreferenceFragment  implements Prefere
  private static final String HEADER_WEATHERTWO_COLOR = "header_weathertwo_color";
  private static final String HEADER_BATTERY_COLOR = "header_battery_text_color";
  private static final String HEADER_ALARM_COLOR = "header_alarm_text_color";
+ private static final String TASK_MANAGER_TITLE_COLOR = "task_manager_title_color";
 
     static final int DEFAULT = 0xffffffff;
     private static final int MENU_RESET = Menu.FIRST;
-	
+
 
     private ColorPickerPreference mHeaderCLockColor;
     private ColorPickerPreference mHeaderDetailColor;
     private ColorPickerPreference mHeaderWeatheroneColor;
-    private ColorPickerPreference mHeaderWeathertwoColor;	
+    private ColorPickerPreference mHeaderWeathertwoColor;
     private ColorPickerPreference mBatteryColor;
-    private ColorPickerPreference mAlarmColor;	
- 
+    private ColorPickerPreference mAlarmColor;
+    private ColorPickerPreference mTaskManagerColor;
+
 
  @Override
     public void onCreate(Bundle icicle) {
@@ -132,7 +134,17 @@ public class HeaderColors extends SettingsPreferenceFragment  implements Prefere
         hexColor = String.format("#%08x", (0xffffffff & intColor));
         mAlarmColor.setSummary(hexColor);
         mAlarmColor.setNewPreviewColor(intColor);
-	
+
+        mTaskManagerColor = (ColorPickerPreference) findPreference(TASK_MANAGER_TITLE_COLOR);
+        mAlarmColor.setOnPreferenceChangeListener(this);
+        intColor = Settings.System.getInt(getContentResolver(),
+                    Settings.System.TASK_MANAGER_TITLE_COLOR, DEFAULT);
+        hexColor = String.format("#%08x", (0xffffffff & intColor));
+        mTaskManagerColor.setSummary(hexColor);
+        mTaskManagerColor.setNewPreviewColor(intColor);
+
+
+
 	setHasOptionsMenu(true);
 
 }
@@ -201,8 +213,16 @@ public class HeaderColors extends SettingsPreferenceFragment  implements Prefere
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.HEADER_ALARM_TEXT_COLOR, intHex);
             return true;
-	}
-	return false;
+        }   else if (preference == mTaskManagerColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                      Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.TASK_MANAGER_TITLE_COLOR, intHex);
+            return true;
+        }
+      	return false;
 	}
 
 
@@ -252,7 +272,7 @@ public class HeaderColors extends SettingsPreferenceFragment  implements Prefere
         mHeaderWeatheroneColor.setSummary(R.string.default_string);
         Settings.System.putInt(getContentResolver(),
                 Settings.System.HEADER_WEATHERTWO_COLOR, DEFAULT);
-	mHeaderWeathertwoColor.setNewPreviewColor(DEFAULT);
+	      mHeaderWeathertwoColor.setNewPreviewColor(DEFAULT);
         mHeaderWeathertwoColor.setSummary(R.string.default_string);
         Settings.System.putInt(getContentResolver(),
                 Settings.System.HEADER_BATTERY_TEXT_COLOR, DEFAULT);
@@ -262,6 +282,10 @@ public class HeaderColors extends SettingsPreferenceFragment  implements Prefere
                 Settings.System.HEADER_ALARM_TEXT_COLOR, DEFAULT);
 	        mAlarmColor.setNewPreviewColor(DEFAULT);
         mAlarmColor.setSummary(R.string.default_string);
+        Settings.System.putInt(getContentResolver(),
+                Settings.System.TASK_MANAGER_TITLE_COLOR, DEFAULT);
+        mTaskManagerColor.setNewPreviewColor(DEFAULT);
+        mTaskManagerColor.setSummary(R.string.default_string);
 
     }
 

@@ -16,7 +16,7 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"	
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/notification_panel_title">
 <PreferenceCategory
         android:title="@string/header_color" >
@@ -51,6 +51,14 @@
         android:title="@string/header_alarm_text_color"
         android:defaultValue="0xffffffff" />
 
+  </PreferenceCategory>
+
+  <PreferenceCategory
+    android:title="@string/tm_color_cat" >
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+         android:key="task_manager_title_color"
+         android:title="@string/task_manager_title_color"
+         android:defaultValue="0xffffffff" />
   </PreferenceCategory>
 
 

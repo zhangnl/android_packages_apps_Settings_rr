@@ -16,7 +16,7 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"	
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/notification_panel_title">
     <PreferenceCategory
         android:title="@string/notifications_items" >
@@ -28,49 +28,49 @@
 
     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
         android:key="hide_panel_clock"
-        android:title="@string/hide_panel_clock_title" 
+        android:title="@string/hide_panel_clock_title"
 	android:summaryOn="@string/hide_clock_summary_on"
         android:summaryOff="@string/hide_clock_summary_off"
 	android:defaultValue="true"/>
 
     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
         android:key="hide_panel_date"
-        android:title="@string/hide_panel_date_title" 
+        android:title="@string/hide_panel_date_title"
 	android:summaryOn="@string/hide_panel_date_summary_on"
         android:summaryOff="@string/hide_panel_date_summary_off"
 	android:defaultValue="true"/>
 
     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
         android:key="hide_panel_clockvalue"
-        android:title="@string/hide_panel_clockvalue" 
+        android:title="@string/hide_panel_clockvalue"
 	android:summaryOn="@string/hide_ampm_summary_on"
         android:summaryOff="@string/hide_ampm_summary_off"
 	android:defaultValue="true"/>
 
     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
         android:key="hide_panel_battery"
-        android:title="@string/hide_panel_battery" 
+        android:title="@string/hide_panel_battery"
 	android:summaryOn="@string/hide_battery_summary_on"
         android:summaryOff="@string/hide_battery_summary_off"
 	android:defaultValue="true"/>
 
     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
         android:key="hide_panel_icons"
-        android:title="@string/hide_panel_icons" 
+        android:title="@string/hide_panel_icons"
 	android:summaryOn="@string/hide_icons_summary_on"
         android:summaryOff="@string/hide_icons_summary_off"
 	android:defaultValue="true"/>
 
     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
         android:key="hide_settings_icon"
-        android:title="@string/hide_settings_icon" 
+        android:title="@string/hide_settings_icon"
  	android:summaryOn="@string/hide_settings_summary_on"
         android:summaryOff="@string/hide_settings_summary_off"
 	android:defaultValue="true"/>
 
     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
         android:key="hide_user_icon"
-        android:title="@string/hide_user_icon" 
+        android:title="@string/hide_user_icon"
  	android:summaryOn="@string/hide_user_summary_on"
         android:summaryOff="@string/hide_user_summary_off"
 	android:defaultValue="true"/>
@@ -85,7 +85,7 @@
 
     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
         android:key="hide_panel_alarm"
-        android:title="@string/hide_panel_alarm_title" 
+        android:title="@string/hide_panel_alarm_title"
 	android:summaryOn="@string/hide_alarm_summary_on"
         android:summaryOff="@string/hide_alarm_summary_off"
 	android:defaultValue="false"/>
