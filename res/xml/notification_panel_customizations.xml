@@ -22,12 +22,6 @@
 <PreferenceCategory
         android:title="@string/header_ui" >
 
-
-    <PreferenceScreen
-            android:key="rr_custom_header"
-            android:title="@string/rr_custom_header_options"
-            android:fragment="com.android.settings.rr.CustomHeader" />
-
     <PreferenceScreen
             android:key="rr_header"
             android:title="@string/rr_header_options"
