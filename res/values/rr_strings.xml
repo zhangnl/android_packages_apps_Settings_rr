@@ -1817,14 +1817,6 @@
 	<string name="clock_date_right">Right of time</string>
 	<string name="clock_date_left">Left of time</string>
 	
-	<!-- QS Tiles Columns -->
-	<string name="qs_num_columns_title">Number of QS tiles per row</string>
-	<string name="qs_num_columns_showing">%1$s tiles per row showing</string>
-	
-	<!-- QS Tiles Rows -->
-	<string name="qs_num_rows_title">Number of QS rows</string>
-	<string name="qs_num_rows_showing">%1$s rows are shown</string>
-	
 	<!-- QS Tiles Rows -->
 	<string name="qs_color_switch">Custom Qs Colors</string>
 	<string name="qs_color_switch_summary">Overrides Theme Colors.</string>
