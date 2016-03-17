@@ -43,22 +43,7 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 public class NotificationColorSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String PREF_CAT_COLORS =
-            "notification_cat_colors";
-    private static final String PREF_MEDIA_BG_MODE =
-            "notification_media_bg_mode";
-    private static final String PREF_APP_ICON_BG_MODE =
-            "notification_app_icon_bg_mode";
-    private static final String PREF_APP_ICON_COLOR_MODE =
-            "notification_app_icon_color_mode";
-    private static final String PREF_BG_COLOR =
-            "notification_bg_color";
-    private static final String PREF_BG_GUTS_COLOR =
-            "notification_bg_guts_color";
-    private static final String PREF_APP_ICON_BG_COLOR =
-            "notification_app_icon_bg_color";
-    private static final String PREF_ICON_COLOR =
-            "notification_icon_color";
+
     private static final String PREF_CLEAR_ALL_ICON_COLOR =
             "notification_drawer_clear_all_icon_color";
     private static final String PREF_QS_TRANSPARENT_SHADE = "qs_transparent_shade";
@@ -78,13 +63,6 @@ public class NotificationColorSettings extends SettingsPreferenceFragment implem
     private static final int MENU_RESET = Menu.FIRST;
     private static final int DLG_RESET = 0;
 
-    private ListPreference mMediaBgMode;
-    private ListPreference mAppIconBgMode;
-    private ListPreference mAppIconColorMode;
-    private ColorPickerPreference mBgColor;
-    private ColorPickerPreference mBgGutsColor;
-    private ColorPickerPreference mAppIconBgColor;
-    private ColorPickerPreference mIconColor;
     private ColorPickerPreference mClearAllIconColor;
     private SeekBarPreference mQSShadeAlpha;
     private SeekBarPreferenceCham mQSHeaderAlpha;	
@@ -116,37 +94,7 @@ public class NotificationColorSettings extends SettingsPreferenceFragment implem
 
         int intColor;
         String hexColor;
-
-        mMediaBgMode = (ListPreference) findPreference(PREF_MEDIA_BG_MODE);
-        int mediaBgMode = Settings.System.getInt(mResolver,
-                Settings.System.NOTIFICATION_MEDIA_BG_MODE, 0);
-        mMediaBgMode.setValue(String.valueOf(mediaBgMode));
-        mMediaBgMode.setSummary(mMediaBgMode.getEntry());
-        mMediaBgMode.setOnPreferenceChangeListener(this);
-
-        mBgColor =
-                (ColorPickerPreference) findPreference(PREF_BG_COLOR);
-        intColor = Settings.System.getInt(mResolver,
-                Settings.System.NOTIFICATION_BG_COLOR, WHITE); 
-        mBgColor.setNewPreviewColor(intColor);
-        hexColor = String.format("#%08x", (0xffffffff & intColor));
-        mBgColor.setSummary(hexColor);
-        mBgColor.setDefaultColors(RR_BLUE_GREY, RR_BLUE_GREY);
-        mBgColor.setOnPreferenceChangeListener(this);
-
-        mBgGutsColor =
-                (ColorPickerPreference) findPreference(PREF_BG_GUTS_COLOR);
-        intColor = Settings.System.getInt(mResolver,
-                Settings.System.NOTIFICATION_GUTS_BG_COLOR, SYSTEMUI_SECONDARY); 
-        mBgGutsColor.setNewPreviewColor(intColor);
-        hexColor = String.format("#%08x", (0xffffffff & intColor));
-        mBgGutsColor.setSummary(hexColor);
-        mBgGutsColor.setDefaultColors(SYSTEMUI_SECONDARY, SYSTEMUI_SECONDARY);
-        mBgGutsColor.setOnPreferenceChangeListener(this);
-
-        PreferenceCategory colorCat =
-                (PreferenceCategory) findPreference(PREF_CAT_COLORS);
-
+  
         mClearAllIconColor =
                 (ColorPickerPreference) findPreference(PREF_CLEAR_ALL_ICON_COLOR);
         intColor = Settings.System.getInt(mResolver,
@@ -223,61 +171,7 @@ public class NotificationColorSettings extends SettingsPreferenceFragment implem
         String hex;
         int intHex;
 
-        if (preference == mMediaBgMode) {
-            int mediaBgMode = Integer.valueOf((String) newValue);
-            int index = mMediaBgMode.findIndexOfValue((String) newValue);
-            Settings.System.putInt(mResolver,
-                Settings.System.NOTIFICATION_MEDIA_BG_MODE, mediaBgMode);
-            preference.setSummary(mMediaBgMode.getEntries()[index]);
-            return true;
-        } else if (preference == mAppIconBgMode) {
-            int appIconBgMode = Integer.valueOf((String) newValue);
-            int index = mAppIconBgMode.findIndexOfValue((String) newValue);
-            Settings.System.putInt(mResolver,
-                Settings.System.NOTIFICATION_APP_ICON_BG_MODE, appIconBgMode);
-            preference.setSummary(mAppIconBgMode.getEntries()[index]);
-            refreshSettings();
-            return true;
-        } else if (preference == mAppIconColorMode) {
-            int appIconColorMode = Integer.valueOf((String) newValue);
-            int index = mAppIconColorMode.findIndexOfValue((String) newValue);
-            Settings.System.putInt(mResolver,
-                Settings.System.NOTIFICATION_APP_ICON_COLOR_MODE, appIconColorMode);
-            preference.setSummary(mAppIconColorMode.getEntries()[index]);
-            return true;
-        } else if (preference == mBgColor) {
-            hex = ColorPickerPreference.convertToARGB(
-                Integer.valueOf(String.valueOf(newValue)));
-            intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(mResolver,
-                Settings.System.NOTIFICATION_BG_COLOR, intHex);
-            preference.setSummary(hex);
-            return true;
-        } else if (preference == mBgGutsColor) {
-            hex = ColorPickerPreference.convertToARGB(
-                Integer.valueOf(String.valueOf(newValue)));
-            intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(mResolver,
-                Settings.System.NOTIFICATION_GUTS_BG_COLOR, intHex);
-            preference.setSummary(hex);
-            return true;
-        } else if (preference == mAppIconBgColor) {
-            hex = ColorPickerPreference.convertToARGB(
-                Integer.valueOf(String.valueOf(newValue)));
-            intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(mResolver,
-                Settings.System.NOTIFICATION_APP_ICON_BG_COLOR, intHex);
-            preference.setSummary(hex);
-            return true;
-        } else if (preference == mIconColor) {
-            hex = ColorPickerPreference.convertToARGB(
-                Integer.valueOf(String.valueOf(newValue)));
-            intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(mResolver,
-                Settings.System.NOTIFICATION_ICON_COLOR, intHex);
-            preference.setSummary(hex);
-            return true;
-        } else if (preference == mClearAllIconColor) {
+        if (preference == mClearAllIconColor) {
             hex = ColorPickerPreference.convertToARGB(
                 Integer.valueOf(String.valueOf(newValue)));
             intHex = ColorPickerPreference.convertToColorInt(hex);
@@ -347,25 +241,6 @@ public class NotificationColorSettings extends SettingsPreferenceFragment implem
                         new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.NOTIFICATION_MEDIA_BG_MODE, 0);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.NOTIFICATION_APP_ICON_BG_MODE, 0);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.NOTIFICATION_APP_ICON_COLOR_MODE, 0);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.NOTIFICATION_BG_COLOR,
-                                    WHITE);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.NOTIFICATION_GUTS_BG_COLOR,
-                                    SYSTEMUI_SECONDARY);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.NOTIFICATION_APP_ICON_BG_COLOR,
-                                    TRANSLUCENT_WHITE);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.NOTIFICATION_TEXT_COLOR, BLACK);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.NOTIFICATION_ICON_COLOR, BLACK);
-                            Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.NOTIFICATION_DRAWER_CLEAR_ALL_ICON_COLOR,
                                     WHITE);
                             getOwner().refreshSettings();
@@ -374,27 +249,6 @@ public class NotificationColorSettings extends SettingsPreferenceFragment implem
                     .setPositiveButton(R.string.dlg_reset_rr,
                         new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.NOTIFICATION_MEDIA_BG_MODE, 1);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.NOTIFICATION_APP_ICON_BG_MODE, 1);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.NOTIFICATION_APP_ICON_COLOR_MODE, 1);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.NOTIFICATION_BG_COLOR,
-                                    WHITE);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.NOTIFICATION_GUTS_BG_COLOR,
-                                    SYSTEMUI_SECONDARY);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.NOTIFICATION_APP_ICON_BG_COLOR,
-                                    TRANSLUCENT_HOLO_BLUE_LIGHT);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.NOTIFICATION_TEXT_COLOR,
-                                    HOLO_BLUE_LIGHT);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.NOTIFICATION_ICON_COLOR,
-                                    HOLO_BLUE_LIGHT);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.NOTIFICATION_DRAWER_CLEAR_ALL_ICON_COLOR,
                                     HOLO_BLUE_LIGHT);
