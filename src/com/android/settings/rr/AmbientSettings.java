@@ -63,7 +63,7 @@ public class AmbientSettings extends SettingsPreferenceFragment implements
     private ListPreference mDozePulseIn;
     private ListPreference mDozePulseVisible;
     private ListPreference mDozePulseOut;
-    private SystemSettingSwitchPreference mDozeTriggerPickup;
+    private SwitchPreference mDozeTriggerPickup;
 
     private DozeBrightnessDialog mDozeBrightnessDialog;
     private Preference mDozeBrightness;
@@ -93,7 +93,7 @@ public class AmbientSettings extends SettingsPreferenceFragment implements
         mDozePulseOut.setOnPreferenceChangeListener(this);
 
         if (isPickupSensorUsedByDefault(activity)) {
-            mDozeTriggerPickup = (SystemSettingSwitchPreference) findPreference(KEY_DOZE_PULSE_PICKUP);
+            mDozeTriggerPickup = (SwitchPreference) findPreference(KEY_DOZE_PULSE_PICKUP);
         } else {
             removePreference(KEY_DOZE_PULSE_PICKUP);
         }
