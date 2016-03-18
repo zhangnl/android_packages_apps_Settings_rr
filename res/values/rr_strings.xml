@@ -1645,14 +1645,6 @@
 	<string name="notifications_header">Header Tweaks </string>	
 	<string name="notifications_items">Notification Header Items</string>
 	<string name="hide_panel_items_title">Notification Panel Icons </string>
-	<string name="hide_panel_clock_title">Show Notification Panel clock</string>
-	<string name="hide_panel_date_title">Show Notification Panel date</string>
-	<string name="hide_panel_clockvalue">Show Clock Detail</string>
-	<string name="hide_panel_battery">Show Notification Panel Battery Text</string>
-	<string name="hide_panel_icons">Show Notification Icons</string>
-	<string name="hide_panel_alarm_title">Hide Alarm</string>	
-	<string name="hide_settings_icon">Show Notification Panel Settings button</string>
-	<string name="hide_user_icon">Show Notification Panel UserSwitcher</string>	
 	<string name="status_bar_header_clock_font_style_title">Notification Panel Clock Font</string>
 	<string name="status_bar_header_weather_font_style">Notification Panel  Weather Font</string>
 	<string name="status_bar_header_weather_font_style_title">Notification Panel  Weather Font</string>
