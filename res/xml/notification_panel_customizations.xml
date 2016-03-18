@@ -27,10 +27,9 @@
            android:title="@string/enable_task_manager_title"
            android:summary="@string/enable_task_manager_summary" />
 
-    <PreferenceScreen
-            android:key="rr_header"
-            android:title="@string/rr_header_options"
-            android:fragment="com.android.settings.rr.Header" />
-	   </PreferenceCategory>
+     <PreferenceScreen
+           android:key="rr_custom_header"
+           android:title="@string/rr_custom_header_options"
+           android:fragment="com.android.settings.rr.CustomHeader" />
 
 </PreferenceScreen>
