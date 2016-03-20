@@ -61,11 +61,6 @@ public class NotificationColorSettings extends SettingsPreferenceFragment implem
             "notification_icon_color";
     private static final String PREF_CLEAR_ALL_ICON_COLOR =
             "notification_drawer_clear_all_icon_color";
-    private static final String PREF_QS_TRANSPARENT_SHADE = "qs_transparent_shade";
-    private static final String PREF_QS_TRANSPARENT_HEADER = "qs_transparent_header";
-    private static final String PREF_TRANSPARENT_VOLUME_DIALOG = "transparent_volume_dialog";
-    private static final String PREF_TRANSPARENT_POWER_MENU = "transparent_power_menu";
-    private static final String PREF_TRANSPARENT_POWER_DIALOG_DIM = "transparent_power_dialog_dim";
 
     private static final int RR_BLUE_GREY = 0xff1b1f23;
     private static final int SYSTEMUI_SECONDARY = 0xff384248;
@@ -85,12 +80,7 @@ public class NotificationColorSettings extends SettingsPreferenceFragment implem
     private ColorPickerPreference mBgGutsColor;
     private ColorPickerPreference mAppIconBgColor;
     private ColorPickerPreference mIconColor;
-    private ColorPickerPreference mClearAllIconColor;
-    private SeekBarPreference mQSShadeAlpha;
-    private SeekBarPreferenceCham mQSHeaderAlpha;	
-    private SeekBarPreferenceCham mVolumeDialogAlpha;	
-    private SeekBarPreferenceCham mPowerMenuAlpha;
-    private SeekBarPreferenceCham mPowerDialogDim;	
+    private ColorPickerPreference mClearAllIconColor;	
   
     private ContentResolver mResolver;
 
@@ -156,48 +146,6 @@ public class NotificationColorSettings extends SettingsPreferenceFragment implem
         mClearAllIconColor.setSummary(hexColor);
         mClearAllIconColor.setDefaultColors(WHITE, HOLO_BLUE_LIGHT);
         mClearAllIconColor.setOnPreferenceChangeListener(this);
-
-	// QS shade alpha
-        mQSShadeAlpha =
-                (SeekBarPreference) findPreference(PREF_QS_TRANSPARENT_SHADE);
-        int qSShadeAlpha = Settings.System.getInt(mResolver,
-                Settings.System.QS_TRANSPARENT_SHADE, 255);
-        mQSShadeAlpha.setValue(qSShadeAlpha / 1);
-        mQSShadeAlpha.setOnPreferenceChangeListener(this);
-
-        setHasOptionsMenu(true);
-
- 	// QS header alpha
-            mQSHeaderAlpha =
-                    (SeekBarPreferenceCham) findPreference(PREF_QS_TRANSPARENT_HEADER);
-            int qSHeaderAlpha = Settings.System.getInt(mResolver,
-                    Settings.System.QS_TRANSPARENT_HEADER, 255);
-            mQSHeaderAlpha.setValue(qSHeaderAlpha / 1);
-            mQSHeaderAlpha.setOnPreferenceChangeListener(this);
-
- // Volume dialog alpha
-            mVolumeDialogAlpha =
-                    (SeekBarPreferenceCham) findPreference(PREF_TRANSPARENT_VOLUME_DIALOG);
-            int volumeDialogAlpha = Settings.System.getInt(mResolver,
-                    Settings.System.TRANSPARENT_VOLUME_DIALOG, 255);
-            mVolumeDialogAlpha.setValue(volumeDialogAlpha / 1);
-            mVolumeDialogAlpha.setOnPreferenceChangeListener(this);
-
-            // Power menu alpha
-            mPowerMenuAlpha =
-                    (SeekBarPreferenceCham) findPreference(PREF_TRANSPARENT_POWER_MENU);
-            int powerMenuAlpha = Settings.System.getInt(mResolver,
-                    Settings.System.TRANSPARENT_POWER_MENU, 100);
-            mPowerMenuAlpha.setValue(powerMenuAlpha / 1);
-            mPowerMenuAlpha.setOnPreferenceChangeListener(this);
-
-       // Power/reboot dialog dim
-            mPowerDialogDim =
-                    (SeekBarPreferenceCham) findPreference(PREF_TRANSPARENT_POWER_DIALOG_DIM);
-            int powerDialogDim = Settings.System.getInt(mResolver,
-                    Settings.System.TRANSPARENT_POWER_DIALOG_DIM, 50);
-            mPowerDialogDim.setValue(powerDialogDim / 1);
-            mPowerDialogDim.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -285,32 +233,7 @@ public class NotificationColorSettings extends SettingsPreferenceFragment implem
                 Settings.System.NOTIFICATION_DRAWER_CLEAR_ALL_ICON_COLOR, intHex);
             preference.setSummary(hex);
             return true;
-        } else if (preference == mQSShadeAlpha) {
-            int alpha = (Integer) newValue;
-            Settings.System.putInt(mResolver,
-                    Settings.System.QS_TRANSPARENT_SHADE, alpha * 1);
-            return true;
-	}  else if (preference == mQSHeaderAlpha) {
-                int alpha = (Integer) newValue;
-                Settings.System.putInt(mResolver,
-                        Settings.System.QS_TRANSPARENT_HEADER, alpha * 1);
-                return true;
-	}  else if (preference == mVolumeDialogAlpha) {
-                int alpha = (Integer) newValue;
-                Settings.System.putInt(mResolver,
-                        Settings.System.TRANSPARENT_VOLUME_DIALOG, alpha * 1);
-                return true;
-	} else if (preference == mPowerMenuAlpha) {
-		int alpha = (Integer) newValue;
-                Settings.System.putInt(mResolver,
-                        Settings.System.TRANSPARENT_POWER_MENU, alpha * 1);
-                return true;
-	}else if (preference == mPowerDialogDim) {
-		int alpha = (Integer) newValue;
-                Settings.System.putInt(mResolver,
-                        Settings.System.TRANSPARENT_POWER_DIALOG_DIM, alpha * 1);
-                return true;
-	}
+        } 
         return false;
     }
 
