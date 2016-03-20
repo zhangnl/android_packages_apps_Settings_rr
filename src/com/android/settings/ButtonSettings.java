@@ -564,7 +564,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         }
    }
 
-
     private void updateDisableHwKeysOption() {
         final PreferenceScreen prefScreen = getPreferenceScreen();
 	    boolean enabled = Settings.System.getInt(getActivity().getContentResolver(),

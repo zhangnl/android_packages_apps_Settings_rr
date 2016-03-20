@@ -302,8 +302,7 @@ public class SettingsActivity extends Activity
 	    R.id.app_circle_bar,
 	    R.id.gesture_anywhere,
             R.id.dashboard,
-            R.id.privacy_settings_cyanogenmod,
-            R.id.button_settings
+            R.id.privacy_settings_cyanogenmod
     };
 
     private static final String[] ENTRY_FRAGMENTS = {

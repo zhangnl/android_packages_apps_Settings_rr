@@ -37,7 +37,6 @@ import android.widget.TextView;
 import android.widget.Button;
 
 import cyanogenmod.hardware.CMHardwareManager;
-import cyanogenmod.providers.CMSettings;
 
 import com.android.settings.R;
 
@@ -53,7 +52,6 @@ public class VibratorIntensity extends DialogPreference implements
     private int mDefaultValue;
     private int mWarningValue;
     private CMHardwareManager mHardware;
-    private final Vibrator mVibrator;
 
     private Drawable mProgressDrawable;
     private Drawable mProgressThumb;
@@ -63,7 +61,6 @@ public class VibratorIntensity extends DialogPreference implements
         super(context, attrs);
 
         mHardware = CMHardwareManager.getInstance(context);
-        mVibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
 
         if (!mHardware.isSupported(CMHardwareManager.FEATURE_VIBRATOR)) {
             return;
@@ -119,8 +116,13 @@ public class VibratorIntensity extends DialogPreference implements
         mRedFilter = new LightingColorFilter(Color.BLACK,
                 getContext().getResources().getColor(android.R.color.holo_red_light));
 
+        // Restore percent value from SharedPreferences object
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+        int defaultValue = intensityToPercent(mMinValue, mMaxValue, mDefaultValue);
+        int percent = prefs.getInt(PREF_NAME, defaultValue);
+
         mSeekBar.setOnSeekBarChangeListener(this);
-        mSeekBar.setProgress(intensityToPercent(mMinValue, mMaxValue, mOriginalValue));
+        mSeekBar.setProgress(percent);
     }
 
     @Override
@@ -148,8 +150,7 @@ public class VibratorIntensity extends DialogPreference implements
             SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
             prefs.edit().putInt(PREF_NAME, mSeekBar.getProgress()).commit();
         } else {
-            CMSettings.Secure.putInt(getContext().getContentResolver(),
-                    CMSettings.Secure.VIBRATOR_INTENSITY, mOriginalValue);
+            mHardware.setVibratorIntensity(mHardware.getVibratorIntensity());
         }
     }
 
@@ -159,15 +160,14 @@ public class VibratorIntensity extends DialogPreference implements
             return;
         }
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        int vibrator = hardware.getVibratorIntensity();
         int min = hardware.getVibratorMinIntensity();
         int max = hardware.getVibratorMaxIntensity();
         int defaultValue = intensityToPercent(min, max,
                 hardware.getVibratorDefaultIntensity());
         int percent = prefs.getInt(PREF_NAME, defaultValue);
 
-        CMSettings.Secure.putInt(context.getContentResolver(),
-                CMSettings.Secure.VIBRATOR_INTENSITY, percentToIntensity(min, max,
-                        percentToIntensity(min, max, percent)));
+        hardware.setVibratorIntensity(percentToIntensity(min, max, percent));
     }
 
     @Override
@@ -183,9 +183,8 @@ public class VibratorIntensity extends DialogPreference implements
             mProgressThumb.setColorFilter(shouldWarn ? mRedFilter : null);
         }
 
-        CMSettings.Secure.putInt(getContext().getContentResolver(),
-                CMSettings.Secure.VIBRATOR_INTENSITY, percentToIntensity(mMinValue, mMaxValue,
-                        progress));
+        mHardware.setVibratorIntensity(percentToIntensity(mMinValue, mMaxValue,
+                progress));
         mValue.setText(String.format("%d%%", progress));
     }
 
