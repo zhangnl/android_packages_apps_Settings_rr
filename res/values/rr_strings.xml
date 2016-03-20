@@ -1532,6 +1532,8 @@
 	
 	<!-- QS shade transparency -->
 	<string name="qs_transparent_shade">QS Panel Opacity</string>
+	<!-- QS shade transparency switch -->
+	<string name="qs_transp_switch">Enable SystemUI transparency</string>
 	
 	<!-- Safe headset volume restore checkbox -->
 	<string name="safe_headset_volume_title">Safe headset volume</string>
