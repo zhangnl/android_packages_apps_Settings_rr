@@ -103,7 +103,7 @@ public class CustomHeader extends SettingsPreferenceFragment  implements Prefere
          mDaylightHeaderPack.setOnPreferenceChangeListener(this);
 
         mHeaderShadow = (SeekBarPreference) findPreference(CUSTOM_HEADER_IMAGE_SHADOW);
-        final int headerShadow = Settings.System.getInt(getContentResolver(),
+        final int headerShadow = Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, 0);
         mHeaderShadow.setValue((int)((headerShadow / 255) * 100));
         mHeaderShadow.setOnPreferenceChangeListener(this);
@@ -136,7 +136,7 @@ public class CustomHeader extends SettingsPreferenceFragment  implements Prefere
          } else if (preference == mHeaderShadow) {
             Integer headerShadow = (Integer) newValue;
             int realHeaderValue = (int) (((double) headerShadow / 100) * 255);
-            Settings.System.putInt(getContentResolver(),
+            Settings.System.putInt(resolver,
               Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, realHeaderValue);
 	    return true;
 	 }
