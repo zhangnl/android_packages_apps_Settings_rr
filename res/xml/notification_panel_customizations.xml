@@ -27,21 +27,11 @@
             android:key="rr_custom_header"
             android:title="@string/rr_custom_header_options"
             android:fragment="com.android.settings.rr.CustomHeader" />
-
+    
     <PreferenceScreen
             android:key="rr_header"
             android:title="@string/rr_header_options"
             android:fragment="com.android.settings.rr.Header" />
-
-    <PreferenceScreen
-            android:key="rr_header_fonts"
-            android:title="@string/rr_header_fonts"
-            android:fragment="com.android.settings.rr.HeaderFonts" />
-
-    <PreferenceScreen
-            android:key="rr_header_colors"
-            android:title="@string/rr_header_colors"
-            android:fragment="com.android.settings.rr.HeaderColors" />
 
 	   </PreferenceCategory>
 
