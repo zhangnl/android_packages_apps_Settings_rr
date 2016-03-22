@@ -114,6 +114,14 @@
         android:summary="@string/disable_fc_notifications_summary"
         android:defaultValue="false" />
 
+
+        <!-- Wakelock blocker -->
+        <PreferenceScreen
+            android:key="wakelock_blocker"
+            android:fragment="com.android.settings.rr.WakeLockBlocker"
+            android:title="@string/wakelock_blocker_title"
+            />
+
      <!-- System APP Remover -->
     <PreferenceScreen
             android:id="@+id/system_app_remover"
