@@ -1246,14 +1246,6 @@
 	<string name="show_enter_key_title">Show enter key</string>
 	<string name="show_enter_key_summary">Force keyboard to show enter instead of emoticon key</string>
 	
-	<!-- Wakelock blocker -->
-	<string name="wakelock_blocker_title">Wakelock Blocker</string>
-	<string name="wakelock_blocker_summary">Block system wakelocks</string>
-	<string name="wakelock_blocker_save">Save</string>
-	<string name="wakelock_list_header">Available wakelocks</string>
-	<string name="wakelock_blocker_reload">Reload</string>
-	<string name="wakelock_blocker_warning_title">Proceed with caution</string>
-	<string name="wakelock_blocker_warning">Blocking wakelocks have the potential to cause instability, crashes or data loss</string>
 	
 
     <!-- Circle app bar -->
@@ -1268,6 +1260,7 @@
     <string name="trigger_top_summary">Adjust the vertical postion of the trigger area</string>
     <string name="trigger_bottom_title">Trigger height</string>
     <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
+
     
 	<!--Ad-Blocker-->
 	<string name="adaway_settings_title">Ad Blocker</string>
@@ -1963,5 +1956,6 @@
      <string name="smartbar_ime_action_none">None</string>
      <string name="smartbar_ime_action_arrows">Input arrows</string>
      <string name="smartbar_ime_action_switcher">Keyboard switcher</string>
+
 
 </resources>

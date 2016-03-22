@@ -104,8 +104,6 @@
                     android:targetPackage="com.resurrection.ota"
                     android:targetClass="com.resurrection.ota.MainActivity" />
         </PreferenceScreen>   
-
-
                 
 </PreferenceCategory>
 
