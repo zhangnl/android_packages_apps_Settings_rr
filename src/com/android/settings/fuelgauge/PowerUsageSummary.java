@@ -497,8 +497,6 @@ public class PowerUsageSummary extends PowerUsageBase
             return;
         }
         mPerfProfilePref.setValue(String.valueOf(mPerf.getPowerProfile()));
-        mPerAppProfiles.setEnabled(
-            mPerf.getProfileHasAppProfiles(mPerf.getPowerProfile()));
         updatePerformanceSummary();
     }
 
