@@ -47,27 +47,6 @@
         android:defaultValue="true" />
 </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="animations_3"
-        android:title="@string/list_cat" >
-
-    <ListPreference
-        android:key="listview_animation"
-        android:dialogTitle="@string/listview_animation_title"
-        android:title="@string/listview_animation_title"
-        android:entries="@array/listview_animation_entries"
-        android:entryValues="@array/listview_animation_values"
-        android:defaultValue="0" />
-
-    <ListPreference
-        android:key="listview_interpolator"
-        android:dialogTitle="@string/listview_interpolator_title"
-        android:title="@string/listview_interpolator_title"
-        android:entries="@array/listview_interpolator_entries"
-        android:entryValues="@array/listview_interpolator_values"
-        android:defaultValue="0" />
-</PreferenceCategory>
-
     <ListPreference
             android:key="power_menu_animations"
             android:title="@string/power_menu_animation_title"
