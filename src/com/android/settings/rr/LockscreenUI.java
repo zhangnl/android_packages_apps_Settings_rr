@@ -47,11 +47,8 @@ import com.android.settings.SettingsPreferenceFragment;
 
 public class LockscreenUI extends SettingsPreferenceFragment  implements OnPreferenceChangeListener {
 
-
-    private static final String KEY_LOCKSCREEN_BLUR_RADIUS = "lockscreen_blur_radius";
     private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";	
 	
-    private SeekBarPreference mBlurRadius;
     private ListPreference mLockClockFonts;	
 
     @Override
@@ -60,11 +57,6 @@ public class LockscreenUI extends SettingsPreferenceFragment  implements OnPrefe
         addPreferencesFromResource(R.xml.rr_ls_ui);
         ContentResolver resolver = getActivity().getContentResolver();
 
-
-	mBlurRadius = (SeekBarPreference) findPreference(KEY_LOCKSCREEN_BLUR_RADIUS);
-            mBlurRadius.setValue(Settings.System.getInt(resolver,
-                    Settings.System.LOCKSCREEN_BLUR_RADIUS, 14));
-            mBlurRadius.setOnPreferenceChangeListener(this);
 
 
             mLockClockFonts = (ListPreference) findPreference(LOCK_CLOCK_FONTS);
@@ -84,12 +76,7 @@ public class LockscreenUI extends SettingsPreferenceFragment  implements OnPrefe
     public boolean onPreferenceChange(Preference preference, Object newValue)
 	{
 	ContentResolver resolver = getActivity().getContentResolver();
-	 if (preference == mBlurRadius) {
-                int width = ((Integer)newValue).intValue();
-                Settings.System.putInt(resolver,
-                        Settings.System.LOCKSCREEN_BLUR_RADIUS, width);
-                return true;
-	} else if (preference == mLockClockFonts) {
+	  if (preference == mLockClockFonts) {
                 Settings.System.putInt(resolver, Settings.System.LOCK_CLOCK_FONTS,
                         Integer.valueOf((String) newValue));
                 mLockClockFonts.setValue(String.valueOf(newValue));
