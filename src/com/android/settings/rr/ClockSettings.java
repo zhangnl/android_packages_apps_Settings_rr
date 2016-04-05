@@ -76,8 +76,6 @@ public class ClockSettings extends SettingsPreferenceFragment
     private static final String STATUS_BAR_DATE_STYLE = "status_bar_date_style";
     private static final String STATUS_BAR_DATE_FORMAT = "status_bar_date_format";
     private static final String PREF_COLOR_PICKER = "clock_color";
-    private static final String PREF_FONT_STYLE = "font_style";
-    private static final String PREF_STATUS_BAR_CLOCK_FONT_SIZE  = "status_bar_clock_font_size";
     private static final String PREF_CLOCK_DATE_POSITION = "clock_date_position";
 
     public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
@@ -94,8 +92,6 @@ public class ClockSettings extends SettingsPreferenceFragment
     private ListPreference mStatusBarDateStyle;
     private ListPreference mStatusBarDateFormat;
     private ColorPickerPreference mColorPicker;
-    private ListPreference mFontStyle;
-    private ListPreference mStatusBarClockFontSize;
     private boolean mCheckPreferences;	
     private ListPreference mClockDatePosition;
 
@@ -190,20 +186,6 @@ public class ClockSettings extends SettingsPreferenceFragment
             mColorPicker.setSummary(hexColor);
         }
         mColorPicker.setNewPreviewColor(intColor);
-
-        mFontStyle = (ListPreference) findPreference(PREF_FONT_STYLE);
-        mFontStyle.setOnPreferenceChangeListener(this);
-        mFontStyle.setValue(Integer.toString(Settings.System.getInt(getActivity()
-                .getContentResolver(), Settings.System.STATUSBAR_CLOCK_FONT_STYLE,
-                0)));
-        mFontStyle.setSummary(mFontStyle.getEntry());
-
-        mStatusBarClockFontSize = (ListPreference) findPreference(PREF_STATUS_BAR_CLOCK_FONT_SIZE);
-        mStatusBarClockFontSize.setOnPreferenceChangeListener(this);
-        mStatusBarClockFontSize.setValue(Integer.toString(Settings.System.getInt(getActivity()
-                .getContentResolver(), Settings.System.STATUSBAR_CLOCK_FONT_SIZE, 
-                14)));
-        mStatusBarClockFontSize.setSummary(mStatusBarClockFontSize.getEntry());
 
         setHasOptionsMenu(true);
         mCheckPreferences = true;
@@ -325,21 +307,7 @@ public class ClockSettings extends SettingsPreferenceFragment
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_CLOCK_COLOR, intHex);
             return true;
-        } else if (preference == mFontStyle) {
-            int val = Integer.parseInt((String) newValue);
-            int index = mFontStyle.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUSBAR_CLOCK_FONT_STYLE, val);
-            mFontStyle.setSummary(mFontStyle.getEntries()[index]);
-            return true;
-        } else if (preference == mStatusBarClockFontSize) {
-            int val = Integer.parseInt((String) newValue);
-            int index = mStatusBarClockFontSize.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUSBAR_CLOCK_FONT_SIZE, val);
-            mStatusBarClockFontSize.setSummary(mStatusBarClockFontSize.getEntries()[index]);
-            return true;
-        }
+        } 
         return false;
     }
 
