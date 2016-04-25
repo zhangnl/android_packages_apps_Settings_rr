@@ -1525,6 +1525,8 @@
 	<string name="dlg_reset_rr">RR</string>
 	<string name="dlg_reset_values_message">Reset values to default?</string>	
 	<string name="dlg_reset_android">Ok</string>	
+	<string name="dlg_reset_values_message">Reset values to\nAndroid- or RR default?</string>
+        <string name="dlg_reset_colors_message">Reset colors to\nAndroid- or RR default?</string>
 	<string name="cat_colors_title">Customizations</string>
 	<string name="background_title">Notification Background</string>
 	<string name="icon_title">Icon</string>
@@ -1617,6 +1619,21 @@
 	
 	<!-- Power/reboot dialogs dim amount -->
 	<string name="power_menu_dialog_dim">Power dialog dim background amount</string>
+	
+	  <!-- Status bar greeting settings -->
+	<string name="greeting_show_greeting_always_summary">The greeting will be shown after the device gets unlocked</string>
+	<string name="greeting_show_greeting_once_summary">The greeting will be shown only the first time the device gets unlocked after the boot</string>
+	<string name="greeting_show_greeting_never_summary">The greeting will never be shown</string>
+	<string name="greeting_show_greeting_once_title">Once after boot</string>
+	<string name="greeting_custom_text_title">Custom text</string>
+	<string name="greeting_custom_text_dlg_message">Enter a new text, which will be shown as greeting. An empty field will revert the text to:\n\'%s\'</string>
+	<string name="greeting_timeout_title">Time out</string>
+	<string name="greeting_preview_title">Preview</string>
+	<string name="greeting_preview_summary">Click to show a preview</string>
+	<string name="rr_greeting">Greeting</string>
+	<string name="status_bar_greeting_settings_summary">Customize greeting</string>
+	<string name="never_title">Never</string>
+	<string name="show_title">Show</string>
 	
 	<!-- Ability to disable hardware keys via nav bar settings -->	
 	<string name="hw_keys_title">Hardware keys</string>
@@ -1802,6 +1819,15 @@
 	<string name="logo40">Resurrection No-ring</string>
 	     
 	<string name="rr_navbar_settings">Navbar</string>
+	
+	
+   	<!-- Status bar notification settings -->
+    	<string name="notification_show_ticker_title">Show ticker</string>
+    	<string name="notification_show_ticker_summary">Enable to show the ticker</string>
+    	<string name="notification_ticker_text_color_title">Ticker text</string>
+   	<string name="rr_ticker">Notification Ticker</string>
+	<string name="notification_ticker_text_color_dark_mode_title">Ticker text (light status bar)</string>
+	<string name="always_title">Always</string>
 	
 	 
 	<!-- Navigation Bar -->

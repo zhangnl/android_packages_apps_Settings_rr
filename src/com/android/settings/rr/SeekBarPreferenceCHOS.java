@@ -26,6 +26,7 @@ public class SeekBarPreferenceCHOS extends Preference implements OnSeekBarChange
     private int mMaxValue      = 100;
     private int mMinValue      = 0;
     private int mInterval      = 1;
+    private boolean mIsSeconds = false;
     private int mCurrentValue;
     private String mUnitsLeft  = "";
     private String mUnitsRight = "";
@@ -60,6 +61,15 @@ public class SeekBarPreferenceCHOS extends Preference implements OnSeekBarChange
         mUnitsLeft = getAttributeStringValue(attrs, SETTINGS, "unitsLeft", "");
         String units = getAttributeStringValue(attrs, SETTINGS, "units", "");
         mUnitsRight = getAttributeStringValue(attrs, SETTINGS, "unitsRight", units);
+        try {
+            String newInterval = attrs.getAttributeValue(SETTINGS, "interval");
+            if(newInterval != null)
+                mInterval = Integer.parseInt(newInterval);
+        }
+        catch(Exception e) {
+            Log.e(TAG, "Invalid interval value", e);
+        }
+        mIsSeconds = attrs.getAttributeBooleanValue(SETTINGS, "isSeconds", false);
 
         Integer id = typedArray.getResourceId(R.styleable.SeekBarPreference_unitsRight, 0);
         if (id > 0) {
@@ -68,15 +78,6 @@ public class SeekBarPreferenceCHOS extends Preference implements OnSeekBarChange
         id = typedArray.getResourceId(R.styleable.SeekBarPreference_unitsLeft, 0);
         if (id > 0) {
             mUnitsLeft = getContext().getResources().getString(id);
-        }
-
-        try {
-            String newInterval = attrs.getAttributeValue(SETTINGS, "interval");
-            if(newInterval != null)
-                mInterval = Integer.parseInt(newInterval);
-        }
-        catch(Exception e) {
-            Log.e(TAG, "Invalid interval value", e);
         }
     }
     
@@ -149,7 +150,11 @@ public class SeekBarPreferenceCHOS extends Preference implements OnSeekBarChange
         try {
             RelativeLayout layout = (RelativeLayout)view;
             mStatusText = (TextView)layout.findViewById(R.id.seekBarPrefValue);
-            mStatusText.setText(String.valueOf(mCurrentValue));
+            if (mIsSeconds) {
+                mStatusText.setText(String.valueOf((float) mCurrentValue / 1000));
+            } else {
+                mStatusText.setText(String.valueOf(mCurrentValue));
+            }
             mStatusText.setMinimumWidth(30);
             mSeekBar.setProgress(mCurrentValue - mMinValue);
 
@@ -180,7 +185,11 @@ public class SeekBarPreferenceCHOS extends Preference implements OnSeekBarChange
         }
         // change accepted, store it
         mCurrentValue = newValue;
-        mStatusText.setText(String.valueOf(newValue));
+        if (mIsSeconds) {
+            mStatusText.setText(String.valueOf((float) mCurrentValue / 1000));
+        } else {
+            mStatusText.setText(String.valueOf(mCurrentValue));
+        }
         persistInt(newValue);
     }
 
