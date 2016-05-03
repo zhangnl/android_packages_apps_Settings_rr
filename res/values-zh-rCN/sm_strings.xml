@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2015 The SudaMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="show_network_speed_title">状态栏网速</string>
+  <string name="show_network_speed_summary">在状态栏显示当前网速</string>
+  <string name="status_bar_network_traffic_style_disable">禁用</string>
+  <string name="status_bar_network_traffic_style_up">显示上传速度</string>
+  <string name="status_bar_network_traffic_style_down">显示下载速度</string>
+  <string name="status_bar_network_traffic_style_all">显示上传和下载速度</string>
+  <string name="suda_version">SudaMod版本</string>
+  <string name="suda_version_default">未知</string>
+  <string name="advanced_device_info_title">高级信息</string>
+  <string name="advanced_device_info_summary">CPU、GPU等</string>
+  <string name="cpu_processor">处理器</string>
+  <string name="cpu_processor_hardware">硬件</string>
+  <string name="cpu_type">处理器类型</string>
+  <string name="cpu_features">处理器特性</string>
+  <string name="gpu_vendor">GPU供应商</string>
+  <string name="gpu_renderer">GPU渲染器</string>
+  <string name="gpu_gl_version">OpenGL版本</string>
+  <string name="gpu_gl_extensions">OpenGL扩展</string>
+  <string name="gpu_shader_version">Shader版本</string>  
+  <string name="gesture_direct_title">手势和体感</string>  
+  <string name="gesture_title">手势</string>  
+  <string name="direct_control_title">体感</string>
+  <string name="shake_clean_recent">晃动清理最近任务</string>
+  <string name="shake_clean_recent_summary">最近任务界面通过晃动清理</string>
+  <string name="shake_clean_notification">晃动清理通知</string>
+  <string name="shake_clean_notification_summary">通知栏通知晃动清理</string>
+  <string name="clock_second_title">时间显示秒</string>
+  <string name="clock_second_summary">让时间精确到秒</string>
+  <string name="recents_options">最近任务</string>    
+  <string name="recents_options_title">最近任务设置</string>
+  <string name="recents_panel_settings">最近任务面板设置</string>
+  <string name="show_clear_all_recents_button_title">一键清理按钮</string>
+  <string name="show_clear_all_recents_button_summary">在最近任务面板显示一键清理按钮</string>
+  <string name="recents_clear_all_location_title">一键清理按钮位置</string>
+  <string name="recents_clear_all_location_top_right">右上方</string>
+  <string name="recents_clear_all_location_top_left">左上方</string>
+  <string name="recents_clear_all_location_top_center">上方中央</string>    
+  <string name="recents_clear_all_location_bottom_right">右下方</string>
+  <string name="recents_clear_all_location_bottom_left">左下方</string>
+  <string name="recents_clear_all_location_bottom_center">下方中央</string>
+  <string name="captive_portal_detection">网络状况检测</string>
+  <string name="captive_portal_detection_summary">如果状态栏有感叹号，可关闭网络状况检测</string>
+  <string name="mod_version_type">类型</string>
+  <string name="captive_portal_server">自定义验证服务器</string>
+  <string name="captive_portal_server_notset">未填写验证服务器</string>
+  <string name="captive_portal_server_explain">自定义验证服务器，修改完成需要重启或者关闭打开飞行模式</string>
+  <string name="wat">天气时钟</string>
+  <string name="wats">天气时钟插件快捷入口</string>
+  <string name="double_tap_sleep_anywhere_title">双击睡眠</string>
+  <string name="double_tap_sleep_anywhere_summary">双击锁屏任意处关闭屏幕</string>
+  <string name="show_chinese_date">锁屏显示农历</string>
+  <string name="hardware_keys_action_screenshot">屏幕截图</string>
+  <string name="hardware_keys_action_reboot_menu">高级重启</string>
+  <string name="lockscreen_settings_title">锁屏壁纸设置</string>
+  <string name="lockscreen_wallpaper_title">锁屏壁纸</string>
+  <string name="lockscreen_wallpaper_set_title">设置锁屏壁纸</string>
+  <string name="lockscreen_wallpaper_clear_title">清除锁屏壁纸</string>
+</resources>
