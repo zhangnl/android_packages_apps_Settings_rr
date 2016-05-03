@@ -20,9 +20,11 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.ColorStateList;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
+import android.graphics.PorterDuff.Mode;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.UserHandle;
@@ -54,7 +56,10 @@ public class DashboardSummary extends InstrumentedFragment {
 
     private LayoutInflater mLayoutInflater;
     private ViewGroup mDashboard;
-
+    private boolean mCustomColors;
+    private int mTextcolor;
+    private int mIconColor;
+    
     private static final int MSG_REBUILD_UI = 1;
     private Handler mHandler = new Handler() {
         @Override
@@ -133,7 +138,8 @@ public class DashboardSummary extends InstrumentedFragment {
             Log.w(LOG_TAG, "Cannot build the DashboardSummary UI yet as the Fragment is not added");
             return;
         }
-
+	mCustomColors = Settings.System.getInt(context.getContentResolver(),
+                Settings.System.DASHBOARD_CUSTOM_COLORS, 0) == 1;
         long start = System.currentTimeMillis();
         final Resources res = getResources();
 
@@ -149,9 +155,21 @@ public class DashboardSummary extends InstrumentedFragment {
 
             View categoryView = mLayoutInflater.inflate(R.layout.dashboard_category, mDashboard,
                     false);
+                           
 
             TextView categoryLabel = (TextView) categoryView.findViewById(R.id.category_title);
             categoryLabel.setText(category.getTitle(res));
+            
+            if(mCustomColors){        
+            categoryView.setBackgroundResource(R.drawable.dashboard_tile_background);
+            categoryView.setBackgroundColor(Settings.System.getInt(context.getContentResolver(),
+                    Settings.System.SETTINGS_BG_COLOR, 0xff000000)); 
+            categoryLabel.setTextColor(Settings.System.getInt(context.getContentResolver(),
+                    Settings.System.SETTINGS_CATEGORY_TEXT_COLOR, 0xff1976D2));
+            categoryLabel.setTextSize(Settings.System.getIntForUser(context.getContentResolver(),
+                    Settings.System.SETTINGS_CATEGORY_TEXT_SIZE, 14,
+                    UserHandle.USER_CURRENT));
+            } 
 
             ViewGroup categoryContent =
                     (ViewGroup) categoryView.findViewById(R.id.category_content);
@@ -232,6 +250,7 @@ public class DashboardSummary extends InstrumentedFragment {
         } else {
             // do nothing
         }
+        setcolors(tileIcon,context,tile,tileTextView, statusTextView, switchBar);
     }
 
     private static int getDashboardSwitches(Context context) {
@@ -244,4 +263,21 @@ public class DashboardSummary extends InstrumentedFragment {
             mHandler.sendEmptyMessage(MSG_REBUILD_UI);
         }
     }
+    
+      public void setcolors( ImageView tileIcon, Context context ,DashboardTile tile,TextView tileTextView , TextView statusTextView, Switch switchBar) {
+        mCustomColors = Settings.System.getInt(context.getContentResolver(),
+                Settings.System.DASHBOARD_CUSTOM_COLORS, 0) == 1;
+        mIconColor = Settings.System.getInt(context.getContentResolver(),
+                Settings.System.DB_ICON_COLOR, 0xFFFFFFFF);         
+	mTextcolor = Settings.System.getInt(context.getContentResolver(),
+                Settings.System.DB_TEXT_COLOR, 0xFFFFFFFF); 
+        if (mCustomColors) {
+		if (tileTextView  !=null) {
+		tileTextView.setTextColor(mTextcolor);      
+		}		
+		if (tileIcon != null) {
+		tileIcon.setColorFilter(mIconColor, Mode.SRC_ATOP);		
+		}
+        }
+    } 
 }

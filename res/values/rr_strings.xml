@@ -1926,6 +1926,13 @@
 	
 	<string name="pulse_custom_div">Pulse Bar Spacing</string>
 	<string name="default_div">Default</string>
+	<string name="pulse_custom_dimen_cat">Adjust The Dimensions of The Pulse bars in Visualizer with Custom Dimension Changer. Also Adjust The Spacing Between Them</string>
+	<string name="pulse_block_category">Pulse Blocks</string>
+	<string name="pulse_custom_dimen_category">Pulse Bar Dimensions</string>
+	<string name="pulse_block_category_title">Pulse Block Size</string>
+	<string name="pulse_block_category_summary">Adjust The Size of Pulse Visualizer Blocks and Spacing Each Block</string>
+	<string name="pulse_aggression">Power</string>
+	<string name="pulse_aggression_category">Adjust The Agression for Pulse Visualizer. Relaxed Being Smallest and Insanse Being Most Agressive</string>
 	<string name="div1">18</string>
 	<string name="div2">20</string>
 	<string name="div3">22</string>
@@ -2044,5 +2051,18 @@
       <string name="slim_action_floats_summary">Launch Slim &amp; Pie Actions in Floating Window Mode</string>
       <string name="gesture_anywhere_floating">Gesture Anywhere</string>
       <string name="gesture_anywhere_floating_summary">Launch Gesture Anywhere shortcuts in float mode</string>
+      
+      <string name="db_custom_colors">Dashboard Custom Styles</string>
+      <string name="db_custom_colors_summary">Colorize Various Elements of Dashboard With the Options Below.</string>
+      <string name="db_colors">Dashboard Styles</string>
+      <string name="db_icon_color">Dashboard Icons</string>
+      <string name="db_text_color">Title text</string>
+      <string name="db_sub_text_color">Text</string>
+      <string name="background_title">Background</string>
+      <string name="text_cat_title">Sub Text</string>
+
+       <!-- Dashboard Text Size -->
+      <string name="dash_title_text_size">Title Text Size</string>
+      <string name="dash_category_text_size">Category Text Size</string>
 
 </resources>

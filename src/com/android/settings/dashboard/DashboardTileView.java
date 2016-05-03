@@ -19,6 +19,9 @@ package com.android.settings.dashboard;
 import android.app.Activity;
 import android.content.Context;
 import android.provider.Settings;
+import android.os.UserHandle;
+import android.graphics.PorterDuff.Mode;
+import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,6 +37,8 @@ import com.android.settings.Utils;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
+import com.android.internal.util.rr.FontHelper;
+
 public class DashboardTileView extends FrameLayout implements View.OnClickListener {
 
     private static final int DEFAULT_COL_SPAN = 1;
@@ -44,6 +49,11 @@ public class DashboardTileView extends FrameLayout implements View.OnClickListen
     private View mDivider;
     private Switch mSwitch;
     private GenericSwitchToggle mSwitchToggle;
+    
+    private boolean mCustomColors;
+    private int mTextcolor;
+    private int mIconColor;
+    private int mDashTextSize = 14;
 
     private int mColSpan = DEFAULT_COL_SPAN;
 
@@ -57,10 +67,11 @@ public class DashboardTileView extends FrameLayout implements View.OnClickListen
         super(context, attrs);
 
         final View view = LayoutInflater.from(context).inflate(R.layout.dashboard_tile, this);
+        mCustomColors = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.DASHBOARD_CUSTOM_COLORS, 0) == 1;
 
         mImageView = (ImageView) view.findViewById(R.id.icon);
         mTitleTextView = (TextView) view.findViewById(R.id.title);
-
  	if (Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.DASHBOARD_TILEVIEW_DOUBLE_LINES, 0) == 1) {
         mTitleTextView.setSingleLine(false);
@@ -80,14 +91,16 @@ public class DashboardTileView extends FrameLayout implements View.OnClickListen
 
         setOnClickListener(this);
         setBackgroundResource(R.drawable.dashboard_tile_background);
+        updatedashboard(context,view);
         setFocusable(true);
+        setcolors(view);
     }
 
     public TextView getTitleTextView() {
-        return mTitleTextView;
+         return mTitleTextView;
     }
 
-    public TextView getStatusTextView() {
+    public TextView getStatusTextView() { 
         return mStatusTextView;
     }
 
@@ -164,6 +177,45 @@ public class DashboardTileView extends FrameLayout implements View.OnClickListen
     public Switch getSwitchView() {
         return mSwitch;
     }
-
-
+  
+  public void setcolors(View view) {
+        mImageView = (ImageView) view.findViewById(R.id.icon);
+        mTitleTextView = (TextView) view.findViewById(R.id.title);
+        mCustomColors = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.DASHBOARD_CUSTOM_COLORS, 0) == 1;
+        mIconColor = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.DB_ICON_COLOR, 0xFFFFFFFF);         
+	mTextcolor = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.DB_TEXT_COLOR, 0xFFFFFFFF); 
+        if (mCustomColors) {
+		if (mTitleTextView !=null) {
+		mTitleTextView.setTextColor(mTextcolor);      
+		}		
+		if (mImageView != null) {
+		mImageView.setColorFilter(mIconColor, Mode.SRC_ATOP);		
+		}
+        }
+    } 
+    
+    public void updatedashboard(Context context ,View view) {
+         mCustomColors = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.DASHBOARD_CUSTOM_COLORS, 0) == 1;
+         if(mCustomColors) {       
+         setBackgroundColor(Settings.System.getInt(context.getContentResolver(),
+            Settings.System.SETTINGS_BG_COLOR, 0xff000000));
+        mDivider = (View) view.findViewById(R.id.tile_divider);
+        mDivider.setBackgroundResource(R.drawable.dashboard_tile_background);
+        mDivider.setBackgroundColor(Settings.System.getInt(context.getContentResolver(),
+            Settings.System.SETTINGS_BG_COLOR, 0xff000000));
+        mStatusTextView.setTextColor(Settings.System.getInt(context.getContentResolver(),
+            Settings.System.SETTINGS_CATEGORY_TEXT_COLOR, 0xff1976D2));
+        mStatusTextView.setTextSize(Settings.System.getIntForUser(context.getContentResolver(),
+            Settings.System.SETTINGS_TITLE_TEXT_SIZE, 14,
+               UserHandle.USER_CURRENT));
+        mTitleTextView.setTextSize(Settings.System.getIntForUser(context.getContentResolver(),
+            Settings.System.SETTINGS_TITLE_TEXT_SIZE, 18,
+               UserHandle.USER_CURRENT));                 
+            }
+ 
+      }
 }
