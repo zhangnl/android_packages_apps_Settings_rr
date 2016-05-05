@@ -55,6 +55,16 @@
 </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="lockscreen_chinese_date_cat"
+        android:title="@string/lockscreen_chinese_date_title" >
+        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+            android:key="chinese_date_view"
+            android:title="@string/show_chinese_date"
+			android:summary="@string/show_chinese_date_summary"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="lockscreen_weather_cat"
         android:title="@string/lockscreen_weather_title" >
 
