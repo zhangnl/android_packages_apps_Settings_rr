@@ -88,4 +88,9 @@
     <string name="lockscreen_wallpaper_title">Wallpaper</string>
     <string name="lockscreen_wallpaper_set_title">Set lock screen wallpaper</string>
     <string name="lockscreen_wallpaper_clear_title">Clear lock screen wallpaper</string>
+	
+	<!-- Show Chinese Date -->
+	<string name="lockscreen_chinese_date_title">Lunar</string>
+	<string name="show_chinese_date">Show Lunar</string>
+	<string name="show_chinese_date_summary">Enable to show Lunar</string>
 </resources>
