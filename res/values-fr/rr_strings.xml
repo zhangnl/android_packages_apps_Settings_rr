@@ -1396,12 +1396,6 @@
   <string name="battery_stats_reset">Réinitialiser les statistiques</string>
   <string name="battery_stats_message">Les statistiques de batterie vont être remises à zéro</string>
   <string name="ok_string">OK</string>
-  <!-- app notifications hide on lockscreen -->
-  <string name="app_notification_no_keyguard_title">Masquées lorsque verrouillé</string>
-  <string name="app_notification_no_keyguard_summary">Masquer les notifications de cette application lorsque l\'appareil est verrouillé</string>
-  <string name="filter_notif_no_keyguard">Masquées lorsque verrouillé</string>
-  <string name="notifications_no_keyguard">Masquées lorsque verrouillé</string>
-  <string name="notifications_four_items"><xliff:g id="notif_state" example="Priority">%1$s </xliff:g> / <xliff:g id="notif_state" example="Priority">%2$s </xliff:g> / <xliff:g id="notif_state" example="Priority">%3$s </xliff:g> / <xliff:g id="notif_state" example="Priority">%4$s </xliff:g></string>
   <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
   <string name="show_cpu_info">Afficher les infos CPU</string>
   <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
@@ -1935,4 +1929,30 @@
   <string name="carrier_label_hide_label_title">Masquer les notifications</string>
   <string name="carrier_label_number_of_notification_icons_title">Nombre maximum d\'icônes avant le masquage</string>
   <string name="status_bar_carrier_font_style_title">Police de l\'étiquette opérateur</string>
+  <!-- Tiles animation style  -->
+  <string name="quicksettings_tiles_category">Animations des raccourcis </string>
+  <string name="qs_tile_animation_style_title">Animation des raccourcis</string>
+  <string name="qs_tile_animation_duration_title">Vitesse d\'animation</string>
+  <string name="qs_tile_animation_interpolator_title">Effet supplémentaire</string>
+  <string name="qs_tile_animation_style_off">Aucune animation</string>
+  <string name="qs_tile_animation_style_flip">Retourner</string>
+  <string name="qs_tile_animation_style_rotate">Rotation</string>
+  <string name="qs_tile_animation_duration_low">Faible</string>
+  <string name="qs_tile_animation_duration_default">Par défaut</string>
+  <string name="qs_tile_animation_duration_fast">Rapide</string>
+  <string name="qs_tile_animation_interpolator_linearInterpolator">Linéaire</string>
+  <string name="qs_tile_animation_interpolator_accelerateInterpolator">Accélérer</string>
+  <string name="qs_tile_animation_interpolator_decelerateInterpolator">Ralentir</string>
+  <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">Accélérer ralentir</string>
+  <string name="qs_tile_animation_interpolator_bounceInterpolator">Rebondir</string>
+  <string name="qs_tile_animation_interpolator_overshootInterpolator">Dépasser</string>
+  <string name="qs_tile_animation_interpolator_anticipateInterpolator">Anticiper</string>
+  <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Anticiper et surpasser</string>
+  <string name="qs_tile_animation_duration_superfast">Super rapide</string>
+  <string name="qs_set_animation_style">%1$s</string>
+  <string name="qs_set_animation_duration">%1$s</string>
+  <string name="qs_set_animation_interpolator">%1$s</string>
+  <!-- Battery fully charged notification -->
+  <string name="battery_fully_charged_notif_title">Notification de batterie complètement chargée</string>
+  <string name="battery_fully_charged_notif_summary">Afficher une notification lorsque la batterie est complètement chargée</string>
 </resources>

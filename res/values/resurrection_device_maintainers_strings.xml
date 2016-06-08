@@ -122,7 +122,7 @@
  	<string name="device_treltexx_summary">N910C/H \nMaintainer - </string>
 
 	<string name="device_i9100">Galaxy S II</string>
-	<string name="device_i9100_summary">GT-I9100 \nMaintainer - Varun Date</string>
+	<string name="device_i9100_summary">GT-I9100 \nMaintainer - GreekDragon</string>
 	
 	<string name="device_i9001">Galaxy S Plus</string>
 	<string name="device_i9001_summary">GT-I9001 \nMaintainer - </string>
@@ -336,6 +336,9 @@
 
 	<string name="device_dior">Xiaomi Redmi Note 4G</string>
 	<string name="device_dior_summary">dior\nMaintainer - Ashish Kotnala</string>
+
+        <string name="device_kenzo">Xiaomi Redmi Note 3</string>
+        <string name="device_kenzo_summary">Kenzo\nMaintainer - Warmachine28</string>
 	
 	<string name="device_sprout4">Android One - 4GB variants (1st Gen)</string>
 	<string name="device_sprout4_summary">Sprout4\nMaintainer - Shreesha Murthy</string>

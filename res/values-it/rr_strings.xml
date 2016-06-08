@@ -1396,12 +1396,6 @@
   <string name="battery_stats_reset">Ripristina statistiche</string>
   <string name="battery_stats_message">Le statistiche e la storia della batteria stanno per essere ripristinate</string>
   <string name="ok_string">Va bene</string>
-  <!-- app notifications hide on lockscreen -->
-  <string name="app_notification_no_keyguard_title">Nascondi quando è bloccato</string>
-  <string name="app_notification_no_keyguard_summary">Nascondere le notifiche di questa applicazione quando il dispositivo è bloccato</string>
-  <string name="filter_notif_no_keyguard">Nascosto quando è bloccato</string>
-  <string name="notifications_no_keyguard">Nascosto quando è bloccato</string>
-  <string name="notifications_four_items"><xliff:g id="NOTIF_STATE_0">%1$s</xliff:g> / <xliff:g id="NOTIF_STATE_1">%2$s</xliff:g> / <xliff:g id="NOTIF_STATE_2">%3$s</xliff:g></string>
   <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
   <string name="show_cpu_info">Mostra info CPU</string>
   <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
@@ -1410,7 +1404,7 @@
   <string name="brightness_icon_summary">Abilita l\'icona della luminosità del cursore luminosità</string>
   <!--Persist Add Tiles Button-->
   <string name="persist_add_title">Aggiungi icona Tile</string>
-  <string name="persist_add_summary">Abilitando questo interruttore permette la visualizzazione dell\'icona del tasto aggiungi Tile visibile anche con luminosità Slider disabilitato</string>
+  <string name="persist_add_summary">Abilitando questo interruttore permette la visualizzazione dell\'icona del tasto aggiungi Tile visibile anche con il cursore della luminosità disabilitato</string>
   <!-- Quick settings disable on lockscreen -->
   <string name="block_on_secure_keyguard_title">Disabilitare le impostazioni rapide sulla schermata di blocco</string>
   <string name="block_on_secure_keyguard_summary">Disabilita le impostazioni rapide nel blocco tastiera per un bloccaggio sicuro</string>
@@ -1935,4 +1929,30 @@
   <string name="carrier_label_hide_label_title">Nascondi sulle notifiche</string>
   <string name="carrier_label_number_of_notification_icons_title">Numero massimo di icone prima di nascondere</string>
   <string name="status_bar_carrier_font_style_title">Carattete dell\'etichetta</string>
+  <!-- Tiles animation style  -->
+  <string name="quicksettings_tiles_category">Opzioni animazione Tile</string>
+  <string name="qs_tile_animation_style_title">Stile animazione dei Tile</string>
+  <string name="qs_tile_animation_duration_title">Durata dell\'animazione dei Tile</string>
+  <string name="qs_tile_animation_interpolator_title">Interpolazione animazione Tile</string>
+  <string name="qs_tile_animation_style_off">Nessuna animazione</string>
+  <string name="qs_tile_animation_style_flip">Invertita</string>
+  <string name="qs_tile_animation_style_rotate">Rotazione</string>
+  <string name="qs_tile_animation_duration_low">Bassa</string>
+  <string name="qs_tile_animation_duration_default">Predefinito</string>
+  <string name="qs_tile_animation_duration_fast">Veloce</string>
+  <string name="qs_tile_animation_interpolator_linearInterpolator">Lineare</string>
+  <string name="qs_tile_animation_interpolator_accelerateInterpolator">Accelera</string>
+  <string name="qs_tile_animation_interpolator_decelerateInterpolator">Decelera</string>
+  <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">Accelera e decelera</string>
+  <string name="qs_tile_animation_interpolator_bounceInterpolator">Rimbalzo</string>
+  <string name="qs_tile_animation_interpolator_overshootInterpolator">Supera</string>
+  <string name="qs_tile_animation_interpolator_anticipateInterpolator">Anticipa</string>
+  <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Anticipa e supera</string>
+  <string name="qs_tile_animation_duration_superfast">Superveloce</string>
+  <string name="qs_set_animation_style">%1$s</string>
+  <string name="qs_set_animation_duration">%1$s</string>
+  <string name="qs_set_animation_interpolator">%1$s</string>
+  <!-- Battery fully charged notification -->
+  <string name="battery_fully_charged_notif_title">Notifica batteria carica completa</string>
+  <string name="battery_fully_charged_notif_summary">Visualizza una notifica quando la batteria è completamente carica</string>
 </resources>

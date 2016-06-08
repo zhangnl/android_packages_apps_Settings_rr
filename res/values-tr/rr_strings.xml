@@ -1396,12 +1396,6 @@
   <string name="battery_stats_reset">İstatistikleri sıfırla</string>
   <string name="battery_stats_message">Pil geçmişi istatistikleri sıfırlanacak</string>
   <string name="ok_string">Tamam</string>
-  <!-- app notifications hide on lockscreen -->
-  <string name="app_notification_no_keyguard_title">Kilitli olduğunda gizle</string>
-  <string name="app_notification_no_keyguard_summary">Cihaz kilitliyken bu uygulamanın bildirimlerini gizle</string>
-  <string name="filter_notif_no_keyguard">Kilitli olduğunda gizle</string>
-  <string name="notifications_no_keyguard">Kilitli olduğunda gizle</string>
-  <string name="notifications_four_items"><xliff:g id="notif_state" example="Priority">%1$s</xliff:g> / <xliff:g id="notif_state" example="Priority">%2$s</xliff:g> / <xliff:g id="notif_state" example="Priority">%3$s</xliff:g> / <xliff:g id="notif_state" example="Priority">%4$s</xliff:g></string>
   <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
   <string name="show_cpu_info">İşlemci bilgisini göster</string>
   <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
@@ -1935,4 +1929,30 @@
   <string name="carrier_label_hide_label_title">Bildirim gizlenir</string>
   <string name="carrier_label_number_of_notification_icons_title">Simgeleri gizlemeden önce ki en fazla sayı</string>
   <string name="status_bar_carrier_font_style_title">Şebeke etiketi rengi</string>
+  <!-- Tiles animation style  -->
+  <string name="quicksettings_tiles_category">Kare animasyon seçenekleri</string>
+  <string name="qs_tile_animation_style_title">Kareler animasyon stili</string>
+  <string name="qs_tile_animation_duration_title">Kareler animasyon süresi</string>
+  <string name="qs_tile_animation_interpolator_title">Kareler interpolator animasyonu</string>
+  <string name="qs_tile_animation_style_off">Animasyon yok</string>
+  <string name="qs_tile_animation_style_flip">Çevir</string>
+  <string name="qs_tile_animation_style_rotate">Döndür</string>
+  <string name="qs_tile_animation_duration_low">Yavaş</string>
+  <string name="qs_tile_animation_duration_default">Varsayılan</string>
+  <string name="qs_tile_animation_duration_fast">Hızlı</string>
+  <string name="qs_tile_animation_interpolator_linearInterpolator">Çizgisel</string>
+  <string name="qs_tile_animation_interpolator_accelerateInterpolator">Hızlandır</string>
+  <string name="qs_tile_animation_interpolator_decelerateInterpolator">Yavaşlat</string>
+  <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">Hızlandır ve yavaşlat</string>
+  <string name="qs_tile_animation_interpolator_bounceInterpolator">Sıçrat</string>
+  <string name="qs_tile_animation_interpolator_overshootInterpolator">İlerlet</string>
+  <string name="qs_tile_animation_interpolator_anticipateInterpolator">Beklet</string>
+  <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">İlerlet ve beklet</string>
+  <string name="qs_tile_animation_duration_superfast">Süper hızlı</string>
+  <string name="qs_set_animation_style">%1$s</string>
+  <string name="qs_set_animation_duration">%1$s</string>
+  <string name="qs_set_animation_interpolator">%1$s</string>
+  <!-- Battery fully charged notification -->
+  <string name="battery_fully_charged_notif_title">Pil tamamen doldu bildirimi</string>
+  <string name="battery_fully_charged_notif_summary">Pil tam olarak şarj edildiğinde bir bildirim göster</string>
 </resources>
