@@ -1803,7 +1803,7 @@
   <string name="pulse_block_category_title">Pulse Block Size</string>
   <string name="pulse_block_category_summary">Adjust The Size of Pulse Visualizer Blocks and Spacing Each Block</string>
   <string name="pulse_aggression">Power</string>
-  <string name="pulse_aggression_category">Adjust The Agression for Pulse Visualizer. Relaxed Being Smallest and Insanse Being Most Agressive</string>
+  <string name="pulse_aggression_category">Adjust The Agression for Pulse Visualizer. Relaxed Being Smallest and Insane Being Most Agressive</string>
   <string name="div1">18</string>
   <string name="div2">20</string>
   <string name="div3">22</string>
@@ -1912,7 +1912,7 @@
   <string name="db_icon_color">Dashboard Icons</string>
   <string name="db_text_color">Title text</string>
   <string name="db_sub_text_color">Text</string>
-  <string name="background_title">Notification Background</string>
+  <string name="db_background_title">Background</string>
   <string name="text_cat_title">Sub Text</string>
   <!-- Dashboard Text Size -->
   <string name="dash_title_text_size">Title Text Size</string>
