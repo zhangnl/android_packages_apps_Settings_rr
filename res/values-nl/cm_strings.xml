@@ -547,7 +547,7 @@
   <string name="volume_adjust_sounds_title">Aanpassingsgeluid volume</string>
   <!-- Hardware tunables - Vibrator intensity -->
   <string name="vibrator_intensity_title">Trilintensiteit</string>
-  <string name="vibrator_warning">Waarden hoger dan %1$d worden niet aangeraden</string>
+  <string name="vibrator_warning">Waarden hoger dan %1$d%% worden niet aangeraden</string>
   <!-- Hardware tunables - Color calibration -->
   <string name="color_calibration_title">Kleuren kalibreren</string>
   <string name="color_calibration_summary">Schermkleur kalibreren</string>
@@ -1015,6 +1015,8 @@
   <string name="reset_stats_confirm">Bevestigen</string>
   <!-- Label for settings shortcut: carrier selection -->
   <!-- title for lock screen blur preference -->
+  <!-- title for lock screen weather preference -->
+  <string name="lockscreen_weather_enabled_title">Weer weergeven</string>
   <!-- Per app controls for LP keyguard notifications -->
   <string name="app_notification_show_on_keyguard_title">Weergeven op vergrendelingsscherm</string>
   <string name="app_notification_show_on_keyguard_summary">Meldingen van deze app weergeven op het vergrendelingsscherm</string>
@@ -1022,4 +1024,8 @@
   <string name="app_notification_no_ongoing_on_keyguard_summary">Permanente meldingen van deze app niet weergeven op het vergrendelingsscherm</string>
   <!-- CmRadioInfo -->
   <!-- Radio Control (IMS/MBN etc.) -->
+  <!-- Lock screen wallpaper -->
+  <!-- Format string for fingerprint location message -->
+  <!-- Fingerprint sensor locations -->
+  <!-- SIM status format string -->
 </resources>

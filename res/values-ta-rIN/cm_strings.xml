@@ -546,7 +546,6 @@
   <string name="volume_adjust_sounds_title">வால்யூம் சரிசெய்தல் ஆடியோகள்</string>
   <!-- Hardware tunables - Vibrator intensity -->
   <string name="vibrator_intensity_title">அதிர்வான் அளவு</string>
-  <string name="vibrator_warning">%1$dஐவிட உயர்வான மதிப்புகள் பரிந்துரைக்கப்படுவதில்லை</string>
   <!-- Hardware tunables - Color calibration -->
   <string name="color_calibration_title">நிற அளவிடுதல்</string>
   <string name="color_calibration_summary">திரைமீதுள்ள நிறங்களை அளவிடு</string>
@@ -1006,6 +1005,8 @@
   <string name="weather_settings_general_settings_title">பொது</string>
   <!-- Label for settings shortcut: carrier selection -->
   <!-- title for lock screen blur preference -->
+  <!-- title for lock screen weather preference -->
+  <string name="lockscreen_weather_enabled_title">வானிலையை காட்டு</string>
   <!-- Per app controls for LP keyguard notifications -->
   <string name="app_notification_show_on_keyguard_title">லாக் திரையில் காட்டு</string>
   <string name="app_notification_show_on_keyguard_summary">லாக் திரையில் இந்த பயன்பாடு-இல் இருந்து அறிவுறுத்தல்களை காட்டு</string>
@@ -1013,4 +1014,8 @@
   <string name="app_notification_no_ongoing_on_keyguard_summary">இந்த பயன்பாடு-இல் இருந்து  விடாப்பிடியான அறிவுறுத்தலை பூட்டுத் திரையில் எப்போதும் காட்டாதே</string>
   <!-- CmRadioInfo -->
   <!-- Radio Control (IMS/MBN etc.) -->
+  <!-- Lock screen wallpaper -->
+  <!-- Format string for fingerprint location message -->
+  <!-- Fingerprint sensor locations -->
+  <!-- SIM status format string -->
 </resources>

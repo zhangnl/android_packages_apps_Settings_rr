@@ -16,7 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- About RR -->
-  <string name="about_rr_settings_title">О прошивке Resurrection</string>
+  <string name="about_rr_settings">О Resurrection</string>
   <string name="about_rr">О прошивке Resurrection</string>
   <string name="about_rr_summary">\@null</string>
   <string name="about_r0m_summary">Все о прошивке</string>
@@ -26,7 +26,7 @@
   <string name="devs">Главный разработчик</string>
   <string name="github_westcrip">https://github.com/westcripp</string>
   <string name="github_varund7726">https://github.com/varund7726</string>
-  <string name="github_akhilnaranag">https://github.com/akhilnaranag</string>
+  <string name="github_akhilnarang">https://github.com/akhilnaranag</string>
   <string name="github_bdogg718k">https://github.com/bdogg718k</string>
   <string name="github_cm">https://github.com/CyanogenMod</string>
   <string name="github_aokp">https://github.com/AOKP</string>
@@ -124,14 +124,49 @@
   <string name="misc_3">Система</string>
   <string name="misc_4">Отпечаток пальца</string>
   <!-- Color picker -->
-  <string name="dialog_color_picker_title">Выбор цвета</string>
-  <string name="press_color_to_apply">Нажмите на цвет для применения</string>
+  <string name="color_picker_fragment_title">Color Picker</string>
+  <string name="apply_color_title">Apply color</string>
+  <string name="edit_hex_title">HEX value</string>
   <string name="palette_darkkat_title">Resurrection</string>
   <string name="palette_material_title">Material</string>
   <string name="palette_rgb_title">RGB</string>
+  <string name="reset_color_title">Reset</string>
   <string name="reset_android_title">Системные цвета Android (по умолчанию)</string>
   <string name="reset_darkkat_title">Настраиваемая палитра</string>
   <string name="default_string">По умолчанию</string>
+  <string name="favorites_title">Favorites</string>
+  <string name="hide_favorites_title">Hide favorites</string>
+  <string name="show_favorites_title">Show favorites</string>
+  <string name="hide_help_title">Hide help</string>
+  <string name="show_help_title">Show help</string>
+  <string name="empty_title">Empty</string>
+  <string name="color_picker_help_screen_title">Color Picker help</string>
+  <string name="color_picker_help_ab_title">Action bar:</string>
+  <string name="color_picker_help_ab_back_title">Back button:</string>
+  <string name="color_picker_help_ab_back_summary">Close the color picker without applying the new color, (cancel).\nThis has the same effect as clicking the back button on the navigation bar.</string>
+  <string name="color_picker_help_ab_name_title">Title:</string>
+  <string name="color_picker_help_ab_name_summary">Only shows the title, no additional functions</string>
+  <string name="color_picker_help_ab_color_apply_title">Color preview and apply color:</string>
+  <string name="color_picker_help_ab_color_apply_summary">The color preview is always visible.\nIf the new color doesn\'t equals the old color, the color preview will be expanded, to allow apply the new color.</string>
+  <string name="color_picker_help_ab_menu_title">Menu button:</string>
+  <string name="color_picker_help_ab_menu_reset_title">Reset:</string>
+  <string name="color_picker_help_ab_menu_reset_summary">Resets the new color to the default Android or Darkkat color without applying the new color.</string>
+  <string name="color_picker_help_ab_menu_hex_title">Hex value:</string>
+  <string name="color_picker_help_ab_menu_hex_summary">Shows the hex input field.\nHex values have to be in hex color format:\n\'#aarrggbb\', (\'alpha\' (transparency), \'red\', \'green\' and \'blue\').\nThe back button closes the hex input field without setting the hex value.\nThe apply button sets the hex value as new color without applying the new color.</string>
+  <string name="color_picker_help_ab_menu_favorites_title">Show/hide favorites:</string>
+  <string name="color_picker_help_ab_menu_favorites_summary">Shows/hides the favorites.\nHiding the favorites will not reset the favorite colors.</string>
+  <string name="color_picker_help_ab_menu_help_title">Show/hide help:</string>
+  <string name="color_picker_help_ab_menu_help_summary">Shows/hides this help screen.</string>
+  <string name="color_picker_help_colors_title">Colors:</string>
+  <string name="color_picker_help_picker_view_title">Color panel:</string>
+  <string name="color_picker_help_picker_view_summary">Pick a color to set a new color without applying the new color.\nThe color range can be changed using the slider on the right side</string>
+  <string name="color_picker_help_color_buttons_title">Color buttons:</string>
+  <string name="color_picker_help_favorites_title">Favorites:</string>
+  <string name="color_picker_help_favorites_summary">Favorites are empty by default.\nThe new color can be saved as a favorite at any time via long click, (a none empty favorite will be overwritten by the new color).\nA click sets the favorite color as new color, without applying the new color.</string>
+  <string name="color_picker_help_palette_title">Palette:\n(DarkKat, Material and RGB)</string>
+  <string name="color_picker_help_palette_summary">All palette colors have a fixed value.\nA click sets the favorite color as new color, without applying the new color.</string>
+  <string name="color_picker_help_do_not_show_title">Don\'t show again</string>
+  <string name="color_picker_help_button_ok_title">OK</string>
   <!-- RR Extra Info -->
   <string name="brokenextrainfo">Дополнительная информация</string>
   <string name="brokenextrainfo_summary">Отобразить дополнительную информацию о процессоре, дисплее и т.д.</string>
@@ -255,6 +290,7 @@
   <string name="button27">Resurrection</string>
   <string name="button28">Стоковая Android</string>
   <string name="button29">Resurrection Lollipop</string>
+  <string name="button30">Android N</string>
   <string name="animation0">Переворот</string>
   <string name="animation1">Закрытие недавних</string>
   <string name="animation2">Полупрозрачный выход </string>
@@ -325,6 +361,7 @@
   <!-- Status bar - Clock -->
   <string name="clock_color_switch">Изменить цвет часов</string>
   <string name="clock_color_title">Цвет часов</string>
+  <string name="clock_color_switch_title">Цвет переключатель</string>
   <string name="status_bar_clock_style_reset">Сбросить цвет</string>
   <string name="status_bar_clock_style_reset_message">Сбросить цвет часов?</string>
   <string name="clock_font_style_title">Шрифт</string>
@@ -481,6 +518,19 @@
   <string name="listview_overshoot_interpolator">Проскочить</string>
   <string name="listview_anticipate_overshoot_interpolator">Ускорить и проскочить</string>
   <string name="listview_bounce_interpolator">Отскакивать</string>
+  <!-- Scrolling Animation Controls -->
+  <string name="scrolling_title">Scrolling modifiers</string>
+  <string name="scrolling_summary">View or change scrolling animations</string>
+  <string name="animation_fling_velocity_title">Fling velocity</string>
+  <string name="animation_scroll_friction_title">Scroll friction</string>
+  <string name="animation_overscroll_distance_title">Overscroll distance</string>
+  <string name="animation_overfling_distance_title">Overfling distance</string>
+  <string name="animation_duration_summary">Установите длительность</string>
+  <string name="animation_no_scroll_title">Customized scrolling modifiers</string>
+  <string name="animation_no_scroll_summary_on">Enabled</string>
+  <string name="animation_no_scroll_summary_off">Disabled</string>
+  <string name="scroll_disclaimer_summary">Note: Most apps need to be restarted for custom values to take effect</string>
+  <string name="animation_settings_reset_message">Reset all animation settings to default?</string>
   <!-- Toast Icons -->
   <string name="toast_icon_title">Иконка приложения в тост-уведомлении</string>
   <string name="toast_icon_summary">Отображать значок приложения в тост-уведомлениях</string>
@@ -1219,7 +1269,7 @@
   <string name="lockscreen_colors_title">Цвета экрана блокировки</string>
   <string name="lockscreen_owner_info_color">Информация о владельце</string>
   <string name="lockscreen_alarm_color">Будильник</string>
-  <string name="icons_title">Значки погоды</string>
+  <string name="icons_title">Иконки погоды</string>
   <string name="text_title">Текст</string>
   <string name="lock_screen_weather_temp_color">Температура</string>
   <string name="lock_screen_weather_con_color">Погодные условия</string>
@@ -1257,12 +1307,15 @@
   <string name="recent_panel_category">Недавние приложения от Slim</string>
   <string name="recent_app_sidebar_title">Боковая панель приложений</string>
   <string name="recent_app_sidebar_summary">Показывать ярлыки приложений у правого края</string>
+  <string name="use_recent_app_sidebar">Enable recent app sidebar</string>
   <string name="recent_app_sidebar_style_title">Вид боковой панели</string>
   <string name="recent_app_sidebar_style_summary">Изменить вид боковой панели приложений</string>
   <string name="recent_app_sidebar_hide_labels_title">Скрывать подписи значков</string>
   <string name="recent_app_sidebar_label_color_title">Цвет подписей значков</string>
   <string name="recent_app_sidebar_bg_color_title">Цвет фона</string>
   <string name="recent_app_sidebar_scale_title">Размер</string>
+  <string name="recent_app_sidebar_open_simultaneously_title">Open simultaneously with recents</string>
+  <string name="recent_app_sidebar_open_simultaneously_summary">Reduce recents opening lag by disabling this</string>
   <!-- Doze options -->
   <string name="display_category_doze_options_title">Активный дисплей</string>
   <string name="doze_settings_title">Расширенные настройки Doze</string>
@@ -1424,6 +1477,8 @@
   <string name="quick_settings_sp_vibrate_summary">Вибрировать при одиночном нажатии на плитки</string>
   <!-- QS shade transparency -->
   <string name="qs_transparent_shade">Непрозрачность панели быстрых настроек</string>
+  <!-- Notifications transparency -->
+  <string name="notifications_transparency">Notifications transparency</string>
   <!-- Safe headset volume restore checkbox -->
   <string name="safe_headset_volume_title">Безопасная громкость гарнитуры</string>
   <string name="safe_headset_volume_summary">Предотвращает высокий уровень громкости при подключении гарнитуры</string>
@@ -1434,7 +1489,7 @@
   <string name="dlg_reset_rr">RR</string>
   <string name="dlg_reset_values_message">Вернуть значения по умолчанию?</string>
   <string name="dlg_reset_android">OK</string>
-  <string name="cat_colors_title">Персонализация</string>
+  <string name="cat_colors_title">Панели</string>
   <string name="background_title">Фон</string>
   <string name="icon_title">Значок</string>
   <string name="colors_title">Цвета</string>
@@ -1554,6 +1609,11 @@
   <string name="panel_settings_sum">Показывать / Скрывать Иконку в панели уведомлений</string>
   <string name="hide_panel_alarm_sum">Показывать / Скрывать Будильник в панели уведомлений</string>
   <string name="notifications_misc">Разное</string>
+  <!-- Header text shadow and color -->
+  <string name="status_bar_custom_header_text_shadow_title">Тень текста в заголовке</string>
+  <string name="status_bar_custom_header_text_shadow_summary">Для лучшей видимости при изменённом заголовке (\"шапке\")</string>
+  <string name="status_bar_custom_header_text_shadow_color_title">Цвет тени текста в заголовке</string>
+  <string name="unit_percent">%</string>
   <!--Summary on/off-->
   <string name="hide_clock_summary_on">Часы отображены</string>
   <string name="hide_clock_summary_off">Часы скрыты</string>
@@ -1706,8 +1766,8 @@
   <string name="action_value_default_action">по умолчанию</string>
   <string name="action_value_select_app">приложение</string>
   <string name="action_value_custom_action">пользовательское действие</string>
-  <string name="action_value_default_action">по умолчанию</string>
-  <string name="action_value_select_app">приложение</string>
+  <string name="action_value_default_action">По умолчанию</string>
+  <string name="action_value_select_app">Приложение</string>
   <string name="action_value_back">назад</string>
   <string name="action_value_home">домой</string>
   <string name="action_value_search_assist">помощник</string>
@@ -1766,35 +1826,20 @@
   <string name="fling_longpress_summary">Увеличить или уменьшить время, требуемое для долгого нажатия</string>
   <!-- Pulse navigation bar music visualizer -->
   <string name="pulse_help_policy_notice_title">Про Пульс</string>
-  <string name="pulse_help_policy_notice_summary">Пульс - это визуализация аудио в стиле эквалайзера на панели навигации, когда играет музыка. Pulse не работает с некоторыми источниками звука, когда прослушивание осуществляется через динамик</string>
+  <string name="pulse_help_policy_notice_summary">Pulse - это блестящий и стильный визуализатор звука, который отображается на панели навигации при воспроизведении музыки. Pulse не работает с некоторыми источниками звука при прослушивании через динамик устройства</string>
   <string name="pulse_settings">Пульс</string>
-  <string name="pulse_settings_summary">Вмзуализация аудио на панель навигации</string>
+  <string name="pulse_settings_summary">Панель навигации аудио графический эквалайзер</string>
   <string name="fling_show_pulse_title">Показывать Пульс</string>
-  <string name="fling_show_pulse_summary">Визуализация аудио на панели навигации</string>
+  <string name="fling_show_pulse_summary">Аудио эквалайзер на панели навигации</string>
+  <string name="pulse_render_mode_title">Режим отображения</string>
+  <string name="pulse_render_mode_fading_bars">Затухающие блоки</string>
+  <string name="pulse_render_mode_solid_lines">Сплошные линии</string>
   <string name="fling_pulse_color">Цвет Пульс</string>
   <string name="eos_fling_lavalamp_title">Включить Лава - лампу</string>
   <string name="eos_fling_lavalamp_summary">Случайные цвета в стиле лава - лампы</string>
+  <string name="pulse_advanced_category">Расширенные</string>
+  <string name="pulse_legacy_mode_advanced_category">Настройки затухающих блоков</string>
   <string name="pulse_custom_dimen">Ширина Пульс-панели</string>
-  <string name="pulse_dimen0">По умолчанию</string>
-  <string name="pulse_dimen1">7dp</string>
-  <string name="pulse_dimen2">8dp</string>
-  <string name="pulse_dimen3">9dp</string>
-  <string name="pulse_dimen4">10dp</string>
-  <string name="pulse_dimen5">11dp</string>
-  <string name="pulse_dimen6">12dp</string>
-  <string name="pulse_dimen7">13dp</string>
-  <string name="pulse_dimen8">15dp</string>
-  <string name="pulse_dimen9">16dp</string>
-  <string name="pulse_dimen10">17dp</string>
-  <string name="pulse_dimen11">18dp</string>
-  <string name="pulse_dimen12">19dp</string>
-  <string name="pulse_dimen13">20dp</string>
-  <string name="pulse_dimen14">21dp</string>
-  <string name="pulse_dimen15">22dp</string>
-  <string name="pulse_dimen16">23dp</string>
-  <string name="pulse_dimen17">24dp</string>
-  <string name="pulse_dimen18">25dp</string>
-  <string name="pulse_dimen19">26dp</string>
   <string name="pulse_custom_div">Интервал</string>
   <string name="default_div">По умолчанию</string>
   <string name="pulse_custom_dimen_cat">Настроить размеры  блоков спектра и расстояние между ними</string>
@@ -1804,33 +1849,12 @@
   <string name="pulse_block_category_summary">Настроить размеры блоков спектра и расстояние до каждого блока</string>
   <string name="pulse_aggression">Сила</string>
   <string name="pulse_aggression_category">Настройте силу для визуализатора Пульса. Расслабление - маленький спектр и Безумие - самый большой спектр</string>
-  <string name="div1">18</string>
-  <string name="div2">20</string>
-  <string name="div3">22</string>
-  <string name="div4">24</string>
-  <string name="div5">26</string>
-  <string name="div6">28</string>
-  <string name="div7">30</string>
-  <string name="div8">32</string>
-  <string name="default_fill">4dp(по умолчанию)</string>
-  <string name="pulse_bar_style">Стиль Пульс панели</string>
-  <string name="default_pulse_empty">1dp(по умолчанию)</string>
-  <string name="pulse_filled_block_size">Размер блоков</string>
+  <string name="pulse_filled_block_size">Размер блока</string>
   <string name="pulse_empty_block_size">Расстояние между блоками</string>
-  <string name="pulse_fill1">5dp</string>
-  <string name="pulse_fill2">6dp</string>
-  <string name="pulse_fill3">7dp</string>
-  <string name="pulse_fill4">8dp</string>
-  <string name="pulse_empty1">2dp</string>
-  <string name="pulse_empty2">3dp</string>
-  <string name="pulse_empty3">4dp</string>
-  <string name="pulse_empty4">0(нет)</string>
-  <string name="factor0">Нормально</string>
-  <string name="factor1">Расслаблено</string>
-  <string name="factor2">Медленно</string>
-  <string name="factor3">Сверхбыстро</string>
-  <string name="factor4">Безумно</string>
   <string name="pulse_custom_fudge_factor">Уровни чувствительности шкалы</string>
+  <string name="pulse_solid_fudge_factor">Уровень безумия</string>
+  <string name="lavamp_solid_speed_title">Скорость анимации \"Лава Лампы\"</string>
+  <string name="pulse_solid_dimen_category">Настройки сплошных линий</string>
   <!-- Navbar height -->
   <string name="navigation_bar_size_title">Размер панели навигации</string>
   <string name="portrait_title">Высота в портретном режиме</string>
@@ -1850,14 +1874,24 @@
   <string name="smartbar_button_animation_summary">Установите стиль анимации кнопок при их нажатии</string>
   <string name="smartbar_button_animation_ripple">Пульсация</string>
   <string name="smartbar_button_animation_spring">Отпружинивание</string>
-  <string name="smartbar_factory_reset_title">Восстановить настройки по умолчанию</string>
-  <string name="smartbar_factory_reset_summary">Будут восстановлены настройки по умолчанию</string>
+  <string name="smartbar_factory_reset_title">Сброс к настройкам по умолчанию</string>
   <string name="smartbar_factory_reset_confirm">Вы уверены, что хотите вернуть настройки в первоначальное состояние?</string>
   <string name="smartbar_ime_action_title">Действия при вводе</string>
   <string name="smartbar_ime_action_summary">Выберите, какие кнопки отображать, когда отображается наэкранная клавиатура</string>
   <string name="smartbar_ime_action_none">Ничего</string>
   <string name="smartbar_ime_action_arrows">Стрелки ввода</string>
   <string name="smartbar_ime_action_switcher">Переключатель раскладки</string>
+  <string name="smartbar_backup_current_config_title">Сохранить профиль</string>
+  <string name="smartbar_restore_config_title">Восстановить профиль</string>
+  <string name="smartbar_config_name_edit_dialog_title">Имя профиля SmartBar</string>
+  <string name="smartbar_config_name_edit_dialog_message">Введите название или оставьте поле пустым</string>
+  <string name="smartbar_config_dialog_title">SmartBar профили</string>
+  <string name="smartbar_config_backup_success_toast">Профиль SmartBar успешно сохранён</string>
+  <string name="smartbar_config_restore_success_toast">Профиль SmartBar успешно восстановлен</string>
+  <string name="smartbar_config_backup_error_toast">Ошибка при сохранении профиля Smartbar</string>
+  <string name="smartbar_config_restore_error_toast">Ошибка при восстановлении профиля Smartbar</string>
+  <!-- Navbar buttons transparency -->
+  <string name="navbar_buttons_alpha_title">Buttons transparency</string>
   <!-- QS Tiles Columns -->
   <string name="qs_num_columns_title">Количество плиток в ряду</string>
   <string name="qs_num_columns_showing">%1$s плитки(ок) в ряду</string>
@@ -1955,4 +1989,64 @@
   <!-- Battery fully charged notification -->
   <string name="battery_fully_charged_notif_title">Уведомление о полном заряде аккумулятора</string>
   <string name="battery_fully_charged_notif_summary">Показывать уведомление при полностью заряженном аккумуляторе</string>
+  <string name="show_dark_icons_title">Отключить градиент в строке состояния</string>
+  <string name="show_dark_icons_summary">Показывать темные иконки в строке состояния с белым фоном. Это удалит эффект градиента, но может повлечь проблемы, например, связанные с цветом часов. Используйте с осторожностью</string>
+  <!-- Volume dialog stroke settings -->
+  <string name="volume_dialog_stroke_title">Окно управления громкости</string>
+  <string name="volume_dialog_stroke_disabled">Отключен</string>
+  <string name="volume_dialog_stroke_accent">Акцентируемый цвет</string>
+  <string name="volume_dialog_stroke_custom">Пользовательский цвет</string>
+  <string name="volume_dialog_stroke_color_title">Цвет ползунка громкости</string>
+  <string name="volume_dialog_stroke_thickness_title">Толщина ползунка громкости</string>
+  <string name="volume_dialog_corner_radius_title">Закругление углов панели громкости</string>
+  <string name="volume_dialog_dash_width_title">Ширина ползунка громкости</string>
+  <string name="volume_dialog_dash_gap_title">Толщина ползунка громкости</string>
+  <!-- Volume dialog timeout -->
+  <string name="volume_dialog_timeout_title">Время ожидания для диалога панели громкости</string>
+  <!-- QS stroke settings -->
+  <string name="qs_stroke_title">Тень значка быстрых настроек</string>
+  <string name="qs_stroke_disabled">Отключен</string>
+  <string name="qs_stroke_accent">Цвет акцента</string>
+  <string name="qs_stroke_custom">Пользовательский цвет</string>
+  <string name="qs_stroke_color_title">Тень значка быстрых настроек</string>
+  <string name="qs_stroke_thickness_title">Толщина тени значка быстрых настроек</string>
+  <string name="qs_corner_radius_title">Радиус тени</string>
+  <string name="qs_trans_title">Панель уведомлений</string>
+  <string name="notification_cat_volume"> Панель громкости</string>
+  <string name="qs_dash_width_title">Ширина строки QS</string>
+  <string name="qs_dash_gap_title">Разрыв в строке QS</string>
+  <string name="qs_panel_logo_category">Логотип в быстрых настройках</string>
+  <string name="qs_panel_logo_title">Логотип RR в быстрых настройках</string>
+  <string name="qs_panel_logo_disabled">Отключён</string>
+  <string name="qs_panel_logo_accent">Цвет акцента</string>
+  <string name="qs_panel_logo_custom">Пользовательский цвет</string>
+  <string name="qs_panel_logo_color_title">Цвет логотипа панели быстрых настроек</string>
+  <string name="qs_panel_logo_alpha_title">Прозрачность логотипа панели быстрых настроек</string>
+  <string name="notification_cat_power">Меню кнопки питания</string>
+  <string name="expansion_view_animation_title">Диспетчер задач анимации</string>
+  <string name="expansion_view_animation_summary">Изменить анимацию входа/выхода изменения панели</string>
+  <string name="expansion_view_animation_dialog_title">Выберите анимацию</string>
+  <string name="expansion_view_animation_down">Вниз (по умолчанию)</string>
+  <string name="expansion_view_animation_enter">ок</string>
+  <string name="expansion_view_animation_left">Налево</string>
+  <string name="expansion_view_animation_right">Направо</string>
+  <string name="expansion_view_animation_rotate">Вращение</string>
+  <string name="expansion_view_animation_turn">Поворот</string>
+  <string name="expansion_view_animation_up">Вверх</string>
+  <string name="expansion_view_recents_enter">Recents Enter</string>
+  <string name="expansion_view_fade">Fade</string>
+  <string name="expansion_view_slide_out">Slide</string>
+  <string name="expansion_view_last_app">Last App</string>
+  <string name="expansion_view_rotate">Reverse Rotate</string>
+  <string name="expansion_view_task_open">Task Open</string>
+  <string name="expansion_view_xylon_toast">Toast</string>
+  <string name="expansion_view_search_bar">SearchBar Animation</string>
+  <string name="expansion_view_toko_toast">Toko Toast</string>
+  <!-- Development Settings -->
+  <!-- ADB always notify -->
+  <string name="adb_always_notify">Debugging always notify</string>
+  <string name="adb_always_notify_summary">Always display a notification when debugging is enabled, even if not connected</string>
+  <!-- Instant reboot -->
+  <string name="advanced_reboot_oneclick">One click reboot</string>
+  <string name="advanced_reboot_oneclick_summary">Instantly trigger reboot action</string>
 </resources>

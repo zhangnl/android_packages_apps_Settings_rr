@@ -548,7 +548,6 @@
   <string name="volume_adjust_sounds_title">Âm thanh điều chỉnh âm lượng</string>
   <!-- Hardware tunables - Vibrator intensity -->
   <string name="vibrator_intensity_title">Cường độ rung</string>
-  <string name="vibrator_warning">Giá trị cao hơn %1$d không được khuyên dùng</string>
   <!-- Hardware tunables - Color calibration -->
   <string name="color_calibration_title">Hiệu chỉnh màu sắc</string>
   <string name="color_calibration_summary">Hiệu chỉnh màu sắc trên màn hình</string>
@@ -1040,6 +1039,8 @@
   <!-- Label for settings shortcut: carrier selection -->
   <string name="shortcut_carrier_title">Nhà điều hành mạng</string>
   <!-- title for lock screen blur preference -->
+  <!-- title for lock screen weather preference -->
+  <string name="lockscreen_weather_enabled_title">Hiển thị thời tiết</string>
   <!-- Per app controls for LP keyguard notifications -->
   <string name="app_notification_show_on_keyguard_title">Hiển thị trên màn hình khóa</string>
   <string name="app_notification_show_on_keyguard_summary">Hiển thị các thông báo từ ứng dụng này trên màn hình khóa</string>
@@ -1047,4 +1048,8 @@
   <string name="app_notification_no_ongoing_on_keyguard_summary">Không bao giờ hiển thị các thông báo liên tục từ ứng dụng này trên màn hình khóa</string>
   <!-- CmRadioInfo -->
   <!-- Radio Control (IMS/MBN etc.) -->
+  <!-- Lock screen wallpaper -->
+  <!-- Format string for fingerprint location message -->
+  <!-- Fingerprint sensor locations -->
+  <!-- SIM status format string -->
 </resources>

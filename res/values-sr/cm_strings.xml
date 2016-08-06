@@ -337,7 +337,7 @@
   <string name="app_ops_summaries_notification_volume">јачина обавештења</string>
   <string name="app_ops_summaries_bluetooth_volume">Јачина bluetooth-а</string>
   <string name="app_ops_summaries_keep_awake">остани будан</string>
-  <string name="app_ops_summaries_monitor_location">локација монитора</string>
+  <string name="app_ops_summaries_monitor_location">праћење локације</string>
   <string name="app_ops_summaries_monitor_high_power_location">високо напајање локације монитора</string>
   <string name="app_ops_summaries_get_usage_stats">добиј статистику коришћења</string>
   <string name="app_ops_summaries_mute_unmute_microphone">укључи/искључи микрофон</string>
@@ -550,7 +550,6 @@
   <string name="volume_adjust_sounds_title">Регулисање јачине звука</string>
   <!-- Hardware tunables - Vibrator intensity -->
   <string name="vibrator_intensity_title">Интензитет вибрације</string>
-  <string name="vibrator_warning">Вредност већа од %1$d није препоручена</string>
   <!-- Hardware tunables - Color calibration -->
   <string name="color_calibration_title">Калибрација боје</string>
   <string name="color_calibration_summary">Калибрација боја на екрану</string>
@@ -1017,7 +1016,12 @@
   <string name="weather_settings_no_services_prompt">Нема инсталираног добављача услуга временске прогнозе</string>
   <string name="weather_settings_button">Поставке добављача</string>
   <string name="weather_settings_activity_not_found">Није могуће покренути подешавање менија овог добављача</string>
+  <string name="weather_settings_add_weather_provider">Додај добављача временске услуге</string>
   <string name="weather_settings_general_settings_title">Опште</string>
+  <string name="weather_settings_providers_title">Добављачи</string>
+  <string name="weather_settings_temp_units_title">Јединица температуре</string>
+  <string name="weather_settings_temp_celsius">Целзијуси</string>
+  <string name="weather_settings_temp_fahrenheit">Фаренхајти</string>
   <string name="weather_settings_keyword">време</string>
   <string name="background_data_access">Приступ подацима у позадини</string>
   <string name="allow_background_both">Преко мрежних података &amp; Wi\u2011Fi</string>
@@ -1037,11 +1041,38 @@
   <!-- Label for settings shortcut: carrier selection -->
   <string name="shortcut_carrier_title">Оператор мреже</string>
   <!-- title for lock screen blur preference -->
+  <string name="lockscreen_blur_enabled_title">Замућење позадине</string>
+  <!-- title for lock screen weather preference -->
+  <string name="lockscreen_weather_enabled_title">Прикажи време</string>
   <!-- Per app controls for LP keyguard notifications -->
   <string name="app_notification_show_on_keyguard_title">Прикажи на закључаном екрану</string>
   <string name="app_notification_show_on_keyguard_summary">Прикажи обавештење ове апликације на закључаном екрану</string>
   <string name="app_notification_no_ongoing_on_keyguard_title">Онемогућити трајна обавештења на закључаном екрану</string>
   <string name="app_notification_no_ongoing_on_keyguard_summary">Никад не приказуј трајна обавештења ове апликације на закључаном екрану</string>
   <!-- CmRadioInfo -->
+  <string name="cm_radio_info_label">Проширена радио контрола</string>
   <!-- Radio Control (IMS/MBN etc.) -->
+  <string name="cm_radio_info_mbn_auto_load_on_label">Искључи MBN ауто учитавање</string>
+  <string name="cm_radio_info_mbn_auto_load_off_label">Укључи MBN ауто учитавање</string>
+  <string name="cm_radio_info_volte_avail_ovr_on_label">Искључи VoLTE отклањање грешака</string>
+  <string name="cm_radio_info_volte_avail_ovr_off_label">Укључи VoLTE отклањање грешака</string>
+  <string name="cm_radio_info_vt_avail_ovr_on_label">Искључи VT отклањање грешака</string>
+  <string name="cm_radio_info_vt_avail_ovr_off_label">Укључи VT отклањање грешака</string>
+  <string name="cm_radio_info_wfc_avail_ovr_on_label">Искључи WFC отклањање грешака</string>
+  <string name="cm_radio_info_wfc_avail_ovr_off_label">Укључи WFC отклањање грешака</string>
+  <string name="cm_radio_info_adb_log_on_label">Искључи ADB радио евиденцију</string>
+  <string name="cm_radio_info_adb_log_off_label">Укључи ADB радио евиденцију</string>
+  <string name="cm_radio_info_diag_log_on_label">Искључи евиденцију дијагностике</string>
+  <string name="cm_radio_info_diag_log_off_label">Укључи евиденцију дијагностике</string>
+  <!-- Lock screen wallpaper -->
+  <string name="lockscreen_wallpaper_title">Тапет</string>
+  <string name="not_available_with_app">Није доступно са %1$s</string>
+  <!-- Format string for fingerprint location message -->
+  <string name="security_settings_fingerprint_enroll_find_sensor_message_cm">Нађи сензор отиска прста <xliff:g id="sensor_location">%1$s</xliff:g> твог телефона.</string>
+  <!-- Fingerprint sensor locations -->
+  <string name="security_settings_fingerprint_sensor_location_back">иза</string>
+  <string name="security_settings_fingerprint_sensor_location_front">испред</string>
+  <string name="security_settings_fingerprint_sensor_location_left">на левој страни</string>
+  <string name="security_settings_fingerprint_sensor_location_right">на десној страни</string>
+  <!-- SIM status format string -->
 </resources>

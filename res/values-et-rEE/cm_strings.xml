@@ -481,7 +481,6 @@
   <string name="volume_adjust_sounds_title">Helitugevuse muutmise helid</string>
   <!-- Hardware tunables - Vibrator intensity -->
   <string name="vibrator_intensity_title">Vibreerimise intensiivsus</string>
-  <string name="vibrator_warning">Väärtused suuremad kui %1$d ei ole soovitatud</string>
   <!-- Hardware tunables - Color calibration -->
   <string name="color_calibration_title">Värvide kalibreerimine</string>
   <string name="color_calibration_summary">Kalibreeri ekraani värvid</string>
@@ -886,6 +885,8 @@ mis ei ohusta sinu privaatsust ega isiklikku infot. Teave saadetakse peale igat 
   <string name="weather_settings_general_settings_title">Üldine</string>
   <!-- Label for settings shortcut: carrier selection -->
   <!-- title for lock screen blur preference -->
+  <!-- title for lock screen weather preference -->
+  <string name="lockscreen_weather_enabled_title">Näita Ilmateadet</string>
   <!-- Per app controls for LP keyguard notifications -->
   <string name="app_notification_show_on_keyguard_title">Kuva lukustusekraanil</string>
   <string name="app_notification_show_on_keyguard_summary">Kuva selle rakenduse teavitusi lukustusekraanil</string>
@@ -893,4 +894,8 @@ mis ei ohusta sinu privaatsust ega isiklikku infot. Teave saadetakse peale igat 
   <string name="app_notification_no_ongoing_on_keyguard_summary">Ära kunagi näita püsivaid teavitusi sellelt rakenduselt lukustuskuval</string>
   <!-- CmRadioInfo -->
   <!-- Radio Control (IMS/MBN etc.) -->
+  <!-- Lock screen wallpaper -->
+  <!-- Format string for fingerprint location message -->
+  <!-- Fingerprint sensor locations -->
+  <!-- SIM status format string -->
 </resources>

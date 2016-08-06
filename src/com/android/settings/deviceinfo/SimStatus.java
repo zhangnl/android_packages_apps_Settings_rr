@@ -46,6 +46,7 @@ import android.widget.ListView;
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.telephony.DefaultPhoneNotifier;
 import com.android.internal.telephony.Phone;
+import com.android.internal.telephony.PhoneConstants;
 import com.android.internal.telephony.PhoneFactory;
 import com.android.settings.InstrumentedPreferenceActivity;
 import com.android.settings.R;
@@ -173,6 +174,8 @@ public class SimStatus extends InstrumentedPreferenceActivity {
                         CB_AREA_INFO_SENDER_PERMISSION, null);
                 // Ask CellBroadcastReceiver to broadcast the latest area info received
                 Intent getLatestIntent = new Intent(GET_LATEST_CB_AREA_INFO_ACTION);
+                getLatestIntent.putExtra(PhoneConstants.SUBSCRIPTION_KEY,
+                        mSir.getSubscriptionId());
                 sendBroadcastAsUser(getLatestIntent, UserHandle.ALL,
                         CB_AREA_INFO_SENDER_PERMISSION);
             }
@@ -297,7 +300,8 @@ public class SimStatus extends InstrumentedPreferenceActivity {
 
         String dataDisplay = Utils.getServiceStateString(dataState, mRes);
 
-        setSummaryText(KEY_SERVICE_STATE, "Voice: " + voiceDisplay + " / Data: " + dataDisplay);
+        setSummaryText(KEY_SERVICE_STATE, getString(R.string.sim_status_format_string,
+                voiceDisplay, dataDisplay));
 
         if (serviceState.getRoaming()) {
             setSummaryText(KEY_ROAMING_STATE, mRes.getString(R.string.radioInfo_roaming_in));
@@ -376,6 +380,12 @@ public class SimStatus extends InstrumentedPreferenceActivity {
                 }
 
                 mPhone = phone;
+                updateAreaInfo("");
+                Intent getLatestIntent = new Intent(GET_LATEST_CB_AREA_INFO_ACTION);
+                getLatestIntent.putExtra(PhoneConstants.SUBSCRIPTION_KEY,
+                        mSir.getSubscriptionId());
+                sendBroadcastAsUser(getLatestIntent, UserHandle.ALL,
+                        CB_AREA_INFO_SENDER_PERMISSION);
                 mPhoneStateListener = new PhoneStateListener(mSir.getSubscriptionId()) {
                     @Override
                     public void onDataConnectionStateChanged(int state) {

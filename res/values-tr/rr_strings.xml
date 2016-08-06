@@ -16,7 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- About RR -->
-  <string name="about_rr_settings_title">Resurrection Hakkında</string>
+  <string name="about_rr_settings">Ressurrection Hakkında</string>
   <string name="about_rr">Resurrection Hakkında</string>
   <string name="about_rr_summary">\@null</string>
   <string name="about_r0m_summary">Rom ile ilgili her şey</string>
@@ -26,7 +26,7 @@
   <string name="devs">Geliştiriciler</string>
   <string name="github_westcrip">https://github.com/westcripp</string>
   <string name="github_varund7726">https://github.com/varund7726</string>
-  <string name="github_akhilnaranag">https://github.com/akhilnaranag</string>
+  <string name="github_akhilnarang">https://github.com/akhilnarang</string>
   <string name="github_bdogg718k">https://github.com/bdogg718k</string>
   <string name="github_cm">https://github.com/CyanogenMod</string>
   <string name="github_aokp">https://github.com/AOKP</string>
@@ -50,7 +50,7 @@
   <string name="maintainer_categorie_title">Resmi Cihazlar</string>
   <string name="sourcebase_title">Kaynak Tabanı</string>
   <string name="title_about">Resurrection Hakkında</string>
-  <string name="dev_categorie_title">Geliştirici &amp; Cihaz Sorumluları</string>
+  <string name="dev_categorie_title">Geliştirici &amp; Cihaz Sorumlusu</string>
   <string name="rr_mod_version">Resurrection sürümü</string>
   <!-- Nfc settings -->
   <string name="nfc_polling_mode_title">NFC seçim modu</string>
@@ -88,7 +88,7 @@
   <string name="features_version">1.0</string>
   <!-- Heads Up button -->
   <string name="enable_headsup_button_extended_statusbar_title">Genişletilmiş durum çubuğu düğmesi</string>
-  <string name="enable_headsup_button_extended_statusbar_summary">Genişletilmiş durum çubuğu alanındaki heads up için eylem düğmesi</string>
+  <string name="enable_headsup_button_extended_statusbar_summary">Genişletilmiş durum çubuğu alanındaki bildirim pencereleri için eylem düğmesi</string>
   <!--Categories-->
   <string name="clock_category">Saat</string>
   <string name="clock_custom">Saati özelleştir</string>
@@ -124,14 +124,49 @@
   <string name="misc_3">Sistem</string>
   <string name="misc_4">Parmak izi</string>
   <!-- Color picker -->
-  <string name="dialog_color_picker_title">Renk Seçici</string>
-  <string name="press_color_to_apply">Uygulamak için aşağıdaki renge tıklayın</string>
+  <string name="color_picker_fragment_title">Color Picker</string>
+  <string name="apply_color_title">Apply color</string>
+  <string name="edit_hex_title">HEX value</string>
   <string name="palette_darkkat_title">Resurrection</string>
   <string name="palette_material_title">Material</string>
   <string name="palette_rgb_title">RGB</string>
+  <string name="reset_color_title">Reset</string>
   <string name="reset_android_title">Android varsayılan</string>
   <string name="reset_darkkat_title">Özelleştirilmiş renk paleti</string>
   <string name="default_string">Varsayılan</string>
+  <string name="favorites_title">Favorites</string>
+  <string name="hide_favorites_title">Hide favorites</string>
+  <string name="show_favorites_title">Show favorites</string>
+  <string name="hide_help_title">Hide help</string>
+  <string name="show_help_title">Show help</string>
+  <string name="empty_title">Empty</string>
+  <string name="color_picker_help_screen_title">Color Picker help</string>
+  <string name="color_picker_help_ab_title">Action bar:</string>
+  <string name="color_picker_help_ab_back_title">Back button:</string>
+  <string name="color_picker_help_ab_back_summary">Close the color picker without applying the new color, (cancel).\nThis has the same effect as clicking the back button on the navigation bar.</string>
+  <string name="color_picker_help_ab_name_title">Title:</string>
+  <string name="color_picker_help_ab_name_summary">Only shows the title, no additional functions</string>
+  <string name="color_picker_help_ab_color_apply_title">Color preview and apply color:</string>
+  <string name="color_picker_help_ab_color_apply_summary">The color preview is always visible.\nIf the new color doesn\'t equals the old color, the color preview will be expanded, to allow apply the new color.</string>
+  <string name="color_picker_help_ab_menu_title">Menu button:</string>
+  <string name="color_picker_help_ab_menu_reset_title">Reset:</string>
+  <string name="color_picker_help_ab_menu_reset_summary">Resets the new color to the default Android or Darkkat color without applying the new color.</string>
+  <string name="color_picker_help_ab_menu_hex_title">Hex value:</string>
+  <string name="color_picker_help_ab_menu_hex_summary">Shows the hex input field.\nHex values have to be in hex color format:\n\'#aarrggbb\', (\'alpha\' (transparency), \'red\', \'green\' and \'blue\').\nThe back button closes the hex input field without setting the hex value.\nThe apply button sets the hex value as new color without applying the new color.</string>
+  <string name="color_picker_help_ab_menu_favorites_title">Show/hide favorites:</string>
+  <string name="color_picker_help_ab_menu_favorites_summary">Shows/hides the favorites.\nHiding the favorites will not reset the favorite colors.</string>
+  <string name="color_picker_help_ab_menu_help_title">Show/hide help:</string>
+  <string name="color_picker_help_ab_menu_help_summary">Shows/hides this help screen.</string>
+  <string name="color_picker_help_colors_title">Colors:</string>
+  <string name="color_picker_help_picker_view_title">Color panel:</string>
+  <string name="color_picker_help_picker_view_summary">Pick a color to set a new color without applying the new color.\nThe color range can be changed using the slider on the right side</string>
+  <string name="color_picker_help_color_buttons_title">Color buttons:</string>
+  <string name="color_picker_help_favorites_title">Favorites:</string>
+  <string name="color_picker_help_favorites_summary">Favorites are empty by default.\nThe new color can be saved as a favorite at any time via long click, (a none empty favorite will be overwritten by the new color).\nA click sets the favorite color as new color, without applying the new color.</string>
+  <string name="color_picker_help_palette_title">Palette:\n(DarkKat, Material and RGB)</string>
+  <string name="color_picker_help_palette_summary">All palette colors have a fixed value.\nA click sets the favorite color as new color, without applying the new color.</string>
+  <string name="color_picker_help_do_not_show_title">Don\'t show again</string>
+  <string name="color_picker_help_button_ok_title">OK</string>
   <!-- RR Extra Info -->
   <string name="brokenextrainfo">Ekstra bilgiler</string>
   <string name="brokenextrainfo_summary">İşlemci, ekran, vb için ekstra bilgi görüntüler</string>
@@ -255,6 +290,7 @@
   <string name="button27">Resurrection</string>
   <string name="button28">Android Stok</string>
   <string name="button29">Resurrection Lollipop</string>
+  <string name="button30">Android N</string>
   <string name="animation0">Döndür </string>
   <string name="animation1">Son Kullanılanlardan Çıkış</string>
   <string name="animation2">Yarı Saydam Çıkış </string>
@@ -291,11 +327,11 @@
   <string name="quick_pulldown_summary_always">Her zaman durum çubuğunu aşağı çekince Hızlı Ayarları göster</string>
   <string name="quick_pulldown_always">Her zaman</string>
   <!-- Quick settings brightness slider -->
-  <string name="qs_brightness_slider_title">Parlaklık kaydırıcıyı göster</string>
+  <string name="qs_brightness_slider_title">Parlaklık Kaydırıcı</string>
   <string name="qs_brightness_slider_summary">Hızlı Ayarlar\'da parlaklık kaydırıcını Etkinleştir/Devre dışı bırak</string>
   <!-- Heads up -->
-  <string name="headsup_section_header">Heads up bildirimleri</string>
-  <string name="heads_up_notifications">Heads up</string>
+  <string name="headsup_section_header">Bildirim pencereleri</string>
+  <string name="heads_up_notifications">Bildirim pencereleri</string>
   <string name="summary_heads_up_enabled">Açılır Pencere bildirimleri etkin</string>
   <string name="summary_heads_up_disabled">Açılır Pencere bildirimleri devre dışı</string>
   <!-- Navigation Bar -->
@@ -325,6 +361,7 @@
   <!-- Status bar - Clock -->
   <string name="clock_color_switch">Özel Saat Renkleri Etkin / Devre dışı</string>
   <string name="clock_color_title">Renk</string>
+  <string name="clock_color_switch_title">Renk anahtarı</string>
   <string name="status_bar_clock_style_reset">Rengi sıfırla</string>
   <string name="status_bar_clock_style_reset_message">Saat rengi sıfırlansın mı?</string>
   <string name="clock_font_style_title">Yazı tipi</string>
@@ -481,6 +518,19 @@
   <string name="listview_overshoot_interpolator">İlerlet</string>
   <string name="listview_anticipate_overshoot_interpolator">Beklet ve İlerlet</string>
   <string name="listview_bounce_interpolator">Sıçrat</string>
+  <!-- Scrolling Animation Controls -->
+  <string name="scrolling_title">Scrolling modifiers</string>
+  <string name="scrolling_summary">View or change scrolling animations</string>
+  <string name="animation_fling_velocity_title">Fling velocity</string>
+  <string name="animation_scroll_friction_title">Scroll friction</string>
+  <string name="animation_overscroll_distance_title">Overscroll distance</string>
+  <string name="animation_overfling_distance_title">Overfling distance</string>
+  <string name="animation_duration_summary">Süreyi ayarla</string>
+  <string name="animation_no_scroll_title">Customized scrolling modifiers</string>
+  <string name="animation_no_scroll_summary_on">Enabled</string>
+  <string name="animation_no_scroll_summary_off">Disabled</string>
+  <string name="scroll_disclaimer_summary">Note: Most apps need to be restarted for custom values to take effect</string>
+  <string name="animation_settings_reset_message">Reset all animation settings to default?</string>
   <!-- Toast Icons -->
   <string name="toast_icon_title">Tost simgesi</string>
   <string name="toast_icon_summary">Tost ile gelen uygulama simgesini görüntüler</string>
@@ -702,7 +752,7 @@
   <string name="lockdate_font_size_default">Varsayılan</string>
   <!-- Headphones icon switch -->
   <string name="show_headset_icon_title">Kulaklık simgesi</string>
-  <string name="show_headset_icon_summary">Kulaklıklar bağlandığında simge gösterir.</string>
+  <string name="show_headset_icon_summary">Kulaklıklar bağlandığında simge gösterir</string>
   <!--Power menu -->
   <string name="power_category">Güç menüsü</string>
   <string name="lockscreen_enable_power_menu_title">Güç menüsünü kilit ekranında göster</string>
@@ -955,15 +1005,15 @@
   <string name="weather_hide_panel_never_summary">Hava Durumu paneli gizli olmayacak</string>
   <string name="weather_number_of_notifications_title">Bildirimlerin sayısı</string>
   <!-- Show carrier label and custom color -->
-  <string name="carrier_options">Şebeke etiketi</string>
-  <string name="show_status_bar_carrier_title">Durum çubuğunda şebeke etiketi</string>
-  <string name="show_status_bar_carrier_summary">Durum çubuğunda şebeke adını göster</string>
-  <string name="custom_carrier_label_title">Özel şebeke etiketi</string>
+  <string name="carrier_options">Operatör etiketi</string>
+  <string name="show_status_bar_carrier_title">Durum çubuğunda operatör etiketi</string>
+  <string name="show_status_bar_carrier_summary">Durum çubuğunda operatör adını göster</string>
+  <string name="custom_carrier_label_title">Özel operatör etiketi</string>
   <string name="custom_carrier_label_explain">Yeni bir etiket girin. Hazır etikete geri dönmek için boş bırakın.</string>
-  <string name="status_bar_carrier_size">Şebeke etiketi yazı boyutu</string>
+  <string name="status_bar_carrier_size">Operatör etiketi yazı boyutu</string>
   <string name="custom_carrier_label_notset">Özel etiket belirlenmiş olan değil</string>
-  <string name="status_bar_carrier_color">Şebeke etiketi rengi</string>
-  <string name="show_carrier_title">Şebeke etiketi</string>
+  <string name="status_bar_carrier_color">Operatör etiketi rengi</string>
+  <string name="show_carrier_title">Operatör etiketi</string>
   <string name="show_carrier_disabled">Devre dışı</string>
   <string name="show_carrier_keyguard">Kilit ekranında</string>
   <string name="show_carrier_statusbar">Durum çubuğunda</string>
@@ -980,10 +1030,10 @@
   <string name="status_bar_logo_position_center">Orta</string>
   <string name="status_bar_logo_position_before">Önce Durum Çubuğu Simgeleri</string>
   <string name="status_bar_colors_summary">Durum çubuğunda çeşitli simgeleri renklendirir. Tema renklerini geçersiz kılar</string>
-  <string name="carrierlabel_summary">Durum çubuğu şebeke etiket metnini özelleştir</string>
+  <string name="carrierlabel_summary">Durum çubuğu operatör etiket metnini özelleştir</string>
   <string name="network_traffic_settings_summary">Durum çubuğu Ağ Trafik GöstergesiNİ özelleştir</string>
   <string name="rr_logo_summary">Durum çubuğunda ki RR logoları için seçenekler arasında seçim yapın</string>
-  <string name="rr_custom_logo_summary">Durum çubuğu özel logolar/görüntüler için seşenekler arasında seçim yapın</string>
+  <string name="rr_custom_logo_summary">Durum çubuğu özel logolar/görüntüler için seçenekler arasında seçim yapın</string>
   <!-- Selinux Switch -->
   <string name="selinux_switch_title">SElinux Anahtarı seçenekleri</string>
   <string name="selinux_switch_summary">SELinux çekirdek modifikasyonlar ve kullanıcı alan araçları kümesidir. Değişen modları istenmeyen etkilere neden olabilir. Riski göze alarak kullanın</string>
@@ -1075,7 +1125,7 @@
   <string name="lock_directly_show_pin">Doğrudan PIN girişini göstermek</string>
   <!-- Sound & Notification Settings -->
   <!-- Linked / unlinked notification volume -->
-  <string name="link_volume_option_title">Zil sesi ve bildirim seslerini bağla</string>
+  <string name="link_volume_option_title">Zil sesi ve bildirim seslerini birleştir</string>
   <string name="notification_volume_option_title">Bildirim sesi</string>
   <string name="ring_notification_volume_option_title">Çağrı ve bildirim sesi</string>
   <!-- Keyboard and Input ASS methods  -->
@@ -1219,7 +1269,7 @@
   <string name="lockscreen_colors_title">Kilit ekranı renkleri</string>
   <string name="lockscreen_owner_info_color">Cihaz sahibi bilgileri</string>
   <string name="lockscreen_alarm_color">Alarm</string>
-  <string name="icons_title">Hava Durumu Simgeler</string>
+  <string name="icons_title">Hava durumu simgeleri</string>
   <string name="text_title">Yazı</string>
   <string name="lock_screen_weather_temp_color">Hava Durumu Sıcaklığı</string>
   <string name="lock_screen_weather_con_color">Hava Durumu</string>
@@ -1257,14 +1307,17 @@
   <string name="recent_panel_category">Slim Son Uygulamalar</string>
   <string name="recent_app_sidebar_title">Uygulama kenar çubuğu</string>
   <string name="recent_app_sidebar_summary">Diğer kenarda uygulama kısayolları göster</string>
+  <string name="use_recent_app_sidebar">Enable recent app sidebar</string>
   <string name="recent_app_sidebar_style_title">Kenar çubuğu stili</string>
   <string name="recent_app_sidebar_style_summary">Son uygulamalar kenar çubuğu stilini değiştir</string>
   <string name="recent_app_sidebar_hide_labels_title">Simge etiketlerini gizle</string>
   <string name="recent_app_sidebar_label_color_title">Etiket rengi</string>
   <string name="recent_app_sidebar_bg_color_title">Arka plan rengi</string>
   <string name="recent_app_sidebar_scale_title">Boyut</string>
+  <string name="recent_app_sidebar_open_simultaneously_title">Open simultaneously with recents</string>
+  <string name="recent_app_sidebar_open_simultaneously_summary">Reduce recents opening lag by disabling this</string>
   <!-- Doze options -->
-  <string name="display_category_doze_options_title">Ortam ekranı</string>
+  <string name="display_category_doze_options_title">Bildirim ekranı</string>
   <string name="doze_settings_title">Gelişmiş ortam ekranı seçenekleri</string>
   <string name="doze_timeout_title">Ortam ekranı yanma zaman aşımı</string>
   <string name="doze_timeout_summary">Bildirimlerin ekranda yanarak kalma zamanı</string>
@@ -1284,8 +1337,8 @@
   <string name="doze_brightness_summary">Ortam ekranı  ekran parlaklık seviyesi (% maksimum izin verilen parlaklık)</string>
   <!-- Doze notification color invert -->
   <string name="doze_notification_color_invert_title">Renk dönüşümü</string>
-  <string name="doze_notification_color_invert_summary_off">Ortam ekranı bildirimleri ters olmayacak. Karanlık temalar için kullanın.</string>
-  <string name="doze_notification_color_invert_summary_on">Ortam ekranı bildirimlerini ters olarak gösterecektir. Açık renk/stok tema için kullanın.</string>
+  <string name="doze_notification_color_invert_summary_off">Bildirim ekranı bildirimleri ters olmayacak. Karanlık temalar için kullanın.</string>
+  <string name="doze_notification_color_invert_summary_on">Bildirim ekranı bildirimlerini ters olarak gösterecektir. Açık renk/stok tema için kullanın.</string>
   <!-- Power menu Animations  -->
   <string name="power_menu_animation_title">Güç menüsü animasyonu</string>
   <string name="power_menu_animation_summary">Güç menüsüne giriş/çıkış animasyonunu değiştir</string>
@@ -1423,7 +1476,9 @@
   <string name="quick_settings_sp_vibrate_title">Bir Kez Dokunulduğunda Titre </string>
   <string name="quick_settings_sp_vibrate_summary">Karelere Bir Kez Dokunulduğunda Titre</string>
   <!-- QS shade transparency -->
-  <string name="qs_transparent_shade">Hızlı Ayarlar Paneli Saydamlığı</string>
+  <string name="qs_transparent_shade">Hızlı Ayarlar Paneli Şeffaflığı</string>
+  <!-- Notifications transparency -->
+  <string name="notifications_transparency">Notifications transparency</string>
   <!-- Safe headset volume restore checkbox -->
   <string name="safe_headset_volume_title">Güvenli kulaklık sesi</string>
   <string name="safe_headset_volume_summary">Kulaklık ilk takıldığında yüksek ses seviyesi önler</string>
@@ -1434,7 +1489,7 @@
   <string name="dlg_reset_rr">RR</string>
   <string name="dlg_reset_values_message">Varsayılan değerleri sıfırla?</string>
   <string name="dlg_reset_android">Tamam</string>
-  <string name="cat_colors_title">Bildirim Özelleştirmeleri</string>
+  <string name="cat_colors_title">Paneller</string>
   <string name="background_title">Bildirim Arkaplanı</string>
   <string name="icon_title">Simge</string>
   <string name="colors_title">Renkler</string>
@@ -1443,7 +1498,7 @@
   <string name="notification_media_bg_mode_title">Medya arka planını renklendir</string>
   <string name="notification_app_icon_bg_mode_title">Uygulama simgesi arka plan renklendir</string>
   <string name="notification_app_icon_color_mode_title">Uygulama simgesini renklendir</string>
-  <string name="notification_bg_guts_color_title">Uzun basmada Bildirim Arkaplanı</string>
+  <string name="notification_bg_guts_color_title">Uzun Basmada Bildirim Arkaplanı</string>
   <string name="notification_app_icon_bg_color_title">Uygulama simgesi arkaplanı</string>
   <string name="notification_color_mode_never_title">Asla</string>
   <string name="notification_icon_color_mode_greyscale_title">Simge rengi gri tonlama ise</string>
@@ -1476,8 +1531,8 @@
   <string name="less_notification_sounds_2m">2 dakika</string>
   <string name="less_notification_sounds_5m">5 dakika</string>
   <!-- Dashboard settings -->
-  <string name="dashboard_category">Kontrol paneli ayarları</string>
-  <string name="dashboard_columns_title">Ön panel sütunları</string>
+  <string name="dashboard_category">Ayarlar menüsü seçenekleri</string>
+  <string name="dashboard_columns_title">Kontrol paneli sütunları</string>
   <string name="dashboard_columns_summary">Kontrol panelinin görüntülenen sütunlarının sayısını değiştirme</string>
   <string name="dashboard_columns_dialog_title">Kontrol paneli sütunlarını seç</string>
   <string name="dashboard_columns_one">Bir</string>
@@ -1506,7 +1561,7 @@
   <string name="sms_breath_title">SMS Nefes Efekti</string>
   <string name="sms_breath_summary">SMS bildirimlerinde durum çubuğunda bir nefes efekti verecek</string>
   <!-- QS header transparency -->
-  <string name="qs_transparent_header">Hızlı ayarlar başlığı şeffaflığı</string>
+  <string name="qs_transparent_header">Hızlı Ayarlar Başlığı Şeffaflığı</string>
   <!-- Volume dialog transparency -->
   <string name="volume_dialog_transparency">Ses paneli şeffaflığı</string>
   <!-- Power menu and dialogs transparency -->
@@ -1554,6 +1609,11 @@
   <string name="panel_settings_sum">Başlıkta Ayarlar Simgesini Göster / Gizle</string>
   <string name="hide_panel_alarm_sum">Başlıkta Sonraki Alarmı Göster / Gizle</string>
   <string name="notifications_misc">Çeşitli</string>
+  <!-- Header text shadow and color -->
+  <string name="status_bar_custom_header_text_shadow_title">Başlık yazı gölgesi</string>
+  <string name="status_bar_custom_header_text_shadow_summary">Tema başlıklarının daha iyi görünmesi için</string>
+  <string name="status_bar_custom_header_text_shadow_color_title">Başlık yazı gölge rengi</string>
+  <string name="unit_percent">\u0025</string>
   <!--Summary on/off-->
   <string name="hide_clock_summary_on">Saat Gösterildi</string>
   <string name="hide_clock_summary_off">Saat Gizlendi</string>
@@ -1587,7 +1647,7 @@
   <string name="nav_buttons_rotation_summary">Ekran döndürülmüş veya gezinti çubuğu yeniden oluşturulduğunda simgeleri döndürmek için etkinleştir</string>
   <!--Smart PullDown-->
   <string name="smart_pulldown_title">Akıllı aşağı çekme</string>
-  <string name="smart_pulldown_summary">Mevcut %1$s bildirimler olduğunda hızlı ayarları açar</string>
+  <string name="smart_pulldown_summary">Mevcut bildirimler %1$s olduğunda hızlı ayarları aç</string>
   <string name="smart_pulldown_off">Kapalı</string>
   <string name="smart_pulldown_dismissable">Kapatılabilir bildirim yoksa</string>
   <string name="smart_pulldown_persistent">Kalıcı bildirim yoksa</string>
@@ -1766,35 +1826,20 @@
   <string name="fling_longpress_summary">Uzun basmayı gerçekleştirmek için gereken süreyi arttırmak yada azaltmak</string>
   <!-- Pulse navigation bar music visualizer -->
   <string name="pulse_help_policy_notice_title">Pulse Hakkına</string>
-  <string name="pulse_help_policy_notice_summary">Pulse gezinme çubuğunda parlak ekolayzır çubukları tarzı müzik çalar ses görselleştirmesidir. Pulse cihazın hoparlörü üzerinde dinlerken bazı ses kaynakları ile çalışmıyor.</string>
+  <string name="pulse_help_policy_notice_summary">Pulse gezinme çubuğunda parlak ekolayzır çubukları tarzı müzik çalar ses görselleştirmesidir. Pulse cihazın hoparlörü üzerinden dinlerken bazı ses kaynakları ile çalışmaz</string>
   <string name="pulse_settings">Pulse</string>
-  <string name="pulse_settings_summary">Gezinti çubuğu ses görselleştirme</string>
+  <string name="pulse_settings_summary">Gezinti çubuğu ses grafiği ekolayzır</string>
   <string name="fling_show_pulse_title">Pulse\'yi Göster</string>
-  <string name="fling_show_pulse_summary">Gezinme çubuğunda ses görselleştirme</string>
+  <string name="fling_show_pulse_summary">Gezinti çubuğunda ses grafiği ekolayzırı</string>
+  <string name="pulse_render_mode_title">İşleme biçimi</string>
+  <string name="pulse_render_mode_fading_bars">Solan bloklar</string>
+  <string name="pulse_render_mode_solid_lines">Düz çizgiler</string>
   <string name="fling_pulse_color">Pulse rengi</string>
   <string name="eos_fling_lavalamp_title">Lav Lambasını açın</string>
   <string name="eos_fling_lavalamp_summary">Pulse animasyonu pürüzsüz bir lav lambası tarzı renk karışımı animasyonu</string>
+  <string name="pulse_advanced_category">Gelişmiş</string>
+  <string name="pulse_legacy_mode_advanced_category">Solan bloklar modu ayarları</string>
   <string name="pulse_custom_dimen">Pulse Çubuk Genişliği</string>
-  <string name="pulse_dimen0">Varsayılan</string>
-  <string name="pulse_dimen1">7dp</string>
-  <string name="pulse_dimen2">8dp</string>
-  <string name="pulse_dimen3">9dp</string>
-  <string name="pulse_dimen4">10dp</string>
-  <string name="pulse_dimen5">11dp</string>
-  <string name="pulse_dimen6">12dp</string>
-  <string name="pulse_dimen7">13dp</string>
-  <string name="pulse_dimen8">15dp</string>
-  <string name="pulse_dimen9">16dp</string>
-  <string name="pulse_dimen10">17dp</string>
-  <string name="pulse_dimen11">18dp</string>
-  <string name="pulse_dimen12">19dp</string>
-  <string name="pulse_dimen13">20dp</string>
-  <string name="pulse_dimen14">21dp</string>
-  <string name="pulse_dimen15">22dp</string>
-  <string name="pulse_dimen16">23dp</string>
-  <string name="pulse_dimen17">24dp</string>
-  <string name="pulse_dimen18">25dp</string>
-  <string name="pulse_dimen19">26dp</string>
   <string name="pulse_custom_div">Pulse Çubuk Aralığı</string>
   <string name="default_div">Varsayılan</string>
   <string name="pulse_custom_dimen_cat">Özel Boyut Değiştiricisi ile Görselleştirici\'de Pulse Çubuklarının Boyutlarını Ayarlayın. Ayrıca Aralarındaki Aralığı Ayarlayın</string>
@@ -1804,33 +1849,12 @@
   <string name="pulse_block_category_summary">Pulse Görselleştirici Bloklarının Boyutunu Ayarlayın ve Her Blok Aralığını</string>
   <string name="pulse_aggression">Güç</string>
   <string name="pulse_aggression_category">Pulse Görselleştiricinin Şiddetini Ayarlayın. Hafif Olması için En Küçük ve Çılgın Olması için En Agresif</string>
-  <string name="div1">18</string>
-  <string name="div2">20</string>
-  <string name="div3">22</string>
-  <string name="div4">24</string>
-  <string name="div5">26</string>
-  <string name="div6">28</string>
-  <string name="div7">30</string>
-  <string name="div8">32</string>
-  <string name="default_fill">4dp(varsayılan)</string>
-  <string name="pulse_bar_style">Pulse Çubuğu Stili</string>
-  <string name="default_pulse_empty">1dp(Varsayılan)</string>
   <string name="pulse_filled_block_size">Blok Boyutu</string>
   <string name="pulse_empty_block_size">Blok Aralığı</string>
-  <string name="pulse_fill1">5dp</string>
-  <string name="pulse_fill2">6dp</string>
-  <string name="pulse_fill3">7dp</string>
-  <string name="pulse_fill4">8dp</string>
-  <string name="pulse_empty1">2dp</string>
-  <string name="pulse_empty2">3dp</string>
-  <string name="pulse_empty3">4dp</string>
-  <string name="pulse_empty4">0(aralık yok)</string>
-  <string name="factor0">Normal</string>
-  <string name="factor1">Ferah</string>
-  <string name="factor2">Yavaş</string>
-  <string name="factor3">Hiper</string>
-  <string name="factor4">Çılgın</string>
   <string name="pulse_custom_fudge_factor">Görselleştiricisi Tutarlılık Seviyesi</string>
+  <string name="pulse_solid_fudge_factor">Davranış seviyesi</string>
+  <string name="lavamp_solid_speed_title">Lav Lambası Animasyon Hızı</string>
+  <string name="pulse_solid_dimen_category">Düz Çizgiler Özelleştirmeleri</string>
   <!-- Navbar height -->
   <string name="navigation_bar_size_title">Gezinti çubuğu boyutu</string>
   <string name="portrait_title">Dikey yükseklik</string>
@@ -1850,14 +1874,24 @@
   <string name="smartbar_button_animation_summary">Basıldığında birincil tuş animasyon stilini ayarla</string>
   <string name="smartbar_button_animation_ripple">Dalgalanma</string>
   <string name="smartbar_button_animation_spring">Sıçrama</string>
-  <string name="smartbar_factory_reset_title">Stok ayarları geri yükle</string>
-  <string name="smartbar_factory_reset_summary">Akıllı çubuğu fabrika ayarlarına sıfırlanır</string>
+  <string name="smartbar_factory_reset_title">Varsayılana sıfırla</string>
   <string name="smartbar_factory_reset_confirm">Akıllı çubuk ayarlarını stok ayarlara sıfırlamak istediğinizden emin misiniz?</string>
   <string name="smartbar_ime_action_title">Giriş yöntemi eylemleri</string>
   <string name="smartbar_ime_action_summary">Ekranda klavye açıkken gösterilecek düğmeleri ayarlayın</string>
   <string name="smartbar_ime_action_none">Hiçbiri</string>
   <string name="smartbar_ime_action_arrows">İmleç okları</string>
   <string name="smartbar_ime_action_switcher">Klavye değiştirici</string>
+  <string name="smartbar_backup_current_config_title">Profili kaydet</string>
+  <string name="smartbar_restore_config_title">Profili geri yükle</string>
+  <string name="smartbar_config_name_edit_dialog_title">Smartbar profil adı</string>
+  <string name="smartbar_config_name_edit_dialog_message">Adı girin veya boş bırakın</string>
+  <string name="smartbar_config_dialog_title">Smartbar profilleri</string>
+  <string name="smartbar_config_backup_success_toast">Smartbar profili başarıyla kaydedildi</string>
+  <string name="smartbar_config_restore_success_toast">Smartbar profil başarıyla geri yüklendi</string>
+  <string name="smartbar_config_backup_error_toast">Smartbar profili kaydedilirken hata oluştu</string>
+  <string name="smartbar_config_restore_error_toast">Smartbar profil geri yüklenirken hata oluştu</string>
+  <!-- Navbar buttons transparency -->
+  <string name="navbar_buttons_alpha_title">Buttons transparency</string>
   <!-- QS Tiles Columns -->
   <string name="qs_num_columns_title">Satır başına kare sayısı</string>
   <string name="qs_num_columns_showing">Satır başına gösterilen %1$s kare</string>
@@ -1881,7 +1915,7 @@
   <!-- Heads Up Snooze -->
   <string name="heads_up_snooze">Erteleme</string>
   <string name="heads_up_snooze_disabled_summary">Erteleme zamanlayıcı devre dışı</string>
-  <string name="heads_up_snooze_summary">Heads up bildirimi kaydırılarak <xliff:g id="number">%d</xliff:g> dakika boyunca uygulamalardan gelecek olan bildirimler ertelenir</string>
+  <string name="heads_up_snooze_summary">Bildirim pencerelerini kaydırılarak <xliff:g id="number">%d</xliff:g> dakika boyunca uygulamalardan gelecek olan bildirimler ertelenir</string>
   <string name="heads_up_snooze_1min">1 dakika</string>
   <string name="heads_up_snooze_5min">5 dakika</string>
   <string name="heads_up_snooze_10min">10 dakika</string>
@@ -1890,8 +1924,8 @@
   <string name="heads_up_snooze_30min">30 dakika</string>
   <string name="heads_up_snooze_45min">45 dakika</string>
   <string name="heads_up_snooze_60min">60 dakika</string>
-  <string name="force_headsup_title">Heads up\'ı zorla</string>
-  <string name="force_headsup_summary">Tüm uygulamalarda heads up\'ı zorla</string>
+  <string name="force_headsup_title">Bildirim pencerelerine zorla</string>
+  <string name="force_headsup_summary">Tüm uygulamalarda bildirim pencerelerini zorla</string>
   <!-- Hide apps from recents -->
   <string name="hide_from_recents_add_app">Uygulama Ekle</string>
   <string name="hide_apps_from_recents_title">Uygulamaları Gizle</string>
@@ -1928,7 +1962,7 @@
   <string name="number_of_notifications_six_title">6</string>
   <string name="carrier_label_hide_label_title">Bildirim gizlenir</string>
   <string name="carrier_label_number_of_notification_icons_title">Simgeleri gizlemeden önce ki en fazla sayı</string>
-  <string name="status_bar_carrier_font_style_title">Şebeke etiketi rengi</string>
+  <string name="status_bar_carrier_font_style_title">Operatör etiketi rengi</string>
   <!-- Tiles animation style  -->
   <string name="quicksettings_tiles_category">Kare animasyon seçenekleri</string>
   <string name="qs_tile_animation_style_title">Kareler animasyon stili</string>
@@ -1955,4 +1989,64 @@
   <!-- Battery fully charged notification -->
   <string name="battery_fully_charged_notif_title">Pil tamamen doldu bildirimi</string>
   <string name="battery_fully_charged_notif_summary">Pil tam olarak şarj edildiğinde bir bildirim göster</string>
+  <string name="show_dark_icons_title">Durum Çubuğu Şeffaflığı Devre Dışı</string>
+  <string name="show_dark_icons_summary">Durum çubuğu arka planı açık renk olduğunda simgeleri koyu renk gösterir. Bu simgelerin görünemez oluşunu ortadan kaldırır ama aynı zamanda saat rengi gibi diğer konuları ortaya çıkartır. Kullanımda ki risk size aittir</string>
+  <!-- Volume dialog stroke settings -->
+  <string name="volume_dialog_stroke_title">Ses paneli indirme</string>
+  <string name="volume_dialog_stroke_disabled">Devre dışı</string>
+  <string name="volume_dialog_stroke_accent">Vurgu rengi</string>
+  <string name="volume_dialog_stroke_custom">Özel renk</string>
+  <string name="volume_dialog_stroke_color_title">Ses paneli indirme rengi</string>
+  <string name="volume_dialog_stroke_thickness_title">Ses paneli kenar kalınlığı</string>
+  <string name="volume_dialog_corner_radius_title">Ses iletişim köşe çevresi</string>
+  <string name="volume_dialog_dash_width_title">Ses paneli indirme genişliği</string>
+  <string name="volume_dialog_dash_gap_title">Ses paneli indirme boşluğu</string>
+  <!-- Volume dialog timeout -->
+  <string name="volume_dialog_timeout_title">Ses paneli zaman aşımı</string>
+  <!-- QS stroke settings -->
+  <string name="qs_stroke_title">Hızlı ayarlar kenar gölgesi</string>
+  <string name="qs_stroke_disabled">Devre dışı</string>
+  <string name="qs_stroke_accent">Vurgu rengi</string>
+  <string name="qs_stroke_custom">Özel renk</string>
+  <string name="qs_stroke_color_title">Hızlı ayarlar kenar gölge rengi</string>
+  <string name="qs_stroke_thickness_title">Hızlı ayarlar kenar gölge kalınlığı</string>
+  <string name="qs_corner_radius_title">Hızlı ayarlar gölge köşe çevresi</string>
+  <string name="qs_trans_title">Bildirim paneli</string>
+  <string name="notification_cat_volume"> Ses paneli</string>
+  <string name="qs_dash_width_title">Hızlı ayarlar indirme panel genişliği</string>
+  <string name="qs_dash_gap_title">Hızlı ayarlar indirme panel boşluğu</string>
+  <string name="qs_panel_logo_category">Hızlı ayarlar paneli logosu</string>
+  <string name="qs_panel_logo_title">Hızlı ayarlar paneli RR logosu</string>
+  <string name="qs_panel_logo_disabled">Devre dışı</string>
+  <string name="qs_panel_logo_accent">Vurgu rengi</string>
+  <string name="qs_panel_logo_custom">Özel renk</string>
+  <string name="qs_panel_logo_color_title">Hızlı ayarlar paneli logo rengi</string>
+  <string name="qs_panel_logo_alpha_title">Hızlı ayarlar paneli logo şeffaflığı</string>
+  <string name="notification_cat_power">Güç menüsü</string>
+  <string name="expansion_view_animation_title">Görev Yöneticisi Animasyonu</string>
+  <string name="expansion_view_animation_summary">Panel değişimi giriş/çıkış animasyonunu değiştir</string>
+  <string name="expansion_view_animation_dialog_title">Animasyonunuzu seçin</string>
+  <string name="expansion_view_animation_down">Aşağı (Varsayılan)</string>
+  <string name="expansion_view_animation_enter">Gir</string>
+  <string name="expansion_view_animation_left">Sol</string>
+  <string name="expansion_view_animation_right">Sağ</string>
+  <string name="expansion_view_animation_rotate">Döndür</string>
+  <string name="expansion_view_animation_turn">Çevir</string>
+  <string name="expansion_view_animation_up">Yukarı</string>
+  <string name="expansion_view_recents_enter">Recents Enter</string>
+  <string name="expansion_view_fade">Fade</string>
+  <string name="expansion_view_slide_out">Slide</string>
+  <string name="expansion_view_last_app">Last App</string>
+  <string name="expansion_view_rotate">Reverse Rotate</string>
+  <string name="expansion_view_task_open">Task Open</string>
+  <string name="expansion_view_xylon_toast">Toast</string>
+  <string name="expansion_view_search_bar">SearchBar Animation</string>
+  <string name="expansion_view_toko_toast">Toko Toast</string>
+  <!-- Development Settings -->
+  <!-- ADB always notify -->
+  <string name="adb_always_notify">Debugging always notify</string>
+  <string name="adb_always_notify_summary">Always display a notification when debugging is enabled, even if not connected</string>
+  <!-- Instant reboot -->
+  <string name="advanced_reboot_oneclick">One click reboot</string>
+  <string name="advanced_reboot_oneclick_summary">Instantly trigger reboot action</string>
 </resources>

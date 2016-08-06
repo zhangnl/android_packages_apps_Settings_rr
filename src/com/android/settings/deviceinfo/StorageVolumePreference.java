@@ -26,6 +26,7 @@ import android.os.storage.StorageManager;
 import android.os.storage.VolumeInfo;
 import android.preference.Preference;
 import android.text.format.Formatter;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.util.TypedValue;
@@ -33,6 +34,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.android.settings.R;
+import com.android.settings.Utils;
 import com.android.settings.deviceinfo.StorageSettings.UnmountTask;
 
 import java.io.File;
@@ -63,7 +65,8 @@ public class StorageVolumePreference extends Preference {
         setLayoutResource(R.layout.storage_volume);
 
         setKey(volume.getId());
-        setTitle(mStorageManager.getBestVolumeDescription(volume));
+        final String fsType = volume.fsType;
+        setTitle(mStorageManager.getBestVolumeDescription(volume) + (TextUtils.isEmpty(fsType) ? "" : " / " + fsType));
 
         Drawable icon;
         if (VolumeInfo.ID_PRIVATE_INTERNAL.equals(volume.getId())) {
@@ -76,7 +79,13 @@ public class StorageVolumePreference extends Preference {
             // TODO: move statfs() to background thread
             final File path = volume.getPath();
             final long freeBytes = path.getFreeSpace();
-            final long totalBytes = path.getTotalSpace();
+            final long totalBytes;
+            if (VolumeInfo.ID_PRIVATE_INTERNAL.equals(volume.getId())) {
+                totalBytes = Utils.estimateTotalSpace(context,
+                        path.getTotalSpace() + Utils.getSystemTotalSpace());
+            } else {
+                totalBytes = path.getTotalSpace();
+            }
             final long usedBytes = totalBytes - freeBytes;
 
             final String used = Formatter.formatFileSize(context, usedBytes);

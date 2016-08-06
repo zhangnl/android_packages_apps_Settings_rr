@@ -413,8 +413,9 @@ public class InstalledAppDetails extends AppInfoBase
         mUpdatedSysApp = (mAppEntry.info.flags & ApplicationInfo.FLAG_UPDATED_SYSTEM_APP) != 0;
         menu.findItem(UNINSTALL_UPDATES).setVisible(mUpdatedSysApp && !mAppControlRestricted);
 
-        menu.findItem(OPEN_PROTECTED_APPS).setVisible(mPackageInfo.applicationInfo.protect);
-
+        if (mPackageInfo.applicationInfo != null) {
+            menu.findItem(OPEN_PROTECTED_APPS).setVisible(mPackageInfo.applicationInfo.protect);
+        }
     }
 
     @Override
@@ -883,7 +884,13 @@ public class InstalledAppDetails extends AppInfoBase
         if (!appRow.peekable) {
             notifSummary.add(context.getString(R.string.notifications_no_peeking));
         }
+        if (!appRow.halo) {
+            notifSummary.add(context.getString(R.string.filter_notif_no_halo));
+        }
         switch (notifSummary.size()) {
+            case 4:
+                return context.getString(R.string.notifications_five_items,
+                        notifSummary.get(0), notifSummary.get(1), notifSummary.get(2), notifSummary.get(3));
             case 3:
                 return context.getString(R.string.notifications_three_items,
                         notifSummary.get(0), notifSummary.get(1), notifSummary.get(2));
@@ -1021,7 +1028,6 @@ public class InstalledAppDetails extends AppInfoBase
         public void onReceive(Context context, Intent intent) {
             if (getActivity() != null && !getActivity().isDestroyed()) {
                 updateForceStopButton(getResultCode() != Activity.RESULT_CANCELED);
-                refreshUi();
             }
         }
     };

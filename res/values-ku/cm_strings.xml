@@ -449,7 +449,6 @@
   <string name="volume_adjust_sounds_title">دەستکاریکردنی دەنگ</string>
   <!-- Hardware tunables - Vibrator intensity -->
   <string name="vibrator_intensity_title">له‌رینه‌وه‌ی توندێتی</string>
-  <string name="vibrator_warning">به‌های به‌رزتر له‌ %1$d پشتگیری نه‌کراوه‌</string>
   <!-- Hardware tunables - Color calibration -->
   <string name="color_calibration_title">ڕه‌نگ کالیبره‌یشن</string>
   <string name="color_calibration_summary">کالیبره‌یت له‌سه‌ر ڕه‌نگی ڕوونما</string>
@@ -768,6 +767,8 @@
   <string name="weather_settings_general_settings_title">گشتی</string>
   <!-- Label for settings shortcut: carrier selection -->
   <!-- title for lock screen blur preference -->
+  <!-- title for lock screen weather preference -->
+  <string name="lockscreen_weather_enabled_title">پیشاندانی کەش و هەوا</string>
   <!-- Per app controls for LP keyguard notifications -->
   <string name="app_notification_show_on_keyguard_title">پیشاندانی لەسەر قوفڵی شاشە</string>
   <string name="app_notification_show_on_keyguard_summary">پیشاندانی تێبینی لەم بەرنامەیە لەسەر قوفڵی شاشە</string>
@@ -775,4 +776,8 @@
   <string name="app_notification_no_ongoing_on_keyguard_summary">هەرگیز بەبەردەوامی تێبینی پیشان مەدە لەسەر ئەم بەرنامەیە لەسەر قوفڵی سەر شاشە</string>
   <!-- CmRadioInfo -->
   <!-- Radio Control (IMS/MBN etc.) -->
+  <!-- Lock screen wallpaper -->
+  <!-- Format string for fingerprint location message -->
+  <!-- Fingerprint sensor locations -->
+  <!-- SIM status format string -->
 </resources>

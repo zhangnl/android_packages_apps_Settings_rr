@@ -620,7 +620,7 @@
 
     <!-- Hardware tunables - Vibrator intensity -->
     <string name="vibrator_intensity_title">Vibrator intensity</string>
-    <string name="vibrator_warning">Values higher than %1$d are not recommended</string>
+    <string name="vibrator_warning">Values higher than %1$d%% are not recommended</string>
 
     <!-- Hardware tunables - Color calibration -->
     <string name="color_calibration_title">Color calibration</string>
@@ -699,6 +699,8 @@
     <string name="live_display_color_profile_photography_summary">Perfect color reproduction for photos</string>
     <string name="live_display_color_profile_basic_title">Basic</string>
     <string name="live_display_color_profile_basic_summary">Use the display uncalibrated</string>
+    <string name="live_display_color_profile_adaptive_title">Adaptive</string>
+    <string name="live_display_color_profile_adaptive_summary">Colors adapt to ambient conditions</string>
 
  <!-- Settings switch for updating Cyanogen recovery -->
     <string name="update_recovery_title">Update Cyanogen recovery</string>
@@ -1233,4 +1235,18 @@
     <string name="cm_radio_info_diag_log_on_label">Turn off Diag log</string>
     <string name="cm_radio_info_diag_log_off_label">Turn on Diag log</string>
 
+    <string name="not_available_with_app">Not available with %1$s</string>
+    <string name="blacklist_country_code_plus" translatable="false">+</string>
+
+    <!-- Format string for fingerprint location message -->
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_cm">Locate the fingerprint sensor on the <xliff:g id="sensor_location">%1$s</xliff:g> of your phone.</string>
+
+    <!-- Fingerprint sensor locations -->
+    <string name="security_settings_fingerprint_sensor_location_back">back</string>
+    <string name="security_settings_fingerprint_sensor_location_front">front</string>
+    <string name="security_settings_fingerprint_sensor_location_left">left side</string>
+    <string name="security_settings_fingerprint_sensor_location_right">right side</string>
+
+    <!-- SIM status format string -->
+    <string name="sim_status_format_string">Voice: <xliff:g id="voice_status">%1$s</xliff:g> / Data: <xliff:g id="data_status">%2$s</xliff:g></string>
 </resources>

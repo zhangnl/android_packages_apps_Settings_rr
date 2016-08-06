@@ -131,6 +131,7 @@ public class ManageApplications extends InstrumentedFragment
     public static final int FILTER_APPS_USAGE_ACCESS            = 12;
     public static final int FILTER_APPS_WITH_OVERLAY            = 13;
     public static final int FILTER_APPS_WRITE_SETTINGS          = 14;
+    public static final int FILTER_APPS_NO_HALO                 = 15;
 
     // This is the string labels for the filter modes above, the order must be kept in sync.
     public static final int[] FILTER_LABELS = new int[] {
@@ -142,6 +143,7 @@ public class ManageApplications extends InstrumentedFragment
         R.string.filter_notif_blocked_apps,   // Blocked Notifications
         R.string.filter_notif_priority_apps,  // Priority Notifications
         R.string.filter_notif_no_peeking,     // No peeking Notifications
+        R.string.filter_notif_no_halo,    // No notifications in HALO
         R.string.filter_notif_sensitive_apps, // Sensitive Notifications
         R.string.filter_personal_apps, // Personal
         R.string.filter_work_apps,     // Work
@@ -163,6 +165,7 @@ public class ManageApplications extends InstrumentedFragment
         AppStateNotificationBridge.FILTER_APP_NOTIFICATION_BLOCKED,   // Blocked Notifications
         AppStateNotificationBridge.FILTER_APP_NOTIFICATION_PRIORITY,  // Priority Notifications
         AppStateNotificationBridge.FILTER_APP_NOTIFICATION_NO_PEEK,   // No peeking Notifications
+        AppStateNotificationBridge.FILTER_APP_NOTIFICATION_NO_HALO, // No notifications in HALO
         AppStateNotificationBridge.FILTER_APP_NOTIFICATION_SENSITIVE, // Sensitive Notifications
         ApplicationsState.FILTER_PERSONAL,    // Personal
         ApplicationsState.FILTER_WORK,        // Work
@@ -304,13 +307,6 @@ public class ManageApplications extends InstrumentedFragment
             lv.setTextFilterEnabled(true);
             lv.setFastScrollEnabled(true);
             mListView = lv;
-            mApplications = new ApplicationsAdapter(mApplicationsState, this, mFilter);
-            if (savedInstanceState != null) {
-                mApplications.mHasReceivedLoadEntries =
-                        savedInstanceState.getBoolean(EXTRA_HAS_ENTRIES, false);
-            }
-            mListView.setAdapter(mApplications);
-            mListView.setRecyclerListener(mApplications);
 
             Utils.prepareCustomPreferencesList(container, mRootView, mListView, false);
         }
@@ -320,8 +316,6 @@ public class ManageApplications extends InstrumentedFragment
         if (container instanceof PreferenceFrameLayout) {
             ((PreferenceFrameLayout.LayoutParams) mRootView.getLayoutParams()).removeBorders = true;
         }
-
-        createHeader();
 
         mResetAppsHelper.onRestoreInstanceState(savedInstanceState);
 
@@ -351,6 +345,7 @@ public class ManageApplications extends InstrumentedFragment
             mFilterAdapter.enableFilter(FILTER_APPS_PRIORITY);
             mFilterAdapter.enableFilter(FILTER_APPS_SENSITIVE);
             mFilterAdapter.enableFilter(FILTER_APPS_NO_PEEKING);
+            mFilterAdapter.enableFilter(FILTER_APPS_NO_HALO);
         }
         if (mListType == LIST_TYPE_HIGH_POWER) {
             mFilterAdapter.enableFilter(FILTER_APPS_POWER_WHITELIST_ALL);
@@ -367,6 +362,14 @@ public class ManageApplications extends InstrumentedFragment
             FrameLayout pinnedHeader = (FrameLayout) mRootView.findViewById(R.id.pinned_header);
             AppHeader.createAppHeader(getActivity(), null, mVolumeName, null, pinnedHeader);
         }
+        mApplications = new ApplicationsAdapter(mApplicationsState, this, mFilter);
+        if (savedInstanceState != null) {
+            mApplications.mHasReceivedLoadEntries =
+                    savedInstanceState.getBoolean(EXTRA_HAS_ENTRIES, false);
+        }
+        mListView.setAdapter(mApplications);
+        mListView.setRecyclerListener(mApplications);
+        createHeader();
     }
 
     private int getDefaultFilter() {
@@ -624,7 +627,10 @@ public class ManageApplications extends InstrumentedFragment
 
     @Override
     public void onResetCompleted() {
-        mApplications.mExtraInfoBridge.onPackageListChanged();
+        /* mExtraInfoBridge can be null when doing reset app preference without
+         * any changes on apps */
+        if (mApplications.mExtraInfoBridge != null)
+            mApplications.mExtraInfoBridge.onPackageListChanged();
     }
 
     static class FilterSpinnerAdapter extends ArrayAdapter<CharSequence> {

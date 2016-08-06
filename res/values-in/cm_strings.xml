@@ -43,7 +43,7 @@
   <string name="mod_version">Versi CyanogenMod</string>
   <string name="mod_version_default">Tidak diketahui</string>
   <!-- About phone screen, Device model -->
-  <string name="device_model">Modusl perangkat</string>
+  <string name="device_model">Model perangkat</string>
   <!-- About phone screen, Device name -->
   <string name="device_name">Nama perangkat</string>
   <!-- About phone screen, CyanogenMod Api Level -->
@@ -548,7 +548,6 @@
   <string name="volume_adjust_sounds_title">Penyesuaian volume suara</string>
   <!-- Hardware tunables - Vibrator intensity -->
   <string name="vibrator_intensity_title">Intensitas penggetar</string>
-  <string name="vibrator_warning">Nilai-nilai yang lebih tinggi daripada %1$d tidak direkomendasikan</string>
   <!-- Hardware tunables - Color calibration -->
   <string name="color_calibration_title">Kalibrasi warna</string>
   <string name="color_calibration_summary">Menyesuaikan layar warna</string>
@@ -1040,6 +1039,8 @@
   <!-- Label for settings shortcut: carrier selection -->
   <string name="shortcut_carrier_title">Operator jaringan</string>
   <!-- title for lock screen blur preference -->
+  <!-- title for lock screen weather preference -->
+  <string name="lockscreen_weather_enabled_title">Tampilkan cuaca</string>
   <!-- Per app controls for LP keyguard notifications -->
   <string name="app_notification_show_on_keyguard_title">Tampilkan pada layar kunci</string>
   <string name="app_notification_show_on_keyguard_summary">Tampilkan pemberitahuan dari aplikasi ini pada layar kunci</string>
@@ -1047,4 +1048,8 @@
   <string name="app_notification_no_ongoing_on_keyguard_summary">Tidak pernah menampilkan pemberitahuan tetap dari aplikasi ini pada layar kunci</string>
   <!-- CmRadioInfo -->
   <!-- Radio Control (IMS/MBN etc.) -->
+  <!-- Lock screen wallpaper -->
+  <!-- Format string for fingerprint location message -->
+  <!-- Fingerprint sensor locations -->
+  <!-- SIM status format string -->
 </resources>

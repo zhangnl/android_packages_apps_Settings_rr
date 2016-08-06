@@ -350,7 +350,6 @@
   <!-- Volume settings - Volume adjustment sound -->
   <!-- Hardware tunables - Vibrator intensity -->
   <string name="vibrator_intensity_title">Vibrāciju stiprums</string>
-  <string name="vibrator_warning">Vērtības, lielākas par %1$d, nav ieteicamas</string>
   <!-- Hardware tunables - Color calibration -->
   <string name="color_calibration_title">Krāsu kalibrēšana</string>
   <string name="color_calibration_summary">Kalibrēt ekrāna krāsas</string>
@@ -552,7 +551,12 @@
   <string name="weather_settings_general_settings_title">Vispārīgi</string>
   <!-- Label for settings shortcut: carrier selection -->
   <!-- title for lock screen blur preference -->
+  <!-- title for lock screen weather preference -->
   <!-- Per app controls for LP keyguard notifications -->
   <!-- CmRadioInfo -->
   <!-- Radio Control (IMS/MBN etc.) -->
+  <!-- Lock screen wallpaper -->
+  <!-- Format string for fingerprint location message -->
+  <!-- Fingerprint sensor locations -->
+  <!-- SIM status format string -->
 </resources>

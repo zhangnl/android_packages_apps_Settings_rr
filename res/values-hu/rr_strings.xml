@@ -16,7 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- About RR -->
-  <string name="about_rr_settings_title">A Resurrectionről</string>
+  <string name="about_rr_settings">A Resurrectionről</string>
   <string name="about_rr">A Resurrectionről</string>
   <string name="about_rr_summary">\@null</string>
   <string name="about_r0m_summary">Minden a Romról</string>
@@ -26,7 +26,7 @@
   <string name="devs">Fejlesztők</string>
   <string name="github_westcrip">https://github.com/westcripp</string>
   <string name="github_varund7726">https://github.com/varund7726</string>
-  <string name="github_akhilnaranag">https://github.com/akhilnaranag</string>
+  <string name="github_akhilnarang">https://github.com/akhilnarang</string>
   <string name="github_bdogg718k">https://github.com/bdogg718k</string>
   <string name="github_cm">https://github.com/CyanogenMod</string>
   <string name="github_aokp">https://github.com/AOKP</string>
@@ -120,31 +120,66 @@
   <string name="notifications_cat">Értesítések</string>
   <string name="notifications_colors_cat">Értesítési színek</string>
   <string name="misc_1">Rendszereszközök</string>
-  <string name="misc_2">Hangolások</string>
+  <string name="misc_2">Finomhangolások</string>
   <string name="misc_3">Rendszer</string>
   <string name="misc_4">Ujjlenyomat</string>
   <!-- Color picker -->
-  <string name="dialog_color_picker_title">Színválasztó</string>
-  <string name="press_color_to_apply">Érintse meg a színt az alkalmazáshoz</string>
+  <string name="color_picker_fragment_title">Színválasztó</string>
+  <string name="apply_color_title">Szín alkalmazása</string>
+  <string name="edit_hex_title">HEX érték</string>
   <string name="palette_darkkat_title">Resurrection</string>
-  <string name="palette_material_title">Material</string>
+  <string name="palette_material_title">Anyag</string>
   <string name="palette_rgb_title">RGB</string>
+  <string name="reset_color_title">Alaphelyzet</string>
   <string name="reset_android_title">Alapértelmezett Android</string>
   <string name="reset_darkkat_title">Egyéni paletta</string>
   <string name="default_string">Alapértelmezett</string>
+  <string name="favorites_title">Kedvencek</string>
+  <string name="hide_favorites_title">Kedvencek elrejtése</string>
+  <string name="show_favorites_title">Kedvencek megjelenítése</string>
+  <string name="hide_help_title">Súgó elrejtése</string>
+  <string name="show_help_title">Súgó megjelenítése</string>
+  <string name="empty_title">Üres</string>
+  <string name="color_picker_help_screen_title">Színválasztó súgó</string>
+  <string name="color_picker_help_ab_title">Műveletsáv:</string>
+  <string name="color_picker_help_ab_back_title">Vissza gomb:</string>
+  <string name="color_picker_help_ab_back_summary">Close the color picker without applying the new color, (cancel).\nThis has the same effect as clicking the back button on the navigation bar.</string>
+  <string name="color_picker_help_ab_name_title">Név:</string>
+  <string name="color_picker_help_ab_name_summary">Only shows the title, no additional functions</string>
+  <string name="color_picker_help_ab_color_apply_title">Color preview and apply color:</string>
+  <string name="color_picker_help_ab_color_apply_summary">The color preview is always visible.\nIf the new color doesn\'t equals the old color, the color preview will be expanded, to allow apply the new color.</string>
+  <string name="color_picker_help_ab_menu_title">Menu button:</string>
+  <string name="color_picker_help_ab_menu_reset_title">Reset:</string>
+  <string name="color_picker_help_ab_menu_reset_summary">Resets the new color to the default Android or Darkkat color without applying the new color.</string>
+  <string name="color_picker_help_ab_menu_hex_title">Hex value:</string>
+  <string name="color_picker_help_ab_menu_hex_summary">Shows the hex input field.\nHex values have to be in hex color format:\n\'#aarrggbb\', (\'alpha\' (transparency), \'red\', \'green\' and \'blue\').\nThe back button closes the hex input field without setting the hex value.\nThe apply button sets the hex value as new color without applying the new color.</string>
+  <string name="color_picker_help_ab_menu_favorites_title">Show/hide favorites:</string>
+  <string name="color_picker_help_ab_menu_favorites_summary">Shows/hides the favorites.\nHiding the favorites will not reset the favorite colors.</string>
+  <string name="color_picker_help_ab_menu_help_title">Show/hide help:</string>
+  <string name="color_picker_help_ab_menu_help_summary">Shows/hides this help screen.</string>
+  <string name="color_picker_help_colors_title">Colors:</string>
+  <string name="color_picker_help_picker_view_title">Color panel:</string>
+  <string name="color_picker_help_picker_view_summary">Pick a color to set a new color without applying the new color.\nThe color range can be changed using the slider on the right side</string>
+  <string name="color_picker_help_color_buttons_title">Color buttons:</string>
+  <string name="color_picker_help_favorites_title">Favorites:</string>
+  <string name="color_picker_help_favorites_summary">Favorites are empty by default.\nThe new color can be saved as a favorite at any time via long click, (a none empty favorite will be overwritten by the new color).\nA click sets the favorite color as new color, without applying the new color.</string>
+  <string name="color_picker_help_palette_title">Palette:\n(DarkKat, Material and RGB)</string>
+  <string name="color_picker_help_palette_summary">All palette colors have a fixed value.\nA click sets the favorite color as new color, without applying the new color.</string>
+  <string name="color_picker_help_do_not_show_title">Don\'t show again</string>
+  <string name="color_picker_help_button_ok_title">OK</string>
   <!-- RR Extra Info -->
   <string name="brokenextrainfo">Extra információ</string>
   <string name="brokenextrainfo_summary">Extra info mutatása a cpu, kijelző, stb esetén</string>
   <!--Time Contexual Header -->
-  <string name="contexual_header_title">Környezetérzékeny értesítési felület fejléc</string>
-  <string name="status_bar_custom_header_title">Egyéni fejléc kép</string>
+  <string name="contexual_header_title">Környezetérzékeny fejléc</string>
+  <string name="status_bar_custom_header_title">Idő környezetfüggő fejléc</string>
   <string name="status_bar_custom_header_summary">Értesítési panel fejléc kép engedélyezése</string>
   <string name="daylight_header_pack_title">Fejléc kép csomag</string>
   <string name="custom_header_image_0">Alapértelmezett</string>
   <string name="custom_header_image_1">Modern</string>
   <string name="custom_header_image_2">Poly HD</string>
-  <string name="status_bar_custom_header_shadow_title">Fejléc kép árnyék</string>
-  <string name="status_bar_custom_header_shadow_summary">Jobb láthatóság érdekében a világos képek esetén</string>
+  <string name="status_bar_custom_header_shadow_title">Árnyék fejléckép</string>
+  <string name="status_bar_custom_header_shadow_summary">A világos képek esetén jobb láthatósága érdekében</string>
   <string name="unit_percent">\u0025</string>
   <!-- RR Extra Info -->
   <string name="rrextrainfo">Extra információ</string>
@@ -165,7 +200,7 @@
   <string name="abi">ABI</string>
   <string name="abitwo">ABI2</string>
   <string name="architecture">Architektúra</string>
-  <string name="implementer">Végrehajtó</string>
+  <string name="implementer">Kivitelező</string>
   <string name="variant">Változat</string>
   <string name="part">Rész</string>
   <string name="revision">Revízió</string>
@@ -179,13 +214,13 @@
   <string name="actualdpi_y">Tényleges DPI Y</string>
   <string name="refresh_rate">Frissítési ráta</string>
   <string name="pixels">Pixel</string>
-  <string name="inches">Inch</string>
+  <string name="inches">Hüvelyk</string>
   <!--Recents-->
   <string name="recents_settings_title">Előzmények</string>
   <string name="recents_panel_category">Előzmények panel</string>
   <string name="show_clear_all_recents_button_title">Mindent töröl gomb</string>
   <string name="show_clear_all_recents_button_summary">Mindent töröl gomb megjelenítése</string>
-  <string name="recents_clear_all_location_title">Mindent töröl helye</string>
+  <string name="recents_clear_all_location_title">Mindent töröl gomb helye</string>
   <string name="recents_clear_all_location_top_right">Jobb fent</string>
   <string name="recents_clear_all_location_top_left">Bal fent</string>
   <string name="recents_clear_all_location_top_center">Fent középen</string>
@@ -193,9 +228,9 @@
   <string name="recents_clear_all_location_bottom_left">Bal lent</string>
   <string name="recents_clear_all_location_bottom_center">Lent középen</string>
   <string name="recents_clear_all_dismiss_all_title">Összes feladat törlése</string>
-  <string name="recents_clear_all_dismiss_all_summary">Előtérben futó feladatot beleértve, ha az összes törlésre kerül</string>
+  <string name="recents_clear_all_dismiss_all_summary">Beleértve az előtérben futó feladatot is, amikor az összes törlésre kerül</string>
   <string name="recents_show_membar_title">Memória sáv</string>
-  <string name="recents_show_membar_summary">Sáv megjelenítése az eszköz elérhető memóriájával</string>
+  <string name="recents_show_membar_summary">Sáv megjelenítése az eszköz szabad memóriájával</string>
   <string name="clear_recents_style">Gomb stílusa</string>
   <string name="fab_button_color">Gomb háttér</string>
   <string name="mem_bar_color">Memória sáv</string>
@@ -205,15 +240,15 @@
   <string name="recents_colors">Stílusok</string>
   <string name="recents_style_2">Színek</string>
   <string name="recents_style_3">Feladatnézet fejléc</string>
-  <string name="pin_button_color">Képernyő rögzítés gomb</string>
+  <string name="pin_button_color">Képernyő rögzítés gomb </string>
   <string name="mw_button_color">Több ablak gomb</string>
   <string name="float_button_color">Lebegő gomb</string>
   <string name="kill_app_button_color">Bezárás gomb</string>
   <string name="tv_app_color">Alkalmazás ikon kitöltés (kitölti a teljes ikont)</string>
   <string name="tv_app_text_color">Alkalmazás leírás szövege</string>
-  <string name="recent_styles">Előzmények stílusa</string>
-  <string name="recent_styles_summary">Előzmények különböző elemeinek testreszabása</string>
-  <string name="mem_text_color">Memória sáv szövegszíne</string>
+  <string name="recent_styles">Előzmények stílusa </string>
+  <string name="recent_styles_summary">Előzmények különböző elemeinek testreszabása </string>
+  <string name="mem_text_color">Memória sáv szöveg</string>
   <string name="clear_button_color">Mindet töröl</string>
   <string name="clear_recents_style_enable">Egyéni előzmények stílus</string>
   <string name="clear_recents_style_enable_summary">Egyéni előzmények nézet stílus módosításának engedélyezése/tiltása</string>
@@ -232,44 +267,45 @@
   <string name="button4">Függőleges vonalak 1</string>
   <string name="button5">Függőleges vonalak 2</string>
   <string name="button6">Vágólap </string>
-  <string name="button7">Paint</string>
+  <string name="button7">Festék </string>
   <string name="button8">Vízszintes vonalak</string>
-  <string name="button9">Körkörös jelölő</string>
+  <string name="button9">Körkörös jelölő </string>
   <string name="button10">Csúszó törlés</string>
   <string name="button11">Zzzzz</string>
   <string name="button12">Csukott szem</string>
   <string name="button13">Like gomb</string>
   <string name="button14">Csúszó kocka</string>
-  <string name="button15">Csengő</string>
-  <string name="button16">Nyíl vonalak balra</string>
-  <string name="button17">Rétegek ki</string>
+  <string name="button15">Csengő </string>
+  <string name="button16">Nyíl vonalak balra </string>
+  <string name="button17">Rétegek ki </string>
   <string name="button18">Nyíl vonalak vissza</string>
   <string name="button19">Rétegek</string>
-  <string name="button20">Archív</string>
+  <string name="button20">Archív </string>
   <string name="button21">Adatbázis plusz</string>
   <string name="button22">Szerződő nyilak</string>
   <string name="button23">Google</string>
-  <string name="button24"> Adatbázis mínusz</string>
+  <string name="button24"> Adatbázis mínusz </string>
   <string name="button25">Szekvenciális kocka</string>
   <string name="button26">Időzítő</string>
   <string name="button27">Resurrection</string>
   <string name="button28">Gyári android</string>
   <string name="button29">Resurrection Lollipop</string>
+  <string name="button30">Android N</string>
   <string name="animation0">Képernyő elforgatás </string>
   <string name="animation1">Előzmények kilépés</string>
-  <string name="animation2">Átlátszó kilépés</string>
+  <string name="animation2">Átlátszó kilépés </string>
   <string name="animation3">Átlátszó kilépési szalag</string>
   <string name="animation4">Buborékszöveg kilépés</string>
-  <string name="animation5">Kiúsztatás lefelé</string>
-  <string name="animation6">Xylon kilépés</string>
+  <string name="animation5">Kiúsztatás lefelé </string>
+  <string name="animation6">Xylon kilépés </string>
   <string name="animation7">Honami buborékszöveg kilépés</string>
-  <string name="animation8">Kiúsztatás jobbra</string>
+  <string name="animation8">Kiúsztatás jobbra </string>
   <string name="animation9">Buborékszöveg kilépés</string>
-  <string name="animation10">Lassú kiúsztatás</string>
+  <string name="animation10">Lassú kiúsztatás </string>
   <string name="animation11">Kiúsztatás balra</string>
   <string name="animation12">Kiúsztatás</string>
-  <string name="animation13">Gyors kiúsztatás</string>
-  <string name="animation14">Kiúsztatás felfelé</string>
+  <string name="animation13">Gyors kiúsztatás </string>
+  <string name="animation14">Kiúsztatás felfelé </string>
   <string name="animation15">Gyors forgatás</string>
   <!-- Recents Fullscreen -->
   <string name="recents_show_fullscreen">Teljes képernyős előzmények</string>
@@ -284,7 +320,7 @@
   <string name="rr_qs_cat">Gyors beállítások legördülő</string>
   <string name="rr_qs">Gyors beállítások</string>
   <string name="rr_brightness_cat">Fényerő csúszka</string>
-  <string name="rr_qs_title">Gyorsbeállítások panel </string>
+  <string name="rr_qs_title">Gyorsbeállítások panel</string>
   <!-- Quick settings quick pull down -->
   <string name="status_bar_quick_qs_pulldown_title">Gyors legördülő</string>
   <string name="status_bar_quick_qs_pulldown_summary">Gyors beállítások megjelenítése az értesítési sáv jobb oldalán történő legörgetéskor</string>
@@ -325,6 +361,7 @@
   <!-- Status bar - Clock -->
   <string name="clock_color_switch">Egyéni óra szín engedélyezése/tiltása</string>
   <string name="clock_color_title">Színek</string>
+  <string name="clock_color_switch_title">Szín váltása</string>
   <string name="status_bar_clock_style_reset">Szín visszaállítása</string>
   <string name="status_bar_clock_style_reset_message">Visszaállítja az óra színét?</string>
   <string name="clock_font_style_title">Betűtípus</string>
@@ -481,6 +518,19 @@
   <string name="listview_overshoot_interpolator">Túlzó</string>
   <string name="listview_anticipate_overshoot_interpolator">Sejtető és túlzó</string>
   <string name="listview_bounce_interpolator">Ugráló</string>
+  <!-- Scrolling Animation Controls -->
+  <string name="scrolling_title">Görgetés módosítások</string>
+  <string name="scrolling_summary">View or change scrolling animations</string>
+  <string name="animation_fling_velocity_title">Fling velocity</string>
+  <string name="animation_scroll_friction_title">Scroll friction</string>
+  <string name="animation_overscroll_distance_title">Overscroll distance</string>
+  <string name="animation_overfling_distance_title">Overfling distance</string>
+  <string name="animation_duration_summary">Időtartam beállítása</string>
+  <string name="animation_no_scroll_title">Customized scrolling modifiers</string>
+  <string name="animation_no_scroll_summary_on">Enabled</string>
+  <string name="animation_no_scroll_summary_off">Disabled</string>
+  <string name="scroll_disclaimer_summary">Note: Most apps need to be restarted for custom values to take effect</string>
+  <string name="animation_settings_reset_message">Reset all animation settings to default?</string>
   <!-- Toast Icons -->
   <string name="toast_icon_title">Buborékszöveg ikon</string>
   <string name="toast_icon_summary">A buborékszöveghez tartozó alkalmazás ikonjának megjelenítése</string>
@@ -1219,13 +1269,13 @@
   <string name="lockscreen_colors_title">Zárképernyő színek</string>
   <string name="lockscreen_owner_info_color">Tulajdonos adatok</string>
   <string name="lockscreen_alarm_color">Ébresztő</string>
-  <string name="icons_title">Ikonok</string>
+  <string name="icons_title">Időjárás ikonok</string>
   <string name="text_title">Időjárás szöveg</string>
   <string name="lock_screen_weather_temp_color">Hőmérséklet</string>
   <string name="lock_screen_weather_con_color">Időjárás állapota</string>
   <string name="lock_screen_weather_stamp_color">Hely időbélyeg </string>
   <string name="lock_screen_weather_hum_color">Páratartalom</string>
-  <string name="lock_screen_weather_city_color">Város </string>
+  <string name="lock_screen_weather_city_color">Város</string>
   <string name="lock_screen_weather_wind_color">Szél</string>
   <string name="yes">IGEN</string>
   <!-- On-The-Go -->
@@ -1257,12 +1307,15 @@
   <string name="recent_panel_category">Slim előzmények</string>
   <string name="recent_app_sidebar_title">Alkalmazás oldalsáv</string>
   <string name="recent_app_sidebar_summary">Alkalmazás parancsikonok megjelenítése a másik oldalon</string>
+  <string name="use_recent_app_sidebar">Enable recent app sidebar</string>
   <string name="recent_app_sidebar_style_title">Oldalsáv stílusa</string>
   <string name="recent_app_sidebar_style_summary">Előzmények alkalmazás oldalsáv stílusának változtatása</string>
   <string name="recent_app_sidebar_hide_labels_title">Ikon feliratok elrejtése</string>
   <string name="recent_app_sidebar_label_color_title">Címke színe</string>
   <string name="recent_app_sidebar_bg_color_title">Háttérszín</string>
   <string name="recent_app_sidebar_scale_title">Méret</string>
+  <string name="recent_app_sidebar_open_simultaneously_title">Open simultaneously with recents</string>
+  <string name="recent_app_sidebar_open_simultaneously_summary">Reduce recents opening lag by disabling this</string>
   <!-- Doze options -->
   <string name="display_category_doze_options_title">Környezeti kijelző</string>
   <string name="doze_settings_title">Környezeti kijelző haladó beállítások</string>
@@ -1395,7 +1448,7 @@
   <!-- Battery stats reset -->
   <string name="battery_stats_reset">Statisztika törlése</string>
   <string name="battery_stats_message">Akkumulátor használati statisztika törlésre kerül</string>
-  <string name="ok_string">Oké</string>
+  <string name="ok_string">Ok</string>
   <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
   <string name="show_cpu_info">CPU info mutatása</string>
   <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
@@ -1424,6 +1477,8 @@
   <string name="quick_settings_sp_vibrate_summary">Csempék egyszerű érintésre rezegnek</string>
   <!-- QS shade transparency -->
   <string name="qs_transparent_shade">Gyors beállítások panel átlátszóság</string>
+  <!-- Notifications transparency -->
+  <string name="notifications_transparency">Notifications transparency</string>
   <!-- Safe headset volume restore checkbox -->
   <string name="safe_headset_volume_title">Biztonsági fejhallgató hangerő</string>
   <string name="safe_headset_volume_summary">Megakadályozza a túl magas hangerőt fejhallgató csatlakoztatásakor</string>
@@ -1434,7 +1489,7 @@
   <string name="dlg_reset_rr">RR</string>
   <string name="dlg_reset_values_message">Alapértelmezett értékek visszaállítása?</string>
   <string name="dlg_reset_android">Ok</string>
-  <string name="cat_colors_title">Testreszabás</string>
+  <string name="cat_colors_title">Panelek</string>
   <string name="background_title">Értesítés háttere</string>
   <string name="icon_title">Ikon</string>
   <string name="colors_title">Színek</string>
@@ -1531,7 +1586,7 @@
   <string name="notifications_fonts">Betűtípusok</string>
   <string name="notifications_header">Fejléc hangolások</string>
   <string name="notifications_items">Értesítési fejléc elemek</string>
-  <string name="hide_panel_items_title">Értesítési panel ikonok </string>
+  <string name="hide_panel_items_title">Értesítési panel ikonok</string>
   <string name="hide_panel_clock_title">Óra megjelenítése</string>
   <string name="hide_panel_date_title">Dátum megjelenítése</string>
   <string name="hide_panel_clockvalue">Óra részletek megjelenítése</string>
@@ -1554,6 +1609,11 @@
   <string name="panel_settings_sum">Beállítások ikon megjelenítése/elrejtése a fejlécen</string>
   <string name="hide_panel_alarm_sum">Következő ébresztés megjelenítése/elrejtése a fejlécen</string>
   <string name="notifications_misc">Egyéb</string>
+  <!-- Header text shadow and color -->
+  <string name="status_bar_custom_header_text_shadow_title">Fejléc szöveg árnyék</string>
+  <string name="status_bar_custom_header_text_shadow_summary">A jobb láthatóság érdekében témázott fejléceknél</string>
+  <string name="status_bar_custom_header_text_shadow_color_title">Fejléc szöveg árnyék színe</string>
+  <string name="unit_percent">\u0025</string>
   <!--Summary on/off-->
   <string name="hide_clock_summary_on">Óra látható</string>
   <string name="hide_clock_summary_off">Óra rejtve</string>
@@ -1652,7 +1712,7 @@
   <string name="logo13">Mancs</string>
   <string name="logo14">Bagoly</string>
   <string name="logo15">Időjárás ki</string>
-  <string name="logo16">Blender </string>
+  <string name="logo16">Blender</string>
   <string name="logo17">Sütemény</string>
   <string name="logo18">Elektromos gitár</string>
   <string name="logo19">Smiley Tag</string>
@@ -1766,35 +1826,20 @@
   <string name="fling_longpress_summary">Növelheti vagy csökkentheti a hosszan nyomás művelet idejét</string>
   <!-- Pulse navigation bar music visualizer -->
   <string name="pulse_help_policy_notice_title">Pulse információk</string>
-  <string name="pulse_help_policy_notice_summary">Pulse egy hangerősáv stílusú audiovizualizáció a navigációs sávon, ha megy a zene. Pulse néhány audió forrással nem működik, miközben az eszköz hangszóróján hallgatod azt. A Pulse méretek alaphelyzetbe állítása után a számot állítsd meg és indítsd el.</string>
+  <string name="pulse_help_policy_notice_summary">Pulse egy hangerősáv stílusú audiovizualizáció a navigációs sávon, ha megy a zene. Pulse néhány audió forrással nem működik, miközben az eszköz hangszóróján hallgatod azt</string>
   <string name="pulse_settings">Pulse</string>
-  <string name="pulse_settings_summary">Navigációs sáv audiovizualizáció</string>
+  <string name="pulse_settings_summary">Navigációs sáv audió grafikus hangszínszabályzó</string>
   <string name="fling_show_pulse_title">Pulse megjelenítése</string>
-  <string name="fling_show_pulse_summary">Audiovizualizáció a navigációs sávon</string>
+  <string name="fling_show_pulse_summary">Audió grafikus hangszínszabályzó a navigációs sávon</string>
+  <string name="pulse_render_mode_title">Render mód</string>
+  <string name="pulse_render_mode_fading_bars">Halványuló blokkok</string>
+  <string name="pulse_render_mode_solid_lines">Folytonos vonalak</string>
   <string name="fling_pulse_color">Pulse színe</string>
   <string name="eos_fling_lavalamp_title">Lávalámpa bekapcsolása</string>
   <string name="eos_fling_lavalamp_summary">Pulse lávalámpa stílust animál a színkeverésnél</string>
+  <string name="pulse_advanced_category">Haladó</string>
+  <string name="pulse_legacy_mode_advanced_category">Halványuló blokkok üzemmód beállításai</string>
   <string name="pulse_custom_dimen">Pulse sáv szélessége</string>
-  <string name="pulse_dimen0">Alapértelmezett</string>
-  <string name="pulse_dimen1">7dp</string>
-  <string name="pulse_dimen2">8dp</string>
-  <string name="pulse_dimen3">9dp</string>
-  <string name="pulse_dimen4">10dp</string>
-  <string name="pulse_dimen5">11dp</string>
-  <string name="pulse_dimen6">12dp</string>
-  <string name="pulse_dimen7">13dp</string>
-  <string name="pulse_dimen8">15dp</string>
-  <string name="pulse_dimen9">16dp</string>
-  <string name="pulse_dimen10">17dp</string>
-  <string name="pulse_dimen11">18dp</string>
-  <string name="pulse_dimen12">19dp</string>
-  <string name="pulse_dimen13">20dp</string>
-  <string name="pulse_dimen14">21dp</string>
-  <string name="pulse_dimen15">22dp</string>
-  <string name="pulse_dimen16">23dp</string>
-  <string name="pulse_dimen17">24dp</string>
-  <string name="pulse_dimen18">25dp</string>
-  <string name="pulse_dimen19">26dp</string>
   <string name="pulse_custom_div">Pulse sáv térköz</string>
   <string name="default_div">Alapértelmezett</string>
   <string name="pulse_custom_dimen_cat">A Pulse sávok méreteit a vizualizálóban az egyéni méretváltóval állíthatod be. Az egymás közötti térköz is állítható</string>
@@ -1804,33 +1849,12 @@
   <string name="pulse_block_category_summary">A Pulse vizualizáló blokkok méreteinek és az egymás közötti térköz beállítása</string>
   <string name="pulse_aggression">Intenzitás</string>
   <string name="pulse_aggression_category">Állítsd be az Pulse vizualizáló agresszivitását. Laza a legkisebb és az őrült a leginkább agresszív</string>
-  <string name="div1">18</string>
-  <string name="div2">20</string>
-  <string name="div3">22</string>
-  <string name="div4">24</string>
-  <string name="div5">26</string>
-  <string name="div6">28</string>
-  <string name="div7">30</string>
-  <string name="div8">32</string>
-  <string name="default_fill">4dp (alapértelmezett)</string>
-  <string name="pulse_bar_style">Pulse sáv stílusa</string>
-  <string name="default_pulse_empty">1dp (alapértelmezett)</string>
   <string name="pulse_filled_block_size">Blokk mérete</string>
   <string name="pulse_empty_block_size">Blokk térköz</string>
-  <string name="pulse_fill1">5dp</string>
-  <string name="pulse_fill2">6dp</string>
-  <string name="pulse_fill3">7dp</string>
-  <string name="pulse_fill4">8dp</string>
-  <string name="pulse_empty1">2dp</string>
-  <string name="pulse_empty2">3dp</string>
-  <string name="pulse_empty3">4dp</string>
-  <string name="pulse_empty4">0 (nincs térköz)</string>
-  <string name="factor0">Normál</string>
-  <string name="factor1">Laza</string>
-  <string name="factor2">Lassú</string>
-  <string name="factor3">Hyper</string>
-  <string name="factor4">Őrült</string>
   <string name="pulse_custom_fudge_factor">Vizualizáló érzékenységi szint</string>
+  <string name="pulse_solid_fudge_factor">Józan ész szint</string>
+  <string name="lavamp_solid_speed_title">Lávalámpa animáció sebessége</string>
+  <string name="pulse_solid_dimen_category">Folytonos vonalak beállításai</string>
   <!-- Navbar height -->
   <string name="navigation_bar_size_title">Sáv mérete</string>
   <string name="portrait_title">Álló magasság</string>
@@ -1851,13 +1875,23 @@
   <string name="smartbar_button_animation_ripple">Hullámosság</string>
   <string name="smartbar_button_animation_spring">Rugózás</string>
   <string name="smartbar_factory_reset_title">Gyári beállítások visszaállítása</string>
-  <string name="smartbar_factory_reset_summary">Smartbar visszaállítása a gyári konfigurációra</string>
   <string name="smartbar_factory_reset_confirm">Biztos, hogy visszaállítod a Smartbar-t gyári állapotra?</string>
   <string name="smartbar_ime_action_title">Beviteli mód műveletek</string>
   <string name="smartbar_ime_action_summary">Állítsa be, milyen gombok jelenjenek meg, ha a képernyő-billentyűzet megjelenik</string>
   <string name="smartbar_ime_action_none">Semmi</string>
   <string name="smartbar_ime_action_arrows">Beviteli nyilak</string>
   <string name="smartbar_ime_action_switcher">Billentyűzet váltó</string>
+  <string name="smartbar_backup_current_config_title">Profil mentése</string>
+  <string name="smartbar_restore_config_title">Profil visszaállítása</string>
+  <string name="smartbar_config_name_edit_dialog_title">Smartbar profilnév</string>
+  <string name="smartbar_config_name_edit_dialog_message">Adjon meg nevet, vagy hagyja üresen</string>
+  <string name="smartbar_config_dialog_title">Smartbar profilok</string>
+  <string name="smartbar_config_backup_success_toast">Smartbar profil mentése sikeres</string>
+  <string name="smartbar_config_restore_success_toast">Smartbar profil sikeresen visszaállítva</string>
+  <string name="smartbar_config_backup_error_toast">Hiba a Smartbar profil mentésekor</string>
+  <string name="smartbar_config_restore_error_toast">Hiba a Smartbar profil visszaállításakor</string>
+  <!-- Navbar buttons transparency -->
+  <string name="navbar_buttons_alpha_title">Buttons transparency</string>
   <!-- QS Tiles Columns -->
   <string name="qs_num_columns_title">Soronkénti csempék száma</string>
   <string name="qs_num_columns_showing">%1$s csempe soronként</string>
@@ -1918,7 +1952,7 @@
   <string name="dash_title_text_size">Címszöveg mérete</string>
   <string name="dash_category_text_size">Kategória szöveg mérete</string>
   <!-- Carrier Label - Hide based on notifications -->
-  <string name="text_title">Időjárás szöveg</string>
+  <string name="text_title">Szöveg</string>
   <string name="number_of_notifications_title">Értesítések száma</string>
   <string name="number_of_notifications_one_title">1</string>
   <string name="number_of_notifications_two_title">2</string>
@@ -1955,4 +1989,64 @@
   <!-- Battery fully charged notification -->
   <string name="battery_fully_charged_notif_title">Akkumulátor teli értesítés</string>
   <string name="battery_fully_charged_notif_summary">Értesítés megjelenítése, ha az akkumulátor teljesen fel van töltve</string>
+  <string name="show_dark_icons_title">Állapotsáv színátmenetének letiltása</string>
+  <string name="show_dark_icons_summary">Sötét ikonok megjelenítése az állapotsávon világos hátterekkel. Ez eltávolítja a színátmenetes nézetet róla, de előidézhet más hibákat, mint például az óra színe. Használja saját kockázatára</string>
+  <!-- Volume dialog stroke settings -->
+  <string name="volume_dialog_stroke_title">Hangerő-párbeszéd vonala</string>
+  <string name="volume_dialog_stroke_disabled">Kikapcsolva</string>
+  <string name="volume_dialog_stroke_accent">Másodlagos szín</string>
+  <string name="volume_dialog_stroke_custom">Egyéni szín</string>
+  <string name="volume_dialog_stroke_color_title">Hangerő-párbeszéd vonalának színe</string>
+  <string name="volume_dialog_stroke_thickness_title">Hangerő-párbeszéd vonalának vastagsága</string>
+  <string name="volume_dialog_corner_radius_title">Hangerő-párbeszéd sarkának sugara</string>
+  <string name="volume_dialog_dash_width_title">Hangerő párbeszédpanel körvonal szélessége</string>
+  <string name="volume_dialog_dash_gap_title">Hangerő párbeszédpanel körvonal térköz</string>
+  <!-- Volume dialog timeout -->
+  <string name="volume_dialog_timeout_title">Hangerő párbeszéd időkorlát</string>
+  <!-- QS stroke settings -->
+  <string name="qs_stroke_title">QS-árnyék vonala</string>
+  <string name="qs_stroke_disabled">Kikapcsolva</string>
+  <string name="qs_stroke_accent">Másodlagos szín</string>
+  <string name="qs_stroke_custom">Egyéni szín</string>
+  <string name="qs_stroke_color_title">QS-árnyék vonalának színe</string>
+  <string name="qs_stroke_thickness_title">QS-árnyék vonalának vastagsága</string>
+  <string name="qs_corner_radius_title">QS-sarokárnyék sugara</string>
+  <string name="qs_trans_title">Értesítési panel</string>
+  <string name="notification_cat_volume">Hangerő párbeszédpanel</string>
+  <string name="qs_dash_width_title">QS körvonal szélessége</string>
+  <string name="qs_dash_gap_title">QS körvonal térköz</string>
+  <string name="qs_panel_logo_category">QS panel logó</string>
+  <string name="qs_panel_logo_title">QS panel RR logó</string>
+  <string name="qs_panel_logo_disabled">Kikapcsolva</string>
+  <string name="qs_panel_logo_accent">Másodlagos szín</string>
+  <string name="qs_panel_logo_custom">Egyéni szín</string>
+  <string name="qs_panel_logo_color_title">QS-panel logó színe</string>
+  <string name="qs_panel_logo_alpha_title">QS-panel logó átláthatósága</string>
+  <string name="notification_cat_power">Kikapcsoló menü</string>
+  <string name="expansion_view_animation_title">Feladatkezelő animáció</string>
+  <string name="expansion_view_animation_summary">A panel változás be- és kilépési animációjának módosítása</string>
+  <string name="expansion_view_animation_dialog_title">Animáció kiválasztása</string>
+  <string name="expansion_view_animation_down">Le (alapértelmezett)</string>
+  <string name="expansion_view_animation_enter">Belépés</string>
+  <string name="expansion_view_animation_left">Bal</string>
+  <string name="expansion_view_animation_right">Jobb</string>
+  <string name="expansion_view_animation_rotate">Forgatás</string>
+  <string name="expansion_view_animation_turn">Fordulás</string>
+  <string name="expansion_view_animation_up">Fel</string>
+  <string name="expansion_view_recents_enter">Recents Enter</string>
+  <string name="expansion_view_fade">Fade</string>
+  <string name="expansion_view_slide_out">Slide</string>
+  <string name="expansion_view_last_app">Last App</string>
+  <string name="expansion_view_rotate">Reverse Rotate</string>
+  <string name="expansion_view_task_open">Task Open</string>
+  <string name="expansion_view_xylon_toast">Toast</string>
+  <string name="expansion_view_search_bar">SearchBar Animation</string>
+  <string name="expansion_view_toko_toast">Toko Toast</string>
+  <!-- Development Settings -->
+  <!-- ADB always notify -->
+  <string name="adb_always_notify">Debugging always notify</string>
+  <string name="adb_always_notify_summary">Always display a notification when debugging is enabled, even if not connected</string>
+  <!-- Instant reboot -->
+  <string name="advanced_reboot_oneclick">One click reboot</string>
+  <string name="advanced_reboot_oneclick_summary">Instantly trigger reboot action</string>
 </resources>

@@ -2,7 +2,7 @@
 
 <PreferenceScreen
 	xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/about_rr_settings_title"
+    android:title="@string/about_rr_settings"
 	xmlns:resurrection="http://schemas.android.com/apk/res/com.android.settings">
                 
  	<PreferenceCategory
@@ -114,7 +114,7 @@
             android:title="akhilnarang"
             resurrection:nameDev="Akhil Narang"
             resurrection:gplusHandle="AkhilNarang"
-            resurrection:donateLink="@string/github_akhilnaranag"
+            resurrection:donateLink="@string/github_akhilnarang"
             resurrection:emailDev="akhilnarang.1999@gmail.com"/>
 
 </PreferenceCategory> 

@@ -92,6 +92,7 @@ import com.android.settings.util.Helpers;
 
 import dalvik.system.VMRuntime;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -118,6 +119,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
 
     private static final String ENABLE_ADB = "enable_adb";
     private static final String ADB_NOTIFY = "adb_notify";
+    private static final String ADB_ALWAYS_NOTIFY = "adb_always_notify";
     private static final String ADB_TCPIP = "adb_over_network";
     private static final String CLEAR_ADB_KEYS = "clear_adb_keys";
     private static final String ENABLE_TERMINAL = "enable_terminal";
@@ -217,6 +219,9 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
 
     private static final int[] MOCK_LOCATION_APP_OPS = new int[] {AppOpsManager.OP_MOCK_LOCATION};
 
+
+    private static final String SUPERUSER_BINARY_PATH = "/system/xbin/su";
+
     private IWindowManager mWindowManager;
     private IBackupManager mBackupManager;
     private DevicePolicyManager mDpm;
@@ -230,6 +235,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
 
     private SwitchPreference mEnableAdb;
     private SwitchPreference mAdbNotify;
+    private SwitchPreference mAdbAlwaysNotify;
     private SwitchPreference mAdbOverNetwork;
     private Preference mClearAdbKeys;
     private SwitchPreference mEnableTerminal;
@@ -362,6 +368,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
 
         mAdbNotify = (SwitchPreference) findPreference(ADB_NOTIFY);
         mAllPrefs.add(mAdbNotify);
+        mAdbAlwaysNotify = findAndInitSwitchPref(ADB_ALWAYS_NOTIFY);
         mAdbOverNetwork = findAndInitSwitchPref(ADB_TCPIP);
 
         mClearAdbKeys = findPreference(CLEAR_ADB_KEYS);
@@ -481,6 +488,13 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         mRootAccess = (ListPreference) findPreference(ROOT_ACCESS_KEY);
         mRootAccess.setOnPreferenceChangeListener(this);
         if (!removeRootOptionsIfRequired()) {
+            if (isRootForAppsAvailable()) {
+                mRootAccess.setEntries(R.array.root_access_entries);
+                mRootAccess.setEntryValues(R.array.root_access_values);
+            } else {
+                mRootAccess.setEntries(R.array.root_access_entries_adb);
+                mRootAccess.setEntryValues(R.array.root_access_values_adb);
+            }
             mAllPrefs.add(mRootAccess);
         }
 
@@ -692,6 +706,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
 
         mAdbNotify.setChecked(CMSettings.Secure.getInt(cr,
                 CMSettings.Secure.ADB_NOTIFY, 1) != 0);
+        updateSwitchPreference(mAdbAlwaysNotify, Settings.Global.getInt(cr,
+                Settings.Global.ADB_ALWAYS_NOTIFY, 0) != 0);
         updateAdbOverNetwork();
 
         if (mEnableTerminal != null) {
@@ -833,6 +849,17 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         mRootAccess.setValue(value);
         mRootAccess.setSummary(getResources()
                 .getStringArray(R.array.root_access_entries)[Integer.valueOf(value)]);
+    }
+
+    private boolean isRootForAppsAvailable() {
+        boolean exists = false;
+        try {
+            File f = new File(SUPERUSER_BINARY_PATH);
+            exists = f.exists();
+        } catch (SecurityException e) {
+            // Ignore
+        }
+        return exists;
     }
 
     public static boolean isRootForAppsEnabled() {
@@ -1919,6 +1946,10 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
             CMSettings.Secure.putInt(getActivity().getContentResolver(),
                     CMSettings.Secure.ADB_NOTIFY,
                     mAdbNotify.isChecked() ? 1 : 0);
+        } else if (preference == mAdbAlwaysNotify) {
+            Settings.Global.putInt(getActivity().getContentResolver(),
+                    Settings.Global.ADB_ALWAYS_NOTIFY,
+                    mAdbAlwaysNotify.isChecked() ? 1 : 0);
         } else if (preference == mAdbOverNetwork) {
             if (mAdbOverNetwork.isChecked()) {
                 if (mAdbTcpDialog != null) {

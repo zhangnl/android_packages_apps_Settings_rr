@@ -546,7 +546,6 @@
   <string name="volume_adjust_sounds_title">വോളിയം ക്രമീകരണ ശബ്ദങ്ങൾ</string>
   <!-- Hardware tunables - Vibrator intensity -->
   <string name="vibrator_intensity_title">വൈബ്രേറ്റർ തീവ്രത</string>
-  <string name="vibrator_warning">%1$d ല്‍ കൂടുതൽ ഉള്ള മൂല്യങ്ങൾക്ക് ശുപാർശ ചെയ്യപ്പെടുന്നില്ല</string>
   <!-- Hardware tunables - Color calibration -->
   <string name="color_calibration_title">നിറം കാലിബ്രേഷൻ</string>
   <string name="color_calibration_summary">ഓൺ-സ്ക്രീൻ നിറങ്ങൾ കാലിബ്രേറ്റ് ചെയ്യുക</string>
@@ -1007,6 +1006,8 @@
   <string name="weather_settings_general_settings_title">പൊതുവായത്</string>
   <!-- Label for settings shortcut: carrier selection -->
   <!-- title for lock screen blur preference -->
+  <!-- title for lock screen weather preference -->
+  <string name="lockscreen_weather_enabled_title">കാലാവസ്ഥ ദൃശ്യമാക്കുക</string>
   <!-- Per app controls for LP keyguard notifications -->
   <string name="app_notification_show_on_keyguard_title">ലോക്ക് സ്ക്രീനിൽ ദൃശ്യമാക്കുക</string>
   <string name="app_notification_show_on_keyguard_summary">ലോക്ക് സ്ക്രീനിൽ ഈ ആപ്ലിക്കേഷനിൽ നിന്ന് അറിയിപ്പുകൾ ദൃശ്യമാക്കുക</string>
@@ -1014,4 +1015,8 @@
   <string name="app_notification_no_ongoing_on_keyguard_summary">ലോക്ക് സ്ക്രീനിൽ ഈ ആപ്ലിക്കേഷനിൽ നിന്ന് തുടരെയുള്ള അറിയിപ്പുകള്‍ ദൃശ്യമാക്കരുത്</string>
   <!-- CmRadioInfo -->
   <!-- Radio Control (IMS/MBN etc.) -->
+  <!-- Lock screen wallpaper -->
+  <!-- Format string for fingerprint location message -->
+  <!-- Fingerprint sensor locations -->
+  <!-- SIM status format string -->
 </resources>

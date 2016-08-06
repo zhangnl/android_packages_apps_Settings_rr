@@ -28,6 +28,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Resources;
 import android.graphics.drawable.BitmapDrawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -511,11 +512,12 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
             // Disable manual provisioning option to user when
             // device is in Airplane mode. Hide it if the extphone framework
             // is not present, as the operation relies on said framework.
-            if (mExtTelephony == null) {
+            if (mExtTelephony == null ||
+                   !mContext.getResources().getBoolean(R.bool.config_enableManualSubProvisioning)) {
                 mSwitch.setVisibility(View.GONE);
             } else {
                 mSwitch.setVisibility(View.VISIBLE);
-                mSwitch.setEnabled(!isAirplaneModeOn());
+                mSwitch.setEnabled(!isAirplaneModeOn() && isCurrentSubValid());
             }
         }
 
@@ -689,26 +691,44 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
             if (!mSwitch.isEnabled()) {
                 return;
             }
-            int result = -1;
-            int newProvisionedState = NOT_PROVISIONED;
-            mCmdInProgress = true;
+            new SimEnablerDisabler().execute();
+        }
 
-            showProgressDialog();
-            setEnabled(false);
-            try {
-                if (mIsChecked) {
-                    result = mExtTelephony.activateUiccCard(mSir.getSimSlotIndex());
-                    newProvisionedState = PROVISIONED;
-                } else {
-                    result = mExtTelephony.deactivateUiccCard(mSir.getSimSlotIndex());
-                }
-            } catch (RemoteException ex) {
-                loge("Activate  sub failed " + result + " phoneId " + mSir.getSimSlotIndex());
-            } catch (NullPointerException ex) {
-                loge("Failed to activate sub Exception: " + ex);
+        private class SimEnablerDisabler extends AsyncTask<Void, Void, Integer> {
+
+            int newProvisionedState = NOT_PROVISIONED;
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                mCmdInProgress = true;
+                showProgressDialog();
+                setEnabled(false);
             }
 
-            processSetUiccDone(result, newProvisionedState);
+            @Override
+            protected Integer doInBackground(Void... params) {
+                int result = -1;
+                newProvisionedState = NOT_PROVISIONED;
+                try {
+                    if (mIsChecked) {
+                        result = mExtTelephony.activateUiccCard(mSir.getSimSlotIndex());
+                        newProvisionedState = PROVISIONED;
+                    } else {
+                        result = mExtTelephony.deactivateUiccCard(mSir.getSimSlotIndex());
+                    }
+                } catch (RemoteException ex) {
+                    loge("Activate  sub failed " + result + " phoneId " + mSir.getSimSlotIndex());
+                } catch (NullPointerException ex) {
+                    loge("Failed to activate sub Exception: " + ex);
+                }
+                return result;
+            }
+
+            @Override
+            protected void onPostExecute(Integer result) {
+                processSetUiccDone(result.intValue(), newProvisionedState);
+            }
         }
 
         private void processSetUiccDone(int result, int newProvisionedState) {
@@ -724,7 +744,6 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
             dismissDialog(sAlertDialog);
             dismissDialog(sProgressDialog);
             AlertDialog.Builder builder = new AlertDialog.Builder(mContext)
-                    .setIcon(android.R.drawable.ic_dialog_alert)
                     .setTitle(title);
 
             switch(dialogId) {
@@ -819,6 +838,7 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
                 .OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         if (which == DialogInterface.BUTTON_POSITIVE) {
+                            dismissDialog(sAlertDialog);
                             sendUiccProvisioningRequest();
                         } else if (which == DialogInterface.BUTTON_NEGATIVE) {
                             update();

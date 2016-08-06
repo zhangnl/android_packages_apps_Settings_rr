@@ -483,7 +483,6 @@
   <string name="volume_adjust_sounds_title">تن تنظیم بلندی صدا</string>
   <!-- Hardware tunables - Vibrator intensity -->
   <string name="vibrator_intensity_title">شدت لرزش</string>
-  <string name="vibrator_warning">مقادیر بالاتر از %1$d توصیه نمی‌شود</string>
   <!-- Hardware tunables - Color calibration -->
   <string name="color_calibration_title">تنظیم رنگ</string>
   <string name="color_calibration_summary">تنظیم رنگ‌های خروجی صفحه</string>
@@ -895,6 +894,8 @@
   <string name="weather_settings_general_settings_title">عمومي</string>
   <!-- Label for settings shortcut: carrier selection -->
   <!-- title for lock screen blur preference -->
+  <!-- title for lock screen weather preference -->
+  <string name="lockscreen_weather_enabled_title">نمایش آب و هوا</string>
   <!-- Per app controls for LP keyguard notifications -->
   <string name="app_notification_show_on_keyguard_title">نمایش در قفل صفحه</string>
   <string name="app_notification_show_on_keyguard_summary">نمایش اعلان‌های این برنامه در قفل صفحه</string>
@@ -902,4 +903,8 @@
   <string name="app_notification_no_ongoing_on_keyguard_summary">اعلان‌های پایدار این برنامه هرگز در قفل صفحه نشان داده نشود</string>
   <!-- CmRadioInfo -->
   <!-- Radio Control (IMS/MBN etc.) -->
+  <!-- Lock screen wallpaper -->
+  <!-- Format string for fingerprint location message -->
+  <!-- Fingerprint sensor locations -->
+  <!-- SIM status format string -->
 </resources>
