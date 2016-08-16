@@ -29,6 +29,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -77,23 +78,28 @@ public class NotificationColorSettings extends SettingsPreferenceFragment implem
     private static final String PREF_VOLUME_DIALOG_STROKE_COLOR = "volume_dialog_stroke_color";
     private static final String PREF_VOLUME_DIALOG_STROKE_THICKNESS = "volume_dialog_stroke_thickness";
     private static final String PREF_VOLUME_DIALOG_CORNER_RADIUS = "volume_dialog_corner_radius";
-    private static final String PREF_QS_STROKE = "qs_stroke";
-    private static final String PREF_QS_STROKE_COLOR = "qs_stroke_color";
-    private static final String PREF_QS_STROKE_THICKNESS = "qs_stroke_thickness";
-    private static final String PREF_QS_CORNER_RADIUS = "qs_corner_radius";
+
     private static final String PREF_VOLUME_DIALOG_STROKE_DASH_WIDTH = "volume_dialog_dash_width";
     private static final String PREF_VOLUME_DIALOG_STROKE_DASH_GAP = "volume_dialog_dash_gap";
-    private static final String PREF_QS_STROKE_DASH_WIDTH = "qs_dash_width";
-    private static final String PREF_QS_STROKE_DASH_GAP = "qs_dash_gap";
     private static final String PREF_QS_PANEL_LOGO = "qs_panel_logo";
     private static final String PREF_QS_PANEL_LOGO_COLOR = "qs_panel_logo_color";
     private static final String PREF_QS_PANEL_LOGO_ALPHA = "qs_panel_logo_alpha";
     private static final String PREF_NOTIFICATION_ALPHA = "notification_alpha";
-    private ListPreference mQSPanelLogo;
-    private ColorPickerPreference mQSPanelLogoColor;
-    private SeekBarPreferenceCham mQSPanelLogoAlpha;
+
+    private static final String PREF_GRADIENT_ORIENTATION = "volume_dialog_background_gradient_orientation";
+    private static final String PREF_USE_CENTER_COLOR = "volume_dialog_background_gradient_use_center_color";
+    private static final String PREF_START_COLOR = "volume_dialog_background_color_start";
+    private static final String PREF_CENTER_COLOR = "volume_dialog_background_color_center";
+    private static final String PREF_END_COLOR = "volume_dialog_background_color_end";
+    private static final String BG_COLORS = "volume_bg_colors";
+
+    private static final String VOLUME_DIALOG_SLIDER_COLOR = "volume_dialog_slider_color";
+    private static final String VOLUME_DIALOG_SLIDER_INACTIVE_COLOR = "volume_dialog_slider_inactive_color";
+    private static final String VOLUME_DIALOG_SLIDER_ICON_COLOR = "volume_dialog_slider_icon_color";
+    private static final String VOLUME_DIALOG_EXPAND_BUTTON_COLOR = "volume_dialog_expand_button_color";
 
     static final int DEFAULT_QS_PANEL_LOGO_COLOR = 0xFF80CBC4;
+    private static final int BACKGROUND_ORIENTATION_T_B = 270;
 
     private static final int RR_BLUE_GREY = 0xff1b1f23;
     private static final int SYSTEMUI_SECONDARY = 0xff384248;
@@ -102,12 +108,17 @@ public class NotificationColorSettings extends SettingsPreferenceFragment implem
     private static final int HOLO_BLUE_LIGHT = 0xff33b5e5;
     private static final int TRANSLUCENT_HOLO_BLUE_LIGHT = 0x4d33b5e5;
     private static final int TRANSLUCENT_WHITE = 0x4dffffff;
+    private static final int MATERIAL_GREEN = 0xff009688;
+    private static final int MATERIAL_BLUE_GREY = 0xff37474f;
     
     static final int DEFAULT_VOLUME_DIALOG_STROKE_COLOR = 0xFF80CBC4;
-    static final int DEFAULT_QS_STROKE_COLOR = 0xFF80CBC4;
 
     private static final int MENU_RESET = Menu.FIRST;
     private static final int DLG_RESET = 0;
+
+    private static final int DISABLED  = 0;
+    private static final int ACCENT    = 1;
+    private static final int CUSTOM = 2;
 
     private ListPreference mMediaBgMode;
     private ListPreference mAppIconBgMode;
@@ -115,7 +126,6 @@ public class NotificationColorSettings extends SettingsPreferenceFragment implem
     private ColorPickerPreference mBgColor;
     private ColorPickerPreference mBgGutsColor;
     private ColorPickerPreference mAppIconBgColor;
-    private ColorPickerPreference mIconColor;
     private ColorPickerPreference mClearAllIconColor;	
     private SeekBarPreferenceCham mVolumeDialogAlpha;	
     private SeekBarPreferenceCham mPowerMenuAlpha;
@@ -125,15 +135,20 @@ public class NotificationColorSettings extends SettingsPreferenceFragment implem
     private ColorPickerPreference mVolumeDialogStrokeColor;
     private SeekBarPreferenceCham mVolumeDialogStrokeThickness;
     private SeekBarPreferenceCham mVolumeDialogCornerRadius;
-    private ListPreference mQSStroke;
-    private ColorPickerPreference mQSStrokeColor;
-    private SeekBarPreferenceCham mQSStrokeThickness;
-    private SeekBarPreferenceCham mQSCornerRadius;
     private SeekBarPreferenceCham mVolumeDialogDashWidth;
     private SeekBarPreferenceCham mVolumeDialogDashGap;
-    private SeekBarPreferenceCham mQSDashWidth;
-    private SeekBarPreferenceCham mQSDashGap;
-  
+    private SwitchPreference mUseCenterColor;
+    private ColorPickerPreference mStartColor;
+    private ColorPickerPreference mCenterColor;
+    private ColorPickerPreference mEndColor;
+    private ListPreference mGradientOrientation;
+    private ListPreference mQSPanelLogo;
+    private ColorPickerPreference mQSPanelLogoColor;
+    private SeekBarPreferenceCham mQSPanelLogoAlpha;
+    private ColorPickerPreference mSliderColor;
+    private ColorPickerPreference mSliderInactiveColor;
+    private ColorPickerPreference mSliderIconColor;
+    private ColorPickerPreference mExpandButtonColor;
     private ContentResolver mResolver;
 
     @Override
@@ -267,42 +282,6 @@ public class NotificationColorSettings extends SettingsPreferenceFragment implem
                     Settings.System.VOLUME_DIALOG_CORNER_RADIUS, 2);
             mVolumeDialogCornerRadius.setValue(volumeDialogCornerRadius / 1);
             mVolumeDialogCornerRadius.setOnPreferenceChangeListener(this);
-
-            // QS stroke
-            mQSStroke =
-                    (ListPreference) findPreference(PREF_QS_STROKE);
-            int qSStroke = Settings.System.getIntForUser(mResolver,
-                            Settings.System.QS_STROKE, 0,
-                            UserHandle.USER_CURRENT);
-            mQSStroke.setValue(String.valueOf(qSStroke));
-            mQSStroke.setSummary(mQSStroke.getEntry());
-            mQSStroke.setOnPreferenceChangeListener(this);
-
-            // QS stroke color
-            mQSStrokeColor =
-                    (ColorPickerPreference) findPreference(PREF_QS_STROKE_COLOR);
-            intColor = Settings.System.getInt(mResolver,
-                    Settings.System.QS_STROKE_COLOR, DEFAULT_QS_STROKE_COLOR);
-            hexColor = String.format("#%08x", (0xFF80CBC4 & intColor));
-            mQSStrokeColor.setSummary(hexColor);
-            mQSStrokeColor.setNewPreviewColor(intColor);
-            mQSStrokeColor.setOnPreferenceChangeListener(this);
-
-            // QS stroke thickness
-            mQSStrokeThickness =
-                    (SeekBarPreferenceCham) findPreference(PREF_QS_STROKE_THICKNESS);
-            int qSStrokeThickness = Settings.System.getInt(mResolver,
-                    Settings.System.QS_STROKE_THICKNESS, 4);
-            mQSStrokeThickness.setValue(qSStrokeThickness / 1);
-            mQSStrokeThickness.setOnPreferenceChangeListener(this);
-
-            // QS corner radius
-            mQSCornerRadius =
-                    (SeekBarPreferenceCham) findPreference(PREF_QS_CORNER_RADIUS);
-            int qSCornerRadius = Settings.System.getInt(mResolver,
-                    Settings.System.QS_CORNER_RADIUS, 0);
-            mQSCornerRadius.setValue(qSCornerRadius / 1);
-            mQSCornerRadius.setOnPreferenceChangeListener(this);
             
             
              // Volume dialog dash width
@@ -325,29 +304,7 @@ public class NotificationColorSettings extends SettingsPreferenceFragment implem
              mVolumeDialogDashGap.setValue(volumeDialogDashGap / 1);
              mVolumeDialogDashGap.setOnPreferenceChangeListener(this);
              
-             
-             // QS dash width
-             mQSDashWidth =
-                     (SeekBarPreferenceCham) findPreference(PREF_QS_STROKE_DASH_WIDTH);
-             int qSDialogDashWidth = Settings.System.getInt(mResolver,
-                     Settings.System.QS_STROKE_DASH_WIDTH, 0);
-             if (qSDialogDashWidth != 0) {
-                 mQSDashWidth.setValue(qSDialogDashWidth / 1);
-             } else {
-                 mQSDashWidth.setValue(0);
-             }
-             mQSDashWidth.setOnPreferenceChangeListener(this);
- 
-             // QS dash gap
-             mQSDashGap =
-                     (SeekBarPreferenceCham) findPreference(PREF_QS_STROKE_DASH_GAP);
-             int qSDialogDashGap = Settings.System.getInt(mResolver,
-                     Settings.System.QS_STROKE_DASH_GAP, 10);
-             mQSDashGap.setValue(qSDialogDashGap / 1);
-             mQSDashGap.setOnPreferenceChangeListener(this);
-
-            VolumeDialogSettingsDisabler(volumeDialogStroke);
-            QSSettingsDisabler(qSStroke);
+             VolumeDialogSettingsDisabler(volumeDialogStroke);
             
              // QS panel RR logo
              mQSPanelLogo =
@@ -376,6 +333,86 @@ public class NotificationColorSettings extends SettingsPreferenceFragment implem
                      Settings.System.QS_PANEL_LOGO_ALPHA, 51);
              mQSPanelLogoAlpha.setValue(qSPanelLogoAlpha / 1);
              mQSPanelLogoAlpha.setOnPreferenceChangeListener(this);
+
+ 	    mGradientOrientation = (ListPreference) findPreference(PREF_GRADIENT_ORIENTATION);
+            final int orientation = Settings.System.getInt(mResolver,
+                    Settings.System.VOLUME_DIALOG_BACKGROUND_GRADIENT_ORIENTATION,
+                    BACKGROUND_ORIENTATION_T_B);
+            mGradientOrientation.setValue(String.valueOf(orientation));
+            mGradientOrientation.setSummary(mGradientOrientation.getEntry());
+            mGradientOrientation.setOnPreferenceChangeListener(this);
+    
+            mStartColor =
+                    (ColorPickerPreference) findPreference(PREF_START_COLOR);
+            intColor = Settings.System.getInt(mResolver,
+                    Settings.System.VOLUME_DIALOG_BACKGROUND_COLOR_START, BLACK); 
+            mStartColor.setNewPreviewColor(intColor);
+            hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mStartColor.setSummary(hexColor);
+            mStartColor.setOnPreferenceChangeListener(this);
+    
+            final boolean useCenterColor = Settings.System.getInt(mResolver,
+                    Settings.System.VOLUME_DIALOG_BACKGROUND_GRADIENT_USE_CENTER_COLOR, 0) == 1;;
+    
+            mUseCenterColor = (SwitchPreference) findPreference(PREF_USE_CENTER_COLOR);
+            mUseCenterColor.setChecked(useCenterColor);
+            mUseCenterColor.setOnPreferenceChangeListener(this);
+    
+            mStartColor.setTitle(getResources().getString(R.string.background_start_color_title));
+
+                mCenterColor =
+                        (ColorPickerPreference) findPreference(PREF_CENTER_COLOR);
+                intColor = Settings.System.getInt(mResolver,
+                        Settings.System.VOLUME_DIALOG_BACKGROUND_COLOR_CENTER, BLACK); 
+                mCenterColor.setNewPreviewColor(intColor);
+                hexColor = String.format("#%08x", (0xffffffff & intColor));
+                mCenterColor.setSummary(hexColor);
+                mCenterColor.setOnPreferenceChangeListener(this);
+
+    		mEndColor =
+                (ColorPickerPreference) findPreference(PREF_END_COLOR);
+        	intColor = Settings.System.getInt(mResolver,
+               		Settings.System.VOLUME_DIALOG_BACKGROUND_COLOR_END, BLACK); 
+        	mEndColor.setNewPreviewColor(intColor);
+       		hexColor = String.format("#%08x", (0xffffffff & intColor));
+        	mEndColor.setSummary(hexColor);
+		mEndColor.setOnPreferenceChangeListener(this);
+
+     		mSliderColor =
+                (ColorPickerPreference) findPreference(VOLUME_DIALOG_SLIDER_COLOR);
+       		intColor = Settings.System.getInt(mResolver,
+               		 Settings.System.VOLUME_DIALOG_SLIDER_COLOR, MATERIAL_GREEN);
+       	        mSliderColor.setNewPreviewColor(intColor);
+        	hexColor = String.format("#%08x", (0xffffffff & intColor));
+       		mSliderColor.setSummary(hexColor);
+	        mSliderColor.setOnPreferenceChangeListener(this);
+
+                        mSliderInactiveColor =
+                (ColorPickerPreference) findPreference(VOLUME_DIALOG_SLIDER_INACTIVE_COLOR);
+        	 intColor = Settings.System.getInt(mResolver,
+                         Settings.System.VOLUME_DIALOG_SLIDER_INACTIVE_COLOR, WHITE); 
+                 mSliderInactiveColor.setNewPreviewColor(intColor);
+                 hexColor = String.format("#%08x", (0xffffffff & intColor));
+                 mSliderInactiveColor.setSummary(hexColor);
+                 mSliderInactiveColor.setOnPreferenceChangeListener(this);
+
+                 mSliderIconColor =
+                         (ColorPickerPreference) findPreference(VOLUME_DIALOG_SLIDER_ICON_COLOR);
+                 intColor = Settings.System.getInt(mResolver,
+                         Settings.System.VOLUME_DIALOG_SLIDER_ICON_COLOR, WHITE); 
+                 mSliderIconColor.setNewPreviewColor(intColor);
+                 hexColor = String.format("#%08x", (0xffffffff & intColor));
+                 mSliderIconColor.setSummary(hexColor);
+                 mSliderIconColor.setOnPreferenceChangeListener(this);
+
+                 mExpandButtonColor =
+                         (ColorPickerPreference) findPreference(VOLUME_DIALOG_EXPAND_BUTTON_COLOR);
+                 intColor = Settings.System.getInt(mResolver,
+                         Settings.System.VOLUME_DIALOG_EXPAND_BUTTON_COLOR, WHITE); 
+                 mExpandButtonColor.setNewPreviewColor(intColor);
+                 hexColor = String.format("#%08x", (0xffffffff & intColor));
+                 mExpandButtonColor.setSummary(hexColor);
+	         mExpandButtonColor.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -447,14 +484,6 @@ public class NotificationColorSettings extends SettingsPreferenceFragment implem
                 Settings.System.NOTIFICATION_APP_ICON_BG_COLOR, intHex);
             preference.setSummary(hex);
             return true;
-        } else if (preference == mIconColor) {
-            hex = ColorPickerPreference.convertToARGB(
-                Integer.valueOf(String.valueOf(newValue)));
-            intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(mResolver,
-                Settings.System.NOTIFICATION_ICON_COLOR, intHex);
-            preference.setSummary(hex);
-            return true;
         } else if (preference == mClearAllIconColor) {
             hex = ColorPickerPreference.convertToARGB(
                 Integer.valueOf(String.valueOf(newValue)));
@@ -509,32 +538,6 @@ public class NotificationColorSettings extends SettingsPreferenceFragment implem
                 Settings.System.putInt(mResolver,
                         Settings.System.VOLUME_DIALOG_CORNER_RADIUS, val * 1);
                 return true;
-        }  else if (preference == mQSStroke) {
-                int qSStroke = Integer.parseInt((String) newValue);
-                int index = mQSStroke.findIndexOfValue((String) newValue);
-                Settings.System.putIntForUser(mResolver, Settings.System.
-                        QS_STROKE, qSStroke, UserHandle.USER_CURRENT);
-                mQSStroke.setSummary(mQSStroke.getEntries()[index]);
-                QSSettingsDisabler(qSStroke);
-                return true;
-        }  else if (preference == mQSStrokeColor) {
-                hex = ColorPickerPreference.convertToARGB(
-                        Integer.valueOf(String.valueOf(newValue)));
-                preference.setSummary(hex);
-                intHex = ColorPickerPreference.convertToColorInt(hex);
-                Settings.System.putInt(mResolver,
-                        Settings.System.QS_STROKE_COLOR, intHex);
-                return true;
-        } else if (preference == mQSStrokeThickness) {
-                int val = (Integer) newValue;
-                Settings.System.putInt(mResolver,
-                        Settings.System.QS_STROKE_THICKNESS, val * 1);
-                return true;
-        }  else if (preference == mQSCornerRadius) {
-                int val = (Integer) newValue;
-                Settings.System.putInt(mResolver,
-                        Settings.System.QS_CORNER_RADIUS, val * 1);
-                return true;
         } else if (preference == mVolumeDialogDashWidth) {
                  int val = (Integer) newValue;
                  Settings.System.putInt(mResolver,
@@ -545,16 +548,6 @@ public class NotificationColorSettings extends SettingsPreferenceFragment implem
                  Settings.System.putInt(mResolver,
                          Settings.System.VOLUME_DIALOG_STROKE_DASH_GAP, val * 1);
                  return true;
-        } else if (preference == mQSDashWidth) {
-                 int val = (Integer) newValue;
-                 Settings.System.putInt(mResolver,
-                         Settings.System.QS_STROKE_DASH_WIDTH, val * 1);
-                 return true;
-        } else if (preference == mQSDashGap) {
-                 int val = (Integer) newValue;
-                 Settings.System.putInt(mResolver,
-                         Settings.System.QS_STROKE_DASH_GAP, val * 1);
-                 return true;    
         } else if (preference == mQSPanelLogo) {
                  int qSPanelLogo = Integer.parseInt((String) newValue);
                  int index = mQSPanelLogo.findIndexOfValue((String) newValue);
@@ -576,7 +569,78 @@ public class NotificationColorSettings extends SettingsPreferenceFragment implem
                  Settings.System.putInt(mResolver,
                         Settings.System.QS_PANEL_LOGO_ALPHA, val * 1);
                 return true;
-        }
+        } else if (preference == mUseCenterColor) {
+            value = (Boolean) newValue;
+            Settings.System.putInt(mResolver,
+                    Settings.System.VOLUME_DIALOG_BACKGROUND_GRADIENT_USE_CENTER_COLOR,
+                    value ? 1 : 0);
+            refreshSettings();
+            return true;
+        } else if (preference == mStartColor) {
+            hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            intHex = ColorPickerPreference.convertToColorInt(hex);
+                Settings.System.putInt(mResolver,
+                        Settings.System.VOLUME_DIALOG_BACKGROUND_COLOR_START, intHex);
+                preference.setSummary(hex);
+                return true;
+            } else if (preference == mCenterColor) {
+                hex = ColorPickerPreference.convertToARGB(
+                        Integer.valueOf(String.valueOf(newValue)));
+                intHex = ColorPickerPreference.convertToColorInt(hex);
+                Settings.System.putInt(mResolver,
+                        Settings.System.VOLUME_DIALOG_BACKGROUND_COLOR_CENTER, intHex);
+                preference.setSummary(hex);
+                return true;
+            } else if (preference == mEndColor) {
+                hex = ColorPickerPreference.convertToARGB(
+                        Integer.valueOf(String.valueOf(newValue)));
+                intHex = ColorPickerPreference.convertToColorInt(hex);
+                Settings.System.putInt(mResolver,
+                        Settings.System.VOLUME_DIALOG_BACKGROUND_COLOR_END, intHex);
+                preference.setSummary(hex);
+                return true;
+            } else if (preference == mGradientOrientation) {
+                int intValue = Integer.valueOf((String) newValue);
+                int index = mGradientOrientation.findIndexOfValue((String) newValue);
+                Settings.System.putInt(mResolver,
+                        Settings.System.VOLUME_DIALOG_BACKGROUND_GRADIENT_ORIENTATION,
+                        intValue);
+                mGradientOrientation.setSummary(mGradientOrientation.getEntries()[index]);
+                return true;
+            } else if (preference == mSliderColor) {
+            hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(mResolver,
+                    Settings.System.VOLUME_DIALOG_SLIDER_COLOR, intHex);
+            preference.setSummary(hex);
+            return true;
+           } else if (preference == mSliderInactiveColor) {
+            hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(mResolver,
+                    Settings.System.VOLUME_DIALOG_SLIDER_INACTIVE_COLOR, intHex);
+            preference.setSummary(hex);
+            return true;
+          } else if (preference == mSliderIconColor) {
+            hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(mResolver,
+                    Settings.System.VOLUME_DIALOG_SLIDER_ICON_COLOR, intHex);
+            preference.setSummary(hex);
+            return true;
+          } else if (preference == mExpandButtonColor) {
+            hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(mResolver,
+                    Settings.System.VOLUME_DIALOG_EXPAND_BUTTON_COLOR, intHex);
+            preference.setSummary(hex);
+            return true;
+	  } 
         return false;
     }
     
@@ -596,28 +660,6 @@ public class NotificationColorSettings extends SettingsPreferenceFragment implem
                 mVolumeDialogStrokeThickness.setEnabled(true);
                 mVolumeDialogDashWidth.setEnabled(true);
                 mVolumeDialogDashGap.setEnabled(true);
-            }
-        }
-
-        private void QSSettingsDisabler(int qSStroke) {
-            if (qSStroke == 0) {
-                mQSStrokeColor.setEnabled(false);
-                mQSStrokeThickness.setEnabled(false);
-		mQSCornerRadius.setEnabled(false);
-                mQSDashWidth.setEnabled(false);
-                mQSDashGap.setEnabled(false);
-            } else if (qSStroke == 1) {
-                mQSStrokeColor.setEnabled(false);
-                mQSStrokeThickness.setEnabled(true);
-                mQSCornerRadius.setEnabled(true);
-                mQSDashWidth.setEnabled(true);
-                mQSDashGap.setEnabled(true);
-            } else {
-                mQSStrokeColor.setEnabled(true);
-                mQSStrokeThickness.setEnabled(true);
-		mQSCornerRadius.setEnabled(true);
-                mQSDashWidth.setEnabled(true);
-                mQSDashGap.setEnabled(true);
             }
         }
         

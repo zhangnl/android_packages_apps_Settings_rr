@@ -82,6 +82,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.android.internal.logging.MetricsLogger;
+import com.android.settings.Settings.AppOpsSummaryActivity;
 import com.android.settings.fuelgauge.InactiveApps;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
@@ -187,6 +188,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
 
     private static final String ROOT_ACCESS_KEY = "root_access";
     private static final String ROOT_ACCESS_PROPERTY = "persist.sys.root_access";
+
+    private static final String ROOT_APPOPS_KEY = "root_appops";
 
     private static final String UPDATE_RECOVERY_KEY = "update_recovery";
     private static final String UPDATE_RECOVERY_PROPERTY = "persist.sys.recovery_update";
@@ -304,6 +307,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private Object mSelectedRootValue;
     private PreferenceScreen mDevelopmentTools;
     private ColorModePreference mColorModePreference;
+    private Preference mRootAppops;
 
 
     private SwitchPreference mUpdateRecovery;
@@ -487,6 +491,10 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
 
         mRootAccess = (ListPreference) findPreference(ROOT_ACCESS_KEY);
         mRootAccess.setOnPreferenceChangeListener(this);
+
+        mRootAppops = (Preference) findPreference(ROOT_APPOPS_KEY);
+        mRootAppops.setOnPreferenceClickListener(this);
+
         if (!removeRootOptionsIfRequired()) {
             if (isRootForAppsAvailable()) {
                 mRootAccess.setEntries(R.array.root_access_entries);
@@ -496,6 +504,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
                 mRootAccess.setEntryValues(R.array.root_access_values_adb);
             }
             mAllPrefs.add(mRootAccess);
+            mAllPrefs.add(mRootAppops);
         }
 
         mDevelopmentTools = (PreferenceScreen) findPreference(DEVELOPMENT_TOOLS);
@@ -849,6 +858,10 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         mRootAccess.setValue(value);
         mRootAccess.setSummary(getResources()
                 .getStringArray(R.array.root_access_entries)[Integer.valueOf(value)]);
+
+        if (mRootAppops != null) {
+            mRootAppops.setEnabled(isRootForAppsEnabled());
+        }
     }
 
     private boolean isRootForAppsAvailable() {
@@ -1912,6 +1925,13 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
                 preference == mTransitionAnimationScale ||
                 preference == mAnimatorDurationScale) {
             ((AnimationScalePreference) preference).click();
+        } else if (preference == mRootAppops) {
+            Activity mActivity = getActivity();
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.putExtra("appops_tab", getString(R.string.app_ops_categories_su));
+            intent.setClass(mActivity, AppOpsSummaryActivity.class);
+            mActivity.startActivity(intent);
+            return true;
         }
         return false;
     }
