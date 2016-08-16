@@ -484,14 +484,6 @@ public class NotificationColorSettings extends SettingsPreferenceFragment implem
                 Settings.System.NOTIFICATION_APP_ICON_BG_COLOR, intHex);
             preference.setSummary(hex);
             return true;
-        } else if (preference == mIconColor) {
-            hex = ColorPickerPreference.convertToARGB(
-                Integer.valueOf(String.valueOf(newValue)));
-            intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(mResolver,
-                Settings.System.NOTIFICATION_ICON_COLOR, intHex);
-            preference.setSummary(hex);
-            return true;
         } else if (preference == mClearAllIconColor) {
             hex = ColorPickerPreference.convertToARGB(
                 Integer.valueOf(String.valueOf(newValue)));
