@@ -638,6 +638,12 @@
        android:summary="@string/device_redmi2_summary"
        android:selectable="false" 
        android:title="@string/device_redmi2" />
+    <Preference
+       android:id="@+id/device_redmi3"
+       android:icon="@drawable/phone_tint"
+       android:summary="@string/device_redmi3_summary"
+       android:selectable="false" 
+       android:title="@string/device_redmi3" />
        </PreferenceCategory>
 
 <PreferenceCategory
@@ -655,6 +661,24 @@
         android:summary="@string/device_sprout8_summary"
         android:selectable="false"
         android:title="@string/device_sprout8" />
+	</PreferenceCategory>
+
+<PreferenceCategory
+	android:id="@+id/device_category_one"
+	android:title="@string/device_category_one_title">
+
+    <Preference
+        android:id="@+id/device_seed"
+        android:icon="@drawable/phone_tint"
+        android:summary="@string/device_seed_summary"
+        android:selectable="false"
+        android:title="@string/device_seed" />
+    <Preference
+        android:id="@+id/device_shamrock"
+        android:icon="@drawable/phone_tint"
+        android:summary="@string/device_shamrock_summary"
+        android:selectable="false"
+        android:title="@string/device_shamrock" />
 	</PreferenceCategory>
 	
   <PreferenceCategory
