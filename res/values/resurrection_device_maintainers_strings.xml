@@ -37,7 +37,8 @@
 	<string name="device_category_nvidia_title">Nvidia</string>
 	<string name="device_category_oppo_title">OPPO</string>
 	<string name="device_category_one_title">Android ONE</string>
-	
+        <string name="device_category_leeco_title">LeEco</string>
+
 	<string name="maintainers_note_title">Note</string>
 	<string name="maintainers_note_title_summary">Send a PM to \'Varun Date\' at Hangouts containing the link to your ROM thread if you want your name to be added in Device Maintainers list.</string>
  
@@ -362,6 +363,9 @@
         <string name="device_kenzo">Xiaomi Redmi Note 3</string>
         <string name="device_kenzo_summary">Kenzo\nMaintainer - Warmachine28</string>
 	
+        <string name="device_mido">Xiaomi Redmi Note 4</string>
+        <string name="device_mido_summary">mido\nMaintainer - Sarthak Narang</string>        
+
 	<string name="device_sprout4">Android One - 4GB variants (1st Gen)</string>
 	<string name="device_sprout4_summary">Sprout4\nMaintainer - Sai Krishna</string>
 	
@@ -373,6 +377,12 @@
 
 	<string name="device_shamrock">Android One - GM 5 Plus (3rd Gen)</string>
 	<string name="device_shamrock_summary">Shamrock\nMaintainer - Ali İhsan Hatun (Asderdd)</string>
+
+        <string name="device_s2">LeEco Le 2</string>
+        <string name="device_s2_summary">s2\nMaintainer - Hriday Sharma(HridayHS)</string>
+
+        <string name="device_x2">LeEco LeMax 2</string>
+        <string name="device_x2_summary">x2\nMaintainer - Andrey Shidakov (andr68rus)</string>
 
 	<string name="device_alpha">Samsung Galaxy Alpha</string>
 	<string name="device_alpha_summary">G850F\nMaintainer - Jan-Luca Neumann (sunsettrack4)</string>
@@ -415,6 +425,9 @@
 
     <string name="device_redmi3">Xiaomi Redmi 3</string>
 	<string name="device_redmi3_summary">ido\nMaintainer - WinKarbik</string>
+
+        <string name="device_land">Xiaomi Redmi 3S/3X/Prime</string>
+	<string name="device_land_summary">land\nMaintainer - Hriday Sharma(HridayHS), Sai Vishal(DroidThug)</string>
 
 	<string name="device_wfxs">WilleyFox Swift</string>
 	<string name="device_wfxs_summary">crackling\nMaintainer - </string>
